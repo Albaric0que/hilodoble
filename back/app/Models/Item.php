@@ -3,16 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Sanctum\HasApiTokens;
 
 /**
- * Class User
+ * Class Item
  *
  * @property $id
- * @property $name
- * @property $email
- * @property $email_verified_at
- * @property $password
+ * @property $itemName
+ * @property $description
  * @property $remember_token
  * @property $created_at
  * @property $updated_at
@@ -20,12 +17,12 @@ use Laravel\Sanctum\HasApiTokens;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class User extends Model
+class Item extends Model
 {
     
     static $rules = [
-		'name' => 'required',
-		'email' => 'required',
+		'itemName' => 'required',
+		'description' => 'required',
     ];
 
     protected $perPage = 20;
@@ -35,7 +32,7 @@ class User extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','email'];
+    protected $fillable = ['itemName','description'];
 
 
 
