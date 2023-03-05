@@ -13,18 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/items', function (Request $request) {
-    // Your code here...
-});
-
-Route::middleware('auth:sanctum')->post('/items', function (Request $request) {
-    // Your code here...
-});
-
-Route::middleware('auth:sanctum')->put('/items/{id}', function (Request $request, $id) {
-    // Your code here...
-});
-
-Route::middleware('auth:sanctum')->delete('/items/{id}', function (Request $request, $id) {
-    // Your code here...
+Route::get('/', function () {
+    return view('welcome');
 });
