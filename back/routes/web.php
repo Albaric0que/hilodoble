@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::delete('/delete/{id}', [ItemController::class, 'destroy'])->name('delete');
+Route::delete('/delete/{id}', [ItemController::class, 'destroy'])->name('deleteItem');

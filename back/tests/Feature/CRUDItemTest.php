@@ -35,10 +35,11 @@ class CRUDItemTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $item = factory(Item::class)->create();
+        /* $item = factory(Item::class)->create(); */
+        $item = Item::factory()->create();
         $this->assertCount(1, Item::all());
-
-        $response = $this->delete(route('delete', $item->id));
+    
+        $response = $this->delete(route('deleteItem', $item->id));
         $this->assertCount(0, Item::all());
 
     }
