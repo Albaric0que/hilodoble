@@ -29,7 +29,7 @@ class ItemController extends Controller
         $item = Item::find($id);
 
         return view('editItem', compact('item'));
-    } 
+    }  
 
     /**
      * Update the specified resource in storage.
