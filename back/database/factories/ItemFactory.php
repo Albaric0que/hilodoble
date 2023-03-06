@@ -18,6 +18,7 @@ class ItemFactory extends Factory
     {
         return [
             //
+            'user_id' => fake()->randomDigit(1, 100),
             'itemName'=> fake()->name(),
             'category'=>fake()->randomElement(['Bolsos', 'Accesorios', 'Material de oficina']),
             'description'=> fake()->realText(),

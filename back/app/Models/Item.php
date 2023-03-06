@@ -11,6 +11,7 @@ class Item extends Model
 
 
     static $rules = [
+        'user_id' => 'required',
         'itemName' => 'required',
         'category' => 'required',
         'description' => 'required',
@@ -22,6 +23,7 @@ class Item extends Model
 
 
     protected $fillable = [
+        'user_id',
         'itemName',
         'category',
         'description',
@@ -30,6 +32,12 @@ class Item extends Model
         'purchaseQuantity',
         'price',
     ];
+
+
+    public function user()
+    {
+        return $this->hasOne('App\Models\User', 'id', 'user_id');
+    }
 
 
 
