@@ -17,12 +17,16 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+Route::resource('items', 'App\Http\Controllers\ItemController');
+Route::resource('users', 'App\Http\Controllers\UserController');
+
 Route::get('/', function () {
     return view('welcome');
 }); 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 //R del CRUD
 Route::get('/',[ItemController::class,'index'])->name('home');
@@ -32,28 +36,11 @@ Route::get('/home',[ItemController::class,'index']);
 Route::get('/edit/{id}', [ItemController::class, 'edit'])->name('editItem');
 Route::patch('/item/{id}', [ItemController::class, 'update'])->name('updateItem')/* ->middleware('isadmin', 'auth') */;
 
-Route::resource('items', 'App\Http\Controllers\ItemController');
 
-Route::resource('users', 'App\Http\Controllers\UserController');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
-
-Route::get('/create', [ItemController::class, 'create'])->name('create')->middleware('auth');
-Route::post('/', [ItemController::class, 'store'])->name('store')->middleware('auth');
+//C del CRUD
+Route::get('/createItem', [ItemController::class, 'create'])->name('create');
+Route::post('/', [ItemController::class, 'store'])->name('store');
 
 
-
-Route::resource('items', 'App\Http\Controllers\ItemController');
-
-Route::resource('users', 'App\Http\Controllers\UserController');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
-
-Route::get('/create', [ItemController::class, 'create'])->name('create')->middleware('auth');
-Route::post('/', [ItemController::class, 'store'])->name('store')->middleware('auth');
 
 
