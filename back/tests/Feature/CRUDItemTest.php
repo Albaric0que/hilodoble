@@ -12,7 +12,6 @@ class CRUDItemText extends TestCase
 
     use RefreshDatabase;
     
-    
     public function test_listItemAppearInHomeView()
     {
         $this->withExceptionHandling();
