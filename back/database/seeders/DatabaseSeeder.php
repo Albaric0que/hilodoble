@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Item;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +19,18 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        Item::factory()->create([
+            'itemName' => 'Bolso',
+            'category' => 'Bolsos',
+            'description' => 'Bolso de mano de lona',
+            'image' => '',
+            'stockQuantity' => '5',
+            'purchaseQuantity' => '2',
+            'price' => '20'
+        ]
+        );
+
+        Item::factory(5)->create();
     }
 }
