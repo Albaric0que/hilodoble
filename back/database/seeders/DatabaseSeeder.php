@@ -18,5 +18,18 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+         Item::factory()->create([
+            'itemName' => 'Bolso',
+            'category' => 'Bolsos',
+            'description' => 'Bolso de mano de lona',
+            'image' => '',
+            'stockQuantity' => '5',
+            'purchaseQuantity' => '2',
+            'price' => '20'
+        ]
+        );
+
+        Item::factory(5)->create();
     }
 }
