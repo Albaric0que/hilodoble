@@ -12,14 +12,14 @@ class UserController extends Controller
     {
         $users = User::paginate();
 
-        return view('user.index', compact('users'))
+        return view('index', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
     }
 
     public function create()
     {
         $user = new User();
-        return view('user.create', compact('user'));
+        return view('create', compact('user'));
     }
 
     public function store(Request $request)
@@ -28,7 +28,6 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|unique:users|max:255',
             'password' => 'required|string|min:6|confirmed',
-            'image' => 'required|image|max:2048',
         ]);
 
         $user = new User($validatedData);
@@ -37,7 +36,7 @@ class UserController extends Controller
         $image->storeAs('public/images', $imageName);
         $user->image = 'storage/images/' . $imageName;
         $user->save();
-        return redirect()->route('users.index')
+        return redirect()->route('index')
             ->with('success', 'Estudiante creado.');
     }
 }

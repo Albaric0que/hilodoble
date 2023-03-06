@@ -9,39 +9,47 @@ use App\Http\Controllers\Controller;
 
 class ItemController extends Controller
 {
-    public function index()
-    {
-        $items = Item::paginate();
-
-        return view('item.index', compact('items'))
-            ->with('i', (request()->input('page', 1) - 1) * $items->perPage());
-    }
-
     /**
-     * Show the form for creating a new resource.
+     * Display a form for creating a new item.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function create()
     {
         $item = new Item();
         $user = User::pluck('name', 'id');
-        return view('create', compact('item', 'user'));
+        return view('create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created item in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        // Validate the form data
         request()->validate(Item::$rules);
+        $item = new Item(
+            null,
+            $request["itemName"],
+            $request["category"],
+            $request["description"],
+            $request["image"],
+            $request["stockQuantity"],
+            $request["purchaseQuantity"],
+            $request["price"],
+        
+        
+        );
+        $item->save();
 
-        $item = Item::create($request->all());
+        // Create a new item with the validated data
+        $item = Item::create($validatedData);
 
-        return redirect()->route('home')
-            ->with('success', 'Item created successfully.');
+        // Redirect to the item's page
+        return redirect()->route('items.index')
+        ->with('success', 'Item created successfully.');
     }
 }

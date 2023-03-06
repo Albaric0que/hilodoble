@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h1>Create Item</h1>
-        <form method="POST" action="{{ route('items.store') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('items.store') }}">
             @csrf
 
             <div class="form-group">
@@ -31,8 +31,8 @@
             </div>
 
             <div class="form-group">
-                <label for="image">Image</label>
-                <input type="file" name="image" id="image" class="form-control-file{{ $errors->has('image') ? ' is-invalid' : '' }}" required>
+                <label for="image">Image URL</label>
+                <input type="url" name="image" id="image" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}" value="{{ old('image') }}" required>
                 @if ($errors->has('image'))
                     <span class="invalid-feedback">{{ $errors->first('image') }}</span>
                 @endif
@@ -46,24 +46,17 @@
                 @endif
             </div>
 
-            <div class="form-group">
-                <label for="purchaseQuantity">Purchase Quantity</label>
-                <input type="number" name="purchaseQuantity" id="purchaseQuantity" class="form-control{{ $errors->has('purchaseQuantity') ? ' is-invalid' : '' }}" value="{{ old('purchaseQuantity') }}" min="0" required>
-                @if ($errors->has('purchaseQuantity'))
-                    <span class="invalid-feedback">{{ $errors->first('purchaseQuantity') }}</span>
-                @endif
-            </div>
 
             <div class="form-group">
                 <label for="price">Price</label>
                 <input type="number" name="price" id="price" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" value="{{ old('price') }}" min="0" required>
-                @if ($errors->has('price'))
+                @if ($errors->has('price'))                
                 <span class="invalid-feedback">{{ $errors->first('price') }}</span>
-            @endif
-        </div>
-
-        <button type="submit" class="btn btn-primary">Create</button>
-    </form>
-</div>
-@endsection
+                @endif
+            </div>
+    
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+    
 

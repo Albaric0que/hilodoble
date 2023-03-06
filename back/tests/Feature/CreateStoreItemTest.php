@@ -2,46 +2,90 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
 use App\Models\User;
 use App\Models\Item;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Tests\TestCase;
 
 class CreateStoreItemTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
-    public function test_example(): void
-    {
-        $response = $this->get('/');
+    use RefreshDatabase;
+    use WithFaker;
+    public function test_An_Admin_Can_Create_New_item_with_an_image_url()
+{
+    $this->withExceptionHandling();
 
-        $response->assertStatus(200);
-    }
+    $userAdmin = User::factory()->create(['isAdmin' => true]);
+    $this->actingAs($userAdmin);
 
-    public function testCreateReturnsCreateView()
-    {
-        $admin = User::factory()->create(['isAdmin' => true]);
+    // Create the item
+    $responseCreate = $this->post(route('items.create'), [
+        'itemName' => 'Riñonera',
+        'category' => 'Some category', // provide a valid value for category
+        'description' => 'Probando esto a ver como funciona lalalala ya cambiaremos los textos',
+        'image' => 'https://hilodoble.com/wp-content/uploads/2021/06/rinonera_colorful_1-300x300.jpg', // provide a valid URL for image
+        'stockQuantity' => '30',
+        'purchaseQuantity' => '1',
+        'price' => '30',
+    ]);
 
-        $response = $this->actingAs($admin)->get(route('users.create'));
+    // Assert that the item was created successfully
+    $this->assertCount(0, Item::all());
 
-        $response->assertStatus(200);
-        $response->assertViewIs('user.create');
-    }
+    // Store the item
+    $responseStore = $this->post(route('items.create'), [
+        'itemName' => 'Riñonera',
+        'category' => 'Some category', // provide a valid value for category
+        'description' => 'Probando esto a ver como funciona lalalala ya cambiaremos los textos',
+        'image' => 'https://hilodoble.com/wp-content/uploads/2021/06/rinonera_colorful_1-300x300.jpg', // provide a valid URL for image
+        'stockQuantity' => '30',
+        'purchaseQuantity' => '1',
+        'price' => '30',
+    ]);
 
-    public function testStoreCreatesNewUser()
-    {
-        $admin = User::factory()->create(['isAdmin' => true]);
-        $userData = User::factory()->make()->toArray();
-        $userData['image'] = UploadedFile::fake()->create('avatar.jpg');
-        $userData['password'] = 'password'; // Agregar campo password
-        $userData['isAdmin'] = false; // Agregar campo isAdmin
-
-        $response = $this->actingAs($admin)->post(route('users.store'), $userData);
-
-        $response->assertRedirect(route('users.index'));
-        $this->assertDatabaseHas('users', ['email' => $userData['email']]);
-    }
+    // Assert that the item was stored successfully
+    $this->assertCount(1, Item::all());
+}
 
 }
+
+
+    //     // Create a user with admin privileges
+    //     $admin = User::factory()->create(['isAdmin' => true]);
+    //     $this->actingAs($isAdmin);
+    
+    //     // Submit a request to create a new item with an image URL
+    //     $response = $this->post(route('items.store'), [
+    //         'itemName' => 'Riñonera',
+    //         'category' => 'Some category', // provide a valid value for category
+    //         'description' => 'Probando esto a ver como funciona lalalala ya cambiaremos los textos',
+    //         'image' => 'https://hilodoble.com/wp-content/uploads/2021/06/rinonera_colorful_1-300x300.jpg', // provide a valid URL for image
+    //         'stockQuantity' => '30',
+    //         'purchaseQuantity' => '1',
+    //         'price' => '30',
+    //     ]);
+    
+    //     $this->assertCount(1, Item::all());
+
+    //     $userNoAdmin = User::factory()->create(['isAdmin' => false]);
+    //     $this->actingAs($userNoAdmin);
+
+    //     $response = $this->post(route('storeItem'),
+    //     [
+    //         'itemName' => 'Riñonera',
+    //         'category' => 'Some category', // provide a valid value for category
+    //         'description' => 'Probando esto a ver como funciona lalalala ya cambiaremos los textos',
+    //         'image' => 'https://hilodoble.com/wp-content/uploads/2021/06/rinonera_colorful_1-300x300.jpg', // provide a valid URL for image
+    //         'stockQuantity' => '30',
+    //         'purchaseQuantity' => '1',
+    //         'price' => '30',
+
+    //     ]);
+
+    //     $this->assertCount(1, Item::all());
+    // }
+
+    

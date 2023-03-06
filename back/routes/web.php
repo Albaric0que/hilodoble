@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +26,9 @@ Route::resource('users', 'App\Http\Controllers\UserController');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
+
+Route::get('/create', [ItemController::class, 'create'])->name('create')->middleware('auth');
+Route::post('/', [ItemController::class, 'store'])->name('store')->middleware('auth');
+
+

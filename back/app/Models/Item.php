@@ -11,14 +11,14 @@ class Item extends Model
 
 
     static $rules = [
-        'user_id' => 'required',
-        'itemName' => 'required',
-        'category' => 'required',
+        'itemName' => 'required|max:255',
+        'user_id'=>'required',
+        'category' => 'required|max:255',
         'description' => 'required',
-        'image' => 'required',
-        'stockQuantity' => 'required',
-        'purchaseQuantity' => 'required',
-        'price' => 'required',
+        'image' => 'required|url',
+        'stockQuantity' => 'required|integer|min:0',
+        'purchaseQuantity' => 'required|integer|min:0',
+        'price' => 'required|numeric|min:0',
     ];
 
 
