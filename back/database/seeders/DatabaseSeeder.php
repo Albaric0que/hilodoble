@@ -25,5 +25,14 @@ class DatabaseSeeder extends Seeder
             'price'=>'15']);
     
         Item::factory(3)->create();
+
+
+        User::factory()->create();
+
+        User::factory()->create(['name' => 'admin', 'email' => 'admin@admin.com', 'isAdmin' => true]);
+
+        User::factory()->create(['name' => 'user1', 'email' => 'user1@user1.com', 'isAdmin' => false]);
+
+    
     }
 }

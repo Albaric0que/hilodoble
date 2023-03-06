@@ -6,11 +6,19 @@ use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\User;
 use App\Http\Controllers\Controller;
-use App\Models\Item;
-use Illuminate\Http\Request;
+
 
 class ItemController extends Controller
 {
+    public function index()
+    {
+        $items = Item::get();
+        
+        return view ('home', compact('items')); 
+        /* var_dump($items); */
+    }
+
+
     /**
      * Display a form for creating a new item.
      *
@@ -34,7 +42,7 @@ class ItemController extends Controller
         // Validate the form data
         request()->validate(Item::$rules);
         $item = new Item(
-            null,
+
             $request["itemName"],
             $request["category"],
             $request["description"],
@@ -54,16 +62,7 @@ class ItemController extends Controller
         return redirect()->route('items.index')
         ->with('success', 'Item created successfully.');
     }
-}
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $items = Item::get();
-        
-        return view ('home', compact('items')); 
-        /* var_dump($items); */
-    }
+
 
     /**
      * Show the form for editing the specified resource.
