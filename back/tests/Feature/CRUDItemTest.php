@@ -9,7 +9,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CRUDItemText extends TestCase
 {  
-
     use RefreshDatabase;
     
     public function test_listItemAppearInHomeView()
