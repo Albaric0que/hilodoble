@@ -7,7 +7,7 @@ use Tests\TestCase;
 use App\Models\Item;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class CRUDItemText extends TestCase
+class CRUDItemTest extends TestCase
 {  
     use RefreshDatabase;
     
