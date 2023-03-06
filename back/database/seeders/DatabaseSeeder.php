@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Item;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,7 +27,7 @@ class DatabaseSeeder extends Seeder
             'image' => '',
             'stockQuantity' => '5',
             'purchaseQuantity' => '2',
-            'price' => '20'
+            'price' => '10'
         ]
         );
 
