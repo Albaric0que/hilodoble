@@ -6,8 +6,9 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Item;
+use App\Models\User;
 
-class ItemTest extends TestCase
+class CRUDItemTest extends TestCase
 {
     use RefreshDatabase;
     /**
@@ -35,6 +36,7 @@ class ItemTest extends TestCase
         $this->withoutExceptionHandling();
 
         $item = factory(Item::class)->create();
+        $this->assertCount(1, Item::all());
 
         $response = $this->delete(route('delete', $item->id));
         $this->assertCount(0, Item::all());
