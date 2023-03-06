@@ -1,4 +1,3 @@
-# Hilodoble
 <h1 align="center">Hilodoble</h1>
 
 <h2>1. Project description:</h2>
