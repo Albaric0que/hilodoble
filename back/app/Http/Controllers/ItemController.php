@@ -25,7 +25,7 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    { 
         $item = Item::find($id);
 
         return view('editItem', compact('item'));
