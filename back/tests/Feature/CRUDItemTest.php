@@ -30,12 +30,12 @@ class CRUDItemTest extends TestCase
         $this->withExceptionHandling();
 
         $item = Item::factory()->create();
-        $item->assertCount(1,Item::all());
+        $this->assertCount(1,Item::all());
 
         $response = $this->get(route('showItem',$item->id));
         $response ->assertSee($item->itemName);
         $response ->assertStatus(200)
-                ->assertViewis('showItem');
+                ->assertViewIs('showItem');
 
     }
 }
