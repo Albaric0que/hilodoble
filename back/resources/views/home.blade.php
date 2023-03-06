@@ -8,10 +8,12 @@
 
     <div>
         <h3>Producto</h3>
-        {{$item->itemName}}</p>
-        {{$item->category}}/
-        {{$item->description}}/
-        {{$item->image}}          
+       <a href="{{route ('ShowItem', $item->id)}}"> Ver Detalles de producto</a> 
+        <img src="{{ asset($item->image) }}" alt="{{ $item->itemName }}" class="img-thumbnail" style="width: 100px; height:auto ;" width='100'>
+        {{$item->itemName}}=>
+        {{$item->category}}
+        <p>Descripción:</p>
+        {{$item->description}}/             
     </div>
     @endforeach 
 

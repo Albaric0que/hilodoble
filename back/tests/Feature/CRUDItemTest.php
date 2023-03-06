@@ -7,7 +7,7 @@ use Tests\TestCase;
 use App\Models\Item;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class CRUDItemText extends TestCase
+class CRUDItemTest extends TestCase
 {  
     use RefreshDatabase;
     
@@ -19,9 +19,23 @@ class CRUDItemText extends TestCase
         $item =$items[0];
 
         $response = $this->get('/');
-        $response -> assertSee($item->itemName);
+        $response -> assertSee($item->name);
 
         $response->assertStatus(200)
                 ->assertViewIs('home');
+    }
+
+    public function test_anItemCanBehowed()
+    {
+        $this->withExceptionHandling();
+
+        $item = Item::factory()->create();
+        $item->assertCount(1,Item::all());
+
+        $response = $this->get(route('showItem',$item->id));
+        $response ->assertSee($item->itemName);
+        $response ->assertStatus(200)
+                ->assertViewis('showItem');
+
     }
 }
