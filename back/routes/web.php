@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,11 +16,14 @@ use App\Http\Controllers\ItemController;
 
 Route::get('/', function () {
     return view('welcome');
-});
-
+}); 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//R del CRUD
+Route::get('/',[ItemController::class,'index'])->name('home');
+Route::get('/home',[ItemController::class,'index']);
 
 //U del CRUD
 Route::get('/edit/{id}', [ItemController::class, 'edit'])->name('editItem');

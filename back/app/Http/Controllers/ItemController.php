@@ -8,16 +8,14 @@ use Illuminate\Http\Request;
 class ItemController extends Controller
 {
     /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * Display a listing of the resource.
      */
-    public function show($id)
+    public function index()
     {
-        $item = Item::find($id);
-
-        return view('showItem', compact('item'));
+        $items = Item::get();
+        
+        return view ('home', compact('items')); 
+        /* var_dump($items); */
     }
 
     /**
@@ -31,7 +29,7 @@ class ItemController extends Controller
         $item = Item::find($id);
 
         return view('editItem', compact('item'));
-    }
+    } 
 
     /**
      * Update the specified resource in storage.
@@ -48,7 +46,5 @@ class ItemController extends Controller
 
         return redirect()->route('home')
             ->with('success', 'Item updated successfully');
-
-
     }
 }
