@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Item>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
 class ItemFactory extends Factory
 {
@@ -17,15 +17,13 @@ class ItemFactory extends Factory
     public function definition(): array
     {
         return [
-            //
-            'user_id' => fake()->randomDigit(1, 100),
-            'itemName'=> fake()->name(),
-            'category'=>fake()->randomElement(['Bolsos', 'Accesorios', 'Material de oficina']),
-            'description'=> fake()->realText(),
-            'image'=> fake()->imageUrl($width = 640, $height = 480),
-            'stockQuantity'=> fake()->numberBetween(1, 3),
-            'purchaseQuantity' => fake()->numberBetween(1, 100),
-            'price' => fake()->numberBetween(1, 100),
+            'itemName' => $this->faker->company(),
+            'category' => $this->faker->company(),
+            'description' => $this->faker->company(),
+            'image' => $this->faker->company(),
+            'stockQuantity' => $this->faker->biasedNumberBetween($min = 1, $max = 10, $function = 'sqrt'),
+            'purchaseQuantity' => $this->faker->biasedNumberBetween($min = 1, $max = 10, $function = 'sqrt'),
+            'price' => $this->faker->biasedNumberBetween($min = 1, $max = 10, $function = 'sqrt'),
         ];
     }
 }

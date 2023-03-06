@@ -34,7 +34,7 @@
                         <td>{{ $item->price }}</td>
                         <td>
                             <a href="{{ route('items.show', $item->id) }}" class="btn btn-info btn-sm">View</a>
-                            <a href="{{ route('items.edit', $item->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="{{ route('editItem',['id'=>$item->id]) }}">✏ EDIT</a>
                             <form action="{{ route('items.destroy', $item->id) }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
@@ -48,4 +48,7 @@
 
         {{ $items->links() }}
     </div>
+
+    
+</div>
 @endsection

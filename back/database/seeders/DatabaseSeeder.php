@@ -15,15 +15,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
-        User::factory()->create(['name' => 'admin', 'email' => 'admin@admin.com']);
-
-        Item::factory()->count(10)->create();
+        Item::factory()->create([
+            'itemName'=> 'Riñonera',
+            'category'=>'bolsos',
+            'description'=>'Riñonera realizada con lona reciclada. Bolsillo posterior, cremallera y correa ajustable.',
+            'image'=>'https://hilodoble.com/wp-content/uploads/2021/06/rinonera_colorful_1-scaled.jpg',
+            'stockQuantity'=>'4',
+            'purchaseQuantity'=>'1',
+            'price'=>'15']);
+    
+        Item::factory(3)->create();
     }
 }
