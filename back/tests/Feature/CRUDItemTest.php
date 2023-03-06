@@ -25,7 +25,7 @@ class CRUDItemTest extends TestCase
                 ->assertViewIs('home');
     }
 
-    public function test_anItemCanBehowed()
+    public function test_anItemCanBeshowed()
     {
         $this->withExceptionHandling();
 
