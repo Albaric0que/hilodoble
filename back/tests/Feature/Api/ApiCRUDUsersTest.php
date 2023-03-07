@@ -29,4 +29,18 @@ class ApiCRUDUsersTest extends TestCase
         $response->assertStatus(200)
         ->assertJsonCount(2);
     }
+
+    public function test_check_if_userlisted_in_json_file()
+    {
+        User::factory(2)->create();
+        $response = $this->get(route('usersApi'));
+        $response->assertStatus(200)
+            ->assertJsonCount(2);
+
+        $response = $this->delete(route('destroyUserApi', 1));
+
+        $response = $this->get(route('usersApi'));
+        $response->assertStatus(200)
+            ->assertJsonCount(1);
+    }
 }

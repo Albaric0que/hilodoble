@@ -22,3 +22,6 @@ use App\Http\Controllers\Api\UserController;
 //R de CRUD
 Route::get('/', [UserController::class, 'index'])->name('usersApi');
 Route::get('/home', [UserController::class, 'index'])->name('usersApi');
+
+//D de CRUD
+Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('destroyUserApi');
