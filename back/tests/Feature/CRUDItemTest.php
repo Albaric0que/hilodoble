@@ -27,7 +27,19 @@ class CRUDItemTest extends TestCase
         $response->assertStatus(200)
                 ->assertViewIs('home');
     }
+    public function test_anItemCanBeshowed()
+    {
+        $this->withExceptionHandling();
 
+        $item = Item::factory()->create();
+        $this->assertCount(1, Item::all());
+
+        $response = $this->get(route('showItem', $item->id));
+        $response->assertSee($item->itemName);
+        $response->assertStatus(200)
+                ->assertViewIs('showItem');
+
+    }
     public function test_canUpdateAnItem(){
         
         $this->withExceptionHandling();
