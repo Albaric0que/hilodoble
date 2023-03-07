@@ -1,0 +1,36 @@
+#navbar {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 60px;
+    margin: auto;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 450;
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #6A09B5;
+}
+
+#navbar li a:hover::after,
+#navbar li a.active::after {
+    content: "";
+    width: 15%;
+    height: 2px;
+    background: #6A09B5;
+    position: absolute;
+    bottom: -4px;
+    left: 60px;
+}
