@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+=======
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+>>>>>>> dev
 
 function App() {
   return (

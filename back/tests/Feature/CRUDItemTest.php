@@ -21,7 +21,31 @@ class CRUDItemTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /* public function test_anItemCanBeDeletedApi()
+    public function test_anItemCanBeshowed()
+    {
+        $this->withExceptionHandling();
+
+        $item = Item::factory()->create();
+        $this->assertCount(1,Item::all());
+
+        $response = $this->get(route('showItem',$item->id));
+        $response ->assertSee($item->itemName);
+        $response ->assertStatus(200)
+                ->assertViewIs('showItem');
+    }
+
+    public function test_canUpdateAnItem(){
+        
+        $this->withExceptionHandling();
+
+        $item = Item::factory()->create();
+        $this->assertCount(1, Item::all());
+
+        $response = $this->patch(route('updateItem', $item->id),['itemName' => 'New itemName']);
+        $this->assertEquals('New itemName', Item::first()->itemName);
+    }
+
+        /* public function test_anItemCanBeDeletedApi()
     {
         $item = factory(Item::class)->create();
 
@@ -43,5 +67,18 @@ class CRUDItemTest extends TestCase
         $this->assertCount(0, Item::all());
 
     }
+        
+    public function test_listItemAppearInHomeView()
+    {
+        $this->withExceptionHandling();
 
+        $items =Item::factory(2)->create();
+        $item =$items[0];
+
+        $response = $this->get('/');
+        $response -> assertSee($item->name);
+
+        $response->assertStatus(200)
+                ->assertViewIs('home');
+    }
 }
