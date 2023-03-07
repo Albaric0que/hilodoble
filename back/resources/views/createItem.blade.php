@@ -8,7 +8,9 @@
 
             <div class="form-group">
                 <label for="itemName">Item Name</label>
+                @auth
                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                @endauth
                 <input type="text" name="itemName" id="itemName" class="form-control{{ $errors->has('itemName') ? ' is-invalid' : '' }}" value="{{ old('itemName') }}" required>
                 @if ($errors->has('itemName'))
                     <span class="invalid-feedback">{{ $errors->first('itemName') }}</span>

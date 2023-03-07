@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers; 
+namespace App\Http\Controllers;
 
 use App\Models\Item;
-use Illuminate\Http\Request; 
+use App\Models\User;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ItemController extends Controller
 {
@@ -13,8 +16,8 @@ class ItemController extends Controller
     public function index()
     {
         $items = Item::get();
-        
-        return view ('home', compact('items')); 
+
+        return view ('home', compact('items'));
     }
 
     /**
@@ -33,11 +36,11 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    { 
+    {
         $item = Item::find($id);
 
         return view('editItem', compact('item'));
-    }  
+    }
 
     /**
      * Update the specified resource in storage.
@@ -56,18 +59,23 @@ class ItemController extends Controller
             ->with('success', 'Item updated successfully');
     }
 
-  /*   public function destroy(string $id)
+/*   public function destroy(string $id)
     {
         Item::destroy($id);
         return response()->json(['message' => 'El producto se ha eliminado correctamente'], 200);
     } */
 
-     public function destroy($id)
-    {
-        Item::destroy($id);
 
-        return redirect()->route('home');
-    }
+        public function destroy($id)
+        {
+            Item::destroy($id);
+
+            return redirect()->route('home');
+        }
+
+
+
+
     public function create()
     {
         $item = new Item();
@@ -81,24 +89,21 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        request()->validate(Item::$rules);
+{
+    $validatedData = $request->validate(Item::$rules);
 
-                // Creación y almacenamiento del libro
-                $item = new Item();
-                $item->itemName = $request->itemName;
-                $item->category = $request->category;
-                $item->description = $request->description;
-                $item->image = $request->image;
-                $item->stockQuantity = $request->stockQuantity;
-                $item->purchaseQuantity = $request->purchaseQuantity;
-                $item->price = $request->price;
-                $item->save();
+    $item = new Item();
+    $item->itemName = $request->itemName;
+    $item->category = $request->category;
+    $item->description = $request->description;
+    $item->image = $request->image;
+    $item->stockQuantity = $request->stockQuantity;
+    $item->price = $request->price;
+    $item->save();
 
     return redirect()->route('home')
         ->with('success', 'Item created successfully');
-    }
-
 }
 
+}
 

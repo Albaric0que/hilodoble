@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('image');
             $table->integer('stockQuantity');
-            $table->integer('purchaseQuantity');
+            $table->integer('purchaseQuantity')->default(0);
             $table->integer('price');
             $table->timestamps();
         });
