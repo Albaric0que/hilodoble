@@ -2,15 +2,15 @@
 
 
 @section('content')
-    <div class ="text-center">
-        <img src="{{$item->image}}" alt="foto del producto" width="100">
-        <div>
-            <h2>{{$item->itemName}}</h2>
-            <h2>Categoría:{{$item->category}}</h2>
+    <div class ="text-center" style="border:solid 3px black; width:1000px; height:630px; margin:auto; padding; 20px">
+        <h1 style="padding-top:20px">{{$item->itemName}}</h1>
+        <img src="{{$item->image}}" alt="foto del producto" style="width:330px; border:solid 4px #50087d">
+        <div style="padding:30px">
+            <h2 style="padding:10px">Categoría:{{$item->category}}</h2>
             <h3>{{$item->description}}</h3>
-            <h4>{{$item->price}}</h4>
+            <h4>Precio: {{$item->price}}€</h4>
             <h4>{{$item->stockQuantity}} Unidades disponibles</h4>
-            <h4>{{$item->purchaseQuantity}}</h4>
+           {{--  <h4>{{$item->purchaseQuantity}}</h4> --}}
         </div>
     </div>
 @endsection
