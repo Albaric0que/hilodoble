@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Item;
+use App\Models\Item; 
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -15,23 +15,6 @@ class ItemController extends Controller
         $items = Item::get();
         
         return view ('home', compact('items')); 
-        /* var_dump($items); */
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -45,25 +28,31 @@ class ItemController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
      */
-    public function edit(string $id)
-    {
-        //
-    }
+    public function edit($id)
+    { 
+        $item = Item::find($id);
+
+        return view('editItem', compact('item'));
+    }  
 
     /**
      * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  Item $item
+     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $item=request()->except('_token', '_method');
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        Item::where('id', '=', $id)->update($item);
+
+        return redirect()->route('home')
+            ->with('success', 'Item updated successfully');
     }
 }

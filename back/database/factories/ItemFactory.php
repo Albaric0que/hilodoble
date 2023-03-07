@@ -17,13 +17,13 @@ class ItemFactory extends Factory
     public function definition(): array
     {
         return [
-            'itemName'=>$this->faker->name(),
-            'category'=>$this->faker->name(),
-            'description'=>$this->faker->realText(),
-            'image'=>$this->faker->imageUrl(),
-            'stockQuantity'=>$this->faker->biasedNumberBetween($min = 1, $max = 20, $function = 'sqrt'),
-            'purchaseQuantity'=>$this->faker->biasedNumberBetween($min = 1, $max = 20, $function = 'sqrt'),
-            'price'=>$this->faker->biasedNumberBetween($min = 1, $max = 20, $function = 'sqrt'),
+            'itemName' => $this->faker->company(),
+            'category' => $this->faker->company(),
+            'description' => $this->faker->company(),
+            'image' => $this->faker->company(),
+            'stockQuantity' => $this->faker->biasedNumberBetween($min = 1, $max = 10, $function = 'sqrt'),
+            'purchaseQuantity' => $this->faker->biasedNumberBetween($min = 1, $max = 10, $function = 'sqrt'),
+            'price' => $this->faker->biasedNumberBetween($min = 1, $max = 10, $function = 'sqrt'),
         ];
     }
 }
