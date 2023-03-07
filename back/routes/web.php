@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,9 @@ use App\Http\Controllers\ItemController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::resource('items', 'App\Http\Controllers\ItemController');
+Route::resource('users', 'App\Http\Controllers\UserController');
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,3 +38,10 @@ Route::patch('/item/{id}', [ItemController::class, 'update'])->name('updateItem'
 //S Show
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/show/{id}',[ItemController::class,'show'])->name('showItem');
+//C del CRUD
+Route::get('/createItem', [ItemController::class, 'create'])->name('create');
+Route::post('/', [ItemController::class, 'store'])->name('store');
+
+// D del CRUD
+Route::delete('/items/{id}', [ItemController::class, 'destroy'])->name('deleteItem');
+Route::get('/items/{id}', [ItemController::class, 'show'])->name('showItem');

@@ -17,10 +17,10 @@ class ItemFactory extends Factory
     public function definition(): array
     {
         return [
-            'itemName' => $this->faker->company(),
-            'category' => $this->faker->company(),
-            'description' => $this->faker->company(),
-            'image' => $this->faker->company(),
+            'itemName' => $this->faker->word(),
+            'category' => $this->faker->word(),
+            'description' => $this->faker->realText(),
+            'image' => $this->faker->imageUrl($width = 640, $height = 480),
             'stockQuantity' => $this->faker->biasedNumberBetween($min = 1, $max = 10, $function = 'sqrt'),
             'purchaseQuantity' => $this->faker->biasedNumberBetween($min = 1, $max = 10, $function = 'sqrt'),
             'price' => $this->faker->biasedNumberBetween($min = 1, $max = 10, $function = 'sqrt'),
