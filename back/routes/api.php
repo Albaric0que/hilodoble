@@ -20,5 +20,5 @@ use App\Http\Controllers\Api\UserController;
 }); */
 
 //R de CRUD
-Route::get('/', [UserController::class, 'index'])->name('userApi');
-Route::get('/home', [UserController::class, 'index'])->name('userApi');
+Route::get('/', [UserController::class, 'index'])->name('usersApi');
+Route::get('/home', [UserController::class, 'index'])->name('usersApi');
