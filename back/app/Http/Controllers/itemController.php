@@ -55,17 +55,4 @@ class ItemController extends Controller
         return redirect()->route('home')
             ->with('success', 'Item updated successfully');
     }
-
-     /*   public function destroy(string $id)
-    {
-        Item::destroy($id);
-        return response()->json(['message' => 'El producto se ha eliminado correctamente'], 200);
-    } */
-
-     public function destroy($id)
-    {
-        Item::destroy($id);
-
-        return redirect()->route('home');
-    }
 }
