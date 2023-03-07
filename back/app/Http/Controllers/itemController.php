@@ -56,7 +56,7 @@ class ItemController extends Controller
             ->with('success', 'Item updated successfully');
     }
 
-  /*   public function destroy(string $id)
+     /*   public function destroy(string $id)
     {
         Item::destroy($id);
         return response()->json(['message' => 'El producto se ha eliminado correctamente'], 200);
