@@ -1,64 +1,73 @@
 <?php
 
-    namespace App\Http\Controllers;
+namespace App\Http\Controllers; 
 
-    use Illuminate\Http\Request;
-    use App\Models\Item;
-    use App\Models\User;
-    use App\Http\Controllers\Controller;
-    use Illuminate\Support\Facades\DB;
+use App\Models\Item;
+use Illuminate\Http\Request; 
 
-
-
-    class ItemController extends Controller
+class ItemController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        public function index()
-        {
-            $items = Item::get();
+        $items = Item::get();
+        
+        return view ('home', compact('items')); 
+    }
 
-            return view ('home', compact('items'));
-            // var_dump($items);
-        }
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $item = Item::find($id);
+        return view('showItem',compact('item'));
+    }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    { 
+        $item = Item::find($id);
 
-        /**
-         * Display a form for creating a new item.
-         *
-         * @return \Illuminate\View\View
-         */
+        return view('editItem', compact('item'));
+    }  
 
-        /**
-         * Show the form for editing the specified resource.
-         *
-         * @param  int $id
-         * @return \Illuminate\Http\Response
-         */
-        public function edit($id)
-        {
-            $item = Item::find($id);
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  Item $item
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $item=request()->except('_token', '_method');
 
-            return view('editItem', compact('item'));
-        }
+        Item::where('id', '=', $id)->update($item);
 
-        /**
-         * Update the specified resource in storage.
-         *
-         * @param  \Illuminate\Http\Request $request
-         * @param  Item $item
-         * @return \Illuminate\Http\Response
-         */
-        public function update(Request $request, $id)
-        {
-            $item=request()->except('_token', '_method');
+        return redirect()->route('home')
+            ->with('success', 'Item updated successfully');
+    }
 
-            Item::where('id', '=', $id)->update($item);
+  /*   public function destroy(string $id)
+    {
+        Item::destroy($id);
+        return response()->json(['message' => 'El producto se ha eliminado correctamente'], 200);
+    } */
 
-            return redirect()->route('home')
-                ->with('success', 'Item updated successfully');
-        }
+     public function destroy($id)
+    {
+        Item::destroy($id);
 
-
-
+        return redirect()->route('home');
+    }
     public function create()
     {
         $item = new Item();

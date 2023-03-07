@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\HomeController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +26,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
 //R del CRUD
 Route::get('/',[ItemController::class,'index'])->name('home');
 Route::get('/home',[ItemController::class,'index']);
@@ -36,11 +34,10 @@ Route::get('/home',[ItemController::class,'index']);
 Route::get('/edit/{id}', [ItemController::class, 'edit'])->name('editItem');
 Route::patch('/item/{id}', [ItemController::class, 'update'])->name('updateItem')/* ->middleware('isadmin', 'auth') */;
 
-
 //C del CRUD
 Route::get('/createItem', [ItemController::class, 'create'])->name('create');
 Route::post('/', [ItemController::class, 'store'])->name('store');
 
-
-
-
+// D del CRUD
+Route::delete('/items/{id}', [ItemController::class, 'destroy'])->name('deleteItem');
+Route::get('/items/{id}', [ItemController::class, 'show'])->name('showItem');
