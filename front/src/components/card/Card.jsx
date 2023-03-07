@@ -5,8 +5,7 @@ function Card() {
   return (
     <div className= "container">
 
-      <div className= "img-container">
-      </div>
+      <div className= "img-container"></div>
 
       <div>
         <h3 className= "name-item">Riñonera de lona reciclada</h3>

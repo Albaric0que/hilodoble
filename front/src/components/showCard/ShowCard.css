@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  height: 900px;
+  width: 900px;
+}
+
+.container-text{
+  display:flex;
+  align-items: center;
+  height: 900px;
+  width: 700px;
+}
+
+.second-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.img-container{
+  height: 300px;
+  width: 900px;
+  background-image: url("https://hilodoble.com/wp-content/uploads/2021/06/rinonera_colorful_1-scaled.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.button{
+  border-color: #6A09B5;
+  background: white;
+  color:#6A09B5;
+}
+
+.name-item{
+  color: #383838;
+}
+
+.price-item{
+  color: #D9D9D9;
+}
+
+.description-item{
+  color: #383838;
+}
