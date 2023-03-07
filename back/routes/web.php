@@ -32,16 +32,17 @@ Route::get('/',[ItemController::class,'index'])->name('home');
 Route::get('/home',[ItemController::class,'index']);
 
 //U del CRUD
-Route::get('/edit/{id}', [ItemController::class, 'edit'])->name('editItem');
-Route::patch('/item/{id}', [ItemController::class, 'update'])->name('updateItem')/* ->middleware('isadmin', 'auth') */;
+Route::get('/edit/{id}', [ItemController::class, 'edit'])->name('editItem')->middleware('isadmin', 'auth');
+Route::patch('/item/{id}', [ItemController::class, 'update'])->name('updateItem')->middleware('isadmin', 'auth');
 
 //S Show
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/show/{id}',[ItemController::class,'show'])->name('showItem');
+
 //C del CRUD
-Route::get('/createItem', [ItemController::class, 'create'])->name('create');
-Route::post('/', [ItemController::class, 'store'])->name('store');
+Route::get('/createItem', [ItemController::class, 'create'])->name('create')->middleware('isadmin', 'auth');
+Route::post('/', [ItemController::class, 'store'])->name('store')->middleware('isadmin', 'auth');
 
 // D del CRUD
-Route::delete('/items/{id}', [ItemController::class, 'destroy'])->name('deleteItem');
-Route::get('/items/{id}', [ItemController::class, 'show'])->name('showItem');
+Route::delete('/items/{id}', [ItemController::class, 'destroy'])->name('deleteItem')->middleware('isadmin', 'auth');
+Route::get('/items/{id}', [ItemController::class, 'show'])->name('showItem')->middleware('isadmin', 'auth');

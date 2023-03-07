@@ -65,9 +65,21 @@ class CRUDItemTest extends TestCase
 
         $item = Item::factory()->create();
         $this->assertCount(1, Item::all());
+
+        $userNoAdmin=User::factory()->create(['isAdmin'=>false]);
+        $this->actingAs($userNoAdmin);
     
         $response = $this->delete(route('deleteItem', $item->id));
+        $this->assertCount(1, Item::all());
+
+        $userAdmin=User::factory()->create(['isAdmin'=>true]);
+        $this->actingAs($userAdmin);
+
+        $response = $this->delete(route('deleteItem', $item->id));
         $this->assertCount(0, Item::all());
+
+
+
 
     }
 
