@@ -11,14 +11,19 @@ use App\Models\User;
 class CRUDItemTest extends TestCase
 {
     use RefreshDatabase;
-    /**
-     * A basic feature test example.
-     */
-    public function test_example(): void
+    
+    public function test_listItemAppearInHomeView()
     {
-        $response = $this->get('/');
+        $this->withExceptionHandling();
 
-        $response->assertStatus(200);
+        $items =Item::factory(2)->create();
+        $item =$items[0];
+
+        $response = $this->get('/');
+        $response -> assertSee($item->name);
+
+        $response->assertStatus(200)
+                ->assertViewIs('home');
     }
 
     public function test_anItemCanBeshowed()
@@ -59,7 +64,6 @@ class CRUDItemTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        /* $item = factory(Item::class)->create(); */
         $item = Item::factory()->create();
         $this->assertCount(1, Item::all());
     
@@ -68,17 +72,4 @@ class CRUDItemTest extends TestCase
 
     }
         
-    public function test_listItemAppearInHomeView()
-    {
-        $this->withExceptionHandling();
-
-        $items =Item::factory(2)->create();
-        $item =$items[0];
-
-        $response = $this->get('/');
-        $response -> assertSee($item->name);
-
-        $response->assertStatus(200)
-                ->assertViewIs('home');
-    }
 }
