@@ -25,3 +25,6 @@ Route::get('/home', [UserController::class, 'index'])->name('usersApi');
 
 //D de CRUD
 Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('destroyUserApi');
+
+//C de CRUD
+Route::post('/createUser',[UserController::class,'store'])->name('createUserApi');

@@ -22,7 +22,7 @@ class ApiCRUDUsersTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_CheckIfEventsListedInJsonFile()
+    public function test_CheckIfUsersListedInJsonFile(): void
     {
         User::factory(2)->create();
         $response = $this->get(route('usersApi'));
@@ -30,7 +30,7 @@ class ApiCRUDUsersTest extends TestCase
         ->assertJsonCount(2);
     }
 
-    public function test_check_if_userlisted_in_json_file()
+    public function test_checkIfUserGetsDeleted(): void
     {
         User::factory(2)->create();
         $response = $this->get(route('usersApi'));

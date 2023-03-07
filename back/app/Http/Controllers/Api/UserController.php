@@ -22,7 +22,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -30,7 +30,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $user = User::create([
+            'name' => $request->name,
+            'surname' => $request->surname,
+            'email' => $request->email,
+            'password' => $request->password,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'postcode'  => $request->postcode,
+            'isAdmin' => $request->isAdmin,
+        ]);
+
+        $user->save();
+        return response()->json($user, 200);
     }
 
     /**
