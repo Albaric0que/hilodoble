@@ -21,7 +21,7 @@ class CRUDItemTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /* public function test_an_item_can_be_deleted_api()
+    /* public function test_anItemCanBeDeletedApi()
     {
         $item = factory(Item::class)->create();
 
@@ -31,7 +31,7 @@ class CRUDItemTest extends TestCase
         $response->assertJson(['message' => 'El producto se ha eliminado correctamente']);
     }  */
 
-     public function test_an_item_can_be_deleted()
+     public function test_anItemCanBeDeleted()
     {
         $this->withoutExceptionHandling();
 
