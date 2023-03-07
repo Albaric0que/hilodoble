@@ -43,8 +43,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function grades()
+    public function items()
     {
-        return $this->hasMany('App\Models\Grade', 'user_id', 'id');
+        return $this->hasMany('App\Models\Item', 'user_id', 'id');
     }
 }

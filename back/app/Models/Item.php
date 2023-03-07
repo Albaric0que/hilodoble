@@ -11,6 +11,7 @@ class Item extends Model
 
 
     static $rules = [
+        'user_id' => 'required',
         'itemName' => 'required|max:255',
         'category' => 'required|max:255',
         'description' => 'required',
@@ -22,6 +23,7 @@ class Item extends Model
 
 
     protected $fillable = [
+        'user_id',
         'itemName',
         'category',
         'description',

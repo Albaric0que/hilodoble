@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container">
-        <h1>Bienvend@s a nuestra tienda!</h1>
-        <p>Puedes ver tus productos creados y crear uno nuevo.</p>
+        <h1>Bienvend@ a nuestra tienda!</h1>
+        <p>Hola Administrador! Puedes ver tus productos en la lista y crear uno nuevo.</p>
 
         <div class="mb-3">
             <a href="{{ route('items.create') }}" class="btn btn-primary">Create Item</a>

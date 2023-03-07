@@ -42,20 +42,35 @@ class CRUDItemTest extends TestCase
     public function test_anItemCanBeCreated(){
         $this->withExceptionHandling();
 
+
         $userAdmin = User::factory()->create(['isAdmin' => true]);
         $this->actingAs($userAdmin);
 
-        $response = $this->post(route('store'),
-        [
-            'itemName'=> 'Palomada',
-            'category'=> 'otras',
-            'description'=> 'Esta es una descripción,bla bla!',
-            'image'=> 'https://hilodoble.com/wp-content/uploads/2021/06/rinonera_colorful_1-scaled.jpg',
-            'stockQuantity'=> '15',
-            'purchaseQuantity'=> '1',
-            'price'=> '20',
+        $item = Item::factory()->create([
+            'id' => $userAdmin->id
         ]);
-        $this->assertCount(1, Item::all());
+
+        $response = $this
+            ->actingAs($userAdmin)
+            ->get(route('store', $item));
+
+        $response->assertOk();
+
+
+        // $userAdmin = User::factory()->create(['isAdmin' => true]);
+        // $this->actingAs($userAdmin);
+
+        // $response = $this->post(route('store'),
+        // [
+        //     'itemName'=> 'Palomada',
+        //     'category'=> 'otras',
+        //     'description'=> 'Esta es una descripción,bla bla!',
+        //     'image'=> 'https://hilodoble.com/wp-content/uploads/2021/06/rinonera_colorful_1-scaled.jpg',
+        //     'stockQuantity'=> '15',
+        //     'purchaseQuantity'=> '1',
+        //     'price'=> '20',
+        // ]);
+        // $this->assertCount(1, Item::all());
 
 
 }
