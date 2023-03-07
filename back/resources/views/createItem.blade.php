@@ -56,6 +56,7 @@
             </div>
     
             <button type="submit" class="btn btn-primary">Create</button>
+            <a href="{{ route('home') }}" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
 

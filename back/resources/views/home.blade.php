@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container">
-        <h1>Welcome to the Item Store!</h1>
-        <p>You can view your items below or create a new item.</p>
+        <h1>Bienvend@s a nuestra tienda!</h1>
+        <p>Puedes ver tus productos creados y crear uno nuevo.</p>
 
         <div class="mb-3">
             <a href="{{ route('items.create') }}" class="btn btn-primary">Create Item</a>
@@ -12,14 +12,14 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Item Name</th>
-                    <th>Category</th>
-                    <th>Description</th>
-                    <th>Image</th>
-                    <th>Stock Quantity</th>
-                    <th>Purchase Quantity</th>
-                    <th>Price</th>
-                    <th>Actions</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Descripción</th>
+                    <th>Imagen</th>
+                    <th>Stock</th>
+                    <th>Vendidos</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,12 +33,12 @@
                         <td>{{ $item->purchaseQuantity }}</td>
                         <td>{{ $item->price }}</td>
                         <td>
-                            <a href="{{ route('items.show', $item->id) }}" class="btn btn-info btn-sm">View</a>
-                            <a href="{{ route('editItem',['id'=>$item->id]) }}">✏ EDIT</a>
+                            <a href="{{ route('items.show', $item->id) }}" class="btn btn-info btn-sm">VER</a><br>
+                            <a href="{{ route('editItem',['id'=>$item->id]) }}" class="btn btn-success btn-sm">EDITAR</a><br>
                             <form action="{{ route('items.destroy', $item->id) }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?')">Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Estás seguro de querer borrar este producto?')">BORRAR</button>
                             </form>
                         </td>
                     </tr>
