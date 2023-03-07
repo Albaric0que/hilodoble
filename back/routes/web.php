@@ -25,5 +25,5 @@ Route::get('/home',[ItemController::class,'index']);
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/show/{id}',[ItemController::class,'show'])->name('ShowItem');
+Route::get('/show/{id}',[ItemController::class,'show'])->name('showItem');
 
