@@ -45,4 +45,25 @@ class ApiCRUDUsersTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonCount(1);
     } */
+
+    public function test_checkIfUserCanBeCreated(): void
+    {
+        $response = $this->post(route('createUserApi'), [
+        "name" => "Regina Patata",
+        "surname" => "Papita",
+        "email" => "patata@example.com",
+        "password" => "patata",
+        "phone" =>  "+14075775576",
+        "address" => "La calle",
+        "postcode" => "29007",
+        "isAdmin" => 0,
+        ]);
+
+        $data = [ "email" => "patata@example.com"];
+
+        $response = $this->get(route('usersApi'));
+        $response ->assertStatus(200)
+                  ->assertJsonCount(1)
+                  ->assertJsonFragment($data);
+    }
 }
