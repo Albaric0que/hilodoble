@@ -126,7 +126,7 @@
 
 <h2>9. Required:</h2>
 <li>NPM installed.</li>
-<li>PHP (Minimum, version 7.4).</li>
+<li>PHP (Minimum, version 8.1).</li>
 <li>React.js installed.</li>
 <li>Composer & Laravel installed and updated to latest version.</li>
 <li>XAMPP/LAMPP installed.</li>
