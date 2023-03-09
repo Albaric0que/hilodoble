@@ -2,11 +2,12 @@
 .container{
   height: 300px;
   width: 300px;
+  background-color: red;
 }
 
 .img-container{
   height: 300px;
-  width: 300.px;
+  width: 300px;
   background-image: url("https://hilodoble.com/wp-content/uploads/2021/06/rinonera_colorful_1-scaled.jpg");
   background-position: center;
   background-size: cover;

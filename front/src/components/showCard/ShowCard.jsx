@@ -10,7 +10,9 @@ function showCard() {
 
           <div className= "container-text">
             <h3 className= "price-item">14,90€</h3>
+            
             <p className= "description-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate architecto facilis, deserunt nobis fuga, nulla similique cumque fugit earum voluptates illum, ducimus harum laudantium cum dignissimos vel delectus sapiente eveniet.</p>
+
             <button className= "button">Añadir al carrito</button>
           </div>
         </div>
