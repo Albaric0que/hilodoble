@@ -22,5 +22,4 @@ class IsAdmin
             return redirect()->route('home');
         }
 }
-    
-    
+

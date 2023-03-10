@@ -13,7 +13,7 @@ use App\Models\User;
 class CRUDItemTest extends TestCase
 {
     use RefreshDatabase;
-    
+
     public function test_listItemAppearInHomeView()
     {
         $this->withExceptionHandling();
@@ -41,7 +41,7 @@ class CRUDItemTest extends TestCase
 
     }
     public function test_canUpdateAnItem(){
-        
+
         $this->withExceptionHandling();
 
         $item = Item::factory()->create();
@@ -65,13 +65,15 @@ class CRUDItemTest extends TestCase
 
         $item = Item::factory()->create();
         $this->assertCount(1, Item::all());
-    
+
+        $userNoAdmin = Item::factory()->create(['isAdmin' => false]);
+        $this->actingAs($userNoAdmin);
         $response = $this->delete(route('deleteItem', $item->id));
-        $this->assertCount(0, Item::all());
+        $this->assertCount(1, Item::all());
 
     }
 
-    
+
     public function test_anItemCanBeCreated(){
         $this->withExceptionHandling();
 
