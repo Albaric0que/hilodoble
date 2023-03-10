@@ -22,7 +22,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -30,7 +30,18 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item = Item::create([
+            'itemName' => $request->itemName,
+            'category' => $request->category,
+            'description' => $request->description,
+            'image' => $request->image,
+            'stockQuantity' => $request->stockQuantity,
+            'price' => $request->price
+        ]);
+        
+        $item->save();
+        return response()->json($item, 200)
+            ->with('success', 'Item created successfully');
     }
 
     /**
