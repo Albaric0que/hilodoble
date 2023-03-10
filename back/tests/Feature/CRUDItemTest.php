@@ -1,7 +1,7 @@
 <?php
 
 namespace Tests\Feature;
-
+use Illuminate\Auth\Middleware\IsAdmin;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -59,7 +59,7 @@ class CRUDItemTest extends TestCase
         $response->assertJson(['message' => 'El producto se ha eliminado correctamente']);
     }  */
 
-    public function test_anItemCanBeDeleted()
+    public function test_anNoAdminUserCanNotDeleteAnItem()
     {
         $this->withoutExceptionHandling();
 
@@ -70,15 +70,22 @@ class CRUDItemTest extends TestCase
         $this->actingAs($userNoAdmin);
     
         $response = $this->delete(route('deleteItem', $item->id));
+        /* $this->assertCount(1, Item::all());  */
+        $response->assertStatus(401);
+    }
+
+    public function test_anAdminCanDeleteAnItem()
+    {
+        $this->withoutExceptionHandling();
+
+        $item = Item::factory()->create();
         $this->assertCount(1, Item::all());
 
         $userAdmin=User::factory()->create(['isAdmin'=>true]);
         $this->actingAs($userAdmin);
 
         $response = $this->delete(route('deleteItem', $item->id));
-        $this->assertCount(0, Item::all());
-
-
+        $this->assertCount(0, Item::all()); 
 
 
     }
