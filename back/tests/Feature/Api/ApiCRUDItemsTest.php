@@ -15,7 +15,7 @@ class ApiCRUDItemsTest extends TestCase
     
     Use RefreshDatabase;
     
-    public function test_CheckIfItemsListedInJsonFile()
+    public function test_ItemsListedInJson()
     {
         Item::factory(2)->create();
 
@@ -23,5 +23,22 @@ class ApiCRUDItemsTest extends TestCase
         
         $response->assertStatus(200)
             ->assertJsonCount(2);
+
+        $response = $this->delete(route('deleteItemApi', 1));
+
+        $response = $this->get(route('itemsApi'));
+        $response = $response->assertStatus(200)
+            ->assertJsonCount(1);
     }
+
+    /* public function test_canDeleteAnItem() 
+    {
+        $item = Item::factory()->create();
+
+        $response = $this->deleteJson('/api/items/'.$item->id);
+
+        $response->assertStatus(200);
+
+        $this->assertDatabaseMissing('items', $item->toArray());
+	} */
 }
