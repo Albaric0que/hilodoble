@@ -59,11 +59,26 @@ class ApiCRUDUsersTest extends TestCase
         "isAdmin" => 0,
         ]);
 
-        $data = [ "email" => "patata@example.com"];
+        $data = [ "name" => "Regina Patata"];
 
         $response = $this->get(route('usersApi'));
         $response ->assertStatus(200)
                   ->assertJsonCount(1)
                   ->assertJsonFragment($data);
+
+         $data = [ "surname" => "Papita"];
+         $response ->assertJsonFragment($data);
+         $data = [ "email" => "patata@example.com"];
+         $response ->assertJsonFragment($data);
+         $data = [ "email_verified_at" => null];
+         $response ->assertJsonFragment($data);
+         $data = [ "phone" => "+14075775576"];
+         $response ->assertJsonFragment($data);
+         $data = [ "address" => "La calle"];
+         $response ->assertJsonFragment($data);
+         $data = [ "postcode" => "29007"];
+         $response ->assertJsonFragment($data);
+         $data = [ "isAdmin" => 0];
+         $response ->assertJsonFragment($data);
     }
 }
