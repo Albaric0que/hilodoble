@@ -28,3 +28,6 @@ Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('destr
 
 //C de CRUD
 Route::post('/createUser',[UserController::class,'store'])->name('createUserApi');
+
+//U de CRUD
+Route::put('/updateUser/{id}', [UserController::class,'update'])->name('updateUserApi');

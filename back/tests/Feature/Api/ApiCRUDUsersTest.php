@@ -49,14 +49,14 @@ class ApiCRUDUsersTest extends TestCase
     public function test_checkIfUserCanBeCreated(): void
     {
         $response = $this->post(route('createUserApi'), [
-        "name" => "Regina Patata",
-        "surname" => "Papita",
-        "email" => "patata@example.com",
-        "password" => "patata",
-        "phone" =>  "+14075775576",
-        "address" => "La calle",
-        "postcode" => "29007",
-        "isAdmin" => 0,
+            "name" => "Regina Patata",
+            "surname" => "Papita",
+            "email" => "patata@example.com",
+            "password" => "patata",
+            "phone" =>  "+14075775576",
+            "address" => "La calle",
+            "postcode" => "29007",
+            "isAdmin" => 0,
         ]);
 
         $data = [ "name" => "Regina Patata"];
@@ -80,5 +80,44 @@ class ApiCRUDUsersTest extends TestCase
          $response ->assertJsonFragment($data);
          $data = [ "isAdmin" => 0];
          $response ->assertJsonFragment($data);
+    }
+
+    public function test_checkIfUserCanBeUpdated(): void
+    {
+        $response = $this->post(route('createUserApi'), [
+            "name" => "Regina Patata",
+            "surname" => "Papita",
+            "email" => "patata@example.com",
+            "password" => "patata",
+            "phone" =>  "+14075775576",
+            "address" => "La calle",
+            "postcode" => "29007",
+            "isAdmin" => 0,
+        ]);
+
+        $data = [ "name" => "Regina Patata"];
+
+        $response = $this->get(route('usersApi'));
+        $response ->assertStatus(200)
+                  ->assertJsonCount(1)
+                  ->assertJsonFragment($data);
+
+        $response = $this->put('api/updateUser/4', [
+            "name" => "Regina Patatita",
+            "surname" => "Papita",
+            "email" => "patata@example.com",
+            "password" => "patata",
+            "phone" =>  "+14075775576",
+            "address" => "La calle",
+            "postcode" => "29007",
+            "isAdmin" => 0,
+        ]);
+
+        $data = ['name' => 'Regina Patatita'];
+
+        $response = $this->get(route('usersApi'));
+        $response ->assertStatus(200)
+                  ->assertJsonCount(1)
+                  ->assertJsonFragment($data);
     }
 }
