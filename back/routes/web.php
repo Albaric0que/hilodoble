@@ -45,3 +45,7 @@ Route::post('/', [ItemController::class, 'store'])->name('store');
 // D del CRUD
 Route::delete('/items/{id}', [ItemController::class, 'destroy'])->name('deleteItem');
 Route::get('/items/{id}', [ItemController::class, 'show'])->name('showItem');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
