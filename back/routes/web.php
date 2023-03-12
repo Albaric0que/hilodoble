@@ -41,8 +41,8 @@ Route::get('/createItem', [ItemController::class, 'create'])->name('create')->mi
 Route::post('/', [ItemController::class, 'store'])->name('store')->middleware('isadmin', 'auth');
 
 // D del CRUD
-Route::delete('/items/{id}', [ItemController::class, 'destroy'])->name('deleteItem')->middleware('isadmin', 'auth');
-Route::get('/items/{id}', [ItemController::class, 'show'])->name('showItem')->middleware('isadmin', 'auth');
+Route::delete('/delete/{id}', [ItemController::class, 'destroy'])->name('deleteItem')->middleware('isadmin', 'auth');
+Route::get('/delete/{id}', [ItemController::class, 'show'])->name('showItem')->middleware('isadmin', 'auth');
 
 Auth::routes();
 
