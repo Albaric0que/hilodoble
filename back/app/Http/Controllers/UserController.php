@@ -8,21 +8,36 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    public function index()
+    public function usersList()
     {
         $users = User::paginate();
 
-        return view('index', compact('users'))
+        return view('usersList', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
     }
 
-    public function create()
+    public function createUser()
     {
         $user = new User();
-        return view('create', compact('user'));
+        return view('createUser', compact('user'));
     }
 
-    public function store(Request $request)
+    public function deleteUser($id)
+    {
+
+        User::deleteUser($id);
+
+        return redirect()->route('usersList');
+    }
+
+    public function editUser($id)
+    {
+        $user = User::find($id);
+
+        return view('editUser', compact('user'));
+    }
+
+    public function storeUser(Request $request)
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
