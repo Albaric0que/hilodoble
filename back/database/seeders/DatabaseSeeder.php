@@ -16,58 +16,112 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Item::factory()->create([
-            'itemName'=> 'Riñonera',
+            'itemName'=> 'Riñonera de lona reciclada',
             'category'=>'bolsos',
             'description'=>'Riñonera realizada con lona reciclada. Bolsillo posterior, cremallera y correa ajustable.',
             'image'=>'https://hilodoble.com/wp-content/uploads/2021/06/rinonera_colorful_1-scaled.jpg',
-            'stockQuantity'=>'4',
+            'stockQuantity'=>'1',
             'purchaseQuantity'=>'1',
-            'price'=>'15']);
+            'price'=>'14.90']);
 
         Item::factory()->create([
-            'itemName'=> 'Monedero',
-            'category'=>'bolsos',
+            'itemName'=> 'Monedero de cámara de bicicleta',
+            'category'=>'accesorios',
             'description'=>'Monedero realizado con cámara de bicicleta. Cierre de cremallera y bolsillo frontal también de cremallera. Un monedero que te durará toda la vida',
             'image'=>'https://hilodoble.com/wp-content/uploads/2021/06/monedorogoma_1-300x300.jpg',
-            'stockQuantity'=>'5',
+            'stockQuantity'=>'1',
             'purchaseQuantity'=>'1',
-            'price'=>'13']);
+            'price'=>'12.90']);
 
         Item::factory()->create([
-            'itemName'=> 'Maletín',
-            'category'=>'bolsos',
-            'description'=>'Funda para portátil realizada con lonas publicitarias recicladas. Dos asas para mano. Forrado de foam. Proteja su dispositivo con esta resistente y original funda.',
+            'itemName'=> 'Maletín portátil de lona reciclada',
+            'category'=>'material oficina',
+            'description'=>'Maletín portátil de lona reciclada. Dos asas para mano. Forrado de foam. Proteja su dispositivo con esta resistente y original funda.',
             'image'=>'https://hilodoble.com/wp-content/uploads/2021/06/IMG_20210520_130855-300x300.jpg',
-            'stockQuantity'=>'3',
+            'stockQuantity'=>'1',
             'purchaseQuantity'=>'1',
-            'price'=>'20']);
+            'price'=>'19.90']);
+
+        Item::factory()->create([
+            'itemName'=> 'Bolsa de viaje de lona reciclada.',
+            'category'=>'bolsos',
+            'description'=>'Bolsa de viaje de lona reciclada. Gran capacidad y muy resistente.',
+            'image'=>'https://hilodoble.com/wp-content/uploads/2021/06/bolsaviaje_museum_3-scaled.jpg',
+            'stockQuantity'=>'1',
+            'purchaseQuantity'=>'1',
+            'price'=>'39.90']);
+
+        Item::factory()->create([
+            'itemName'=> 'Bandolera horizontal de lona reciclada',
+            'category'=>'bolsos',
+            'description'=>'Bandolera horizontal de lona reciclada para llevar tus documentos.',
+            'image'=>'https://hilodoble.com/wp-content/uploads/2021/06/Bandolerahorizontal_time_1.jpg',
+            'stockQuantity'=>'1',
+            'purchaseQuantity'=>'1',
+            'price'=>'24.90']);
+
+        Item::factory()->create([
+            'itemName'=> 'Maletín Grande de Lona Reciclada',
+            'category'=>'bolsos',
+            'description'=>'Maletín Grande de Lona Reciclada confeccionado con banderolas publicitarias de gran colorido con cierre en clip.',
+            'image'=>'https://hilodoble.com/wp-content/uploads/2020/12/maletin-grande-scaled.jpg',
+            'stockQuantity'=>'1',
+            'purchaseQuantity'=>'1',
+            'price'=>'29.90']);
 
         Item::factory()->create([
             'itemName'=> 'Funda tablet/ipad',
-            'category'=>'bolsos',
-            'description'=>'Protege tu table o ipad con esta funda realizada con lona reciclada.',
-            'image'=>'https://hilodoble.com/wp-content/uploads/2021/06/fundaipad_fuego_1-300x300.jpg',
-            'stockQuantity'=>'6',
+            'category'=>'material oficina',
+            'description'=>'Funda tablet/ipad de lona reciclada. Gran capacidad y muy resistente.',
+            'image'=>'https://hilodoble.com/wp-content/uploads/2021/06/fundaipad_fuego_1-scaled.jpg',
+            'stockQuantity'=>'1',
             'purchaseQuantity'=>'1',
-            'price'=>'15']);
+            'price'=>'14.90']);
 
         Item::factory()->create([
-            'itemName'=> 'Carpeta de gomas',
-            'category'=>'papelería',
-            'description'=>'Carpeta de Hilo Doble con cubiertas duras y resistentes y con un bolsillo interior para tu documentación o tarjetas de visita.',
-            'image'=>'https://hilodoble.com/wp-content/uploads/2021/06/carpetagomas_maps_1-300x300.jpg',
-            'stockQuantity'=>'7',
+            'itemName'=> 'Alforja simple de lona reciclada',
+            'category'=>'bolsos',
+            'description'=>'Alforja simple de lona reciclada para bicicleta. Gran capacidad y muy resistente.',
+            'image'=>'https://hilodoble.com/wp-content/uploads/2021/06/Alforjasimple_happy_3-scaled.jpg',
+            'stockQuantity'=>'1',
             'purchaseQuantity'=>'1',
-            'price'=>'13']);
+            'price'=>'32.90']);
+        
+        Item::factory()->create([
+            'itemName'=> 'Agenda de Lona Reciclada',
+            'category'=>'accesorios',
+            'description'=>'Agenda de Lona Reciclada año 2022-2023. Agenda formato A5 con distribución de página por día cubierta por lona publicitaria de pvc reciclado de la ciudad de Málaga.',
+            'image'=>'https://hilodoble.com/wp-content/uploads/2021/03/Agenda_cine_1-scaled.jpg',
+            'stockQuantity'=>'1',
+            'purchaseQuantity'=>'1',
+            'price'=>'12.90']);
 
         Item::factory()->create([
-            'itemName'=> 'Bolsa de viaje',
+            'itemName'=> 'Bolsa Mini de Lona Reciclada',
             'category'=>'bolsos',
-            'description'=>'Bolsa de viaje de lona reciclada. Asa ajustable e interior forrado de foam. Dos bolsillos interiores. Gran capacidad y muy resistente.',
-            'image'=>'https://hilodoble.com/wp-content/uploads/2021/06/bolsaviaje_museum_3-300x300.jpg',
-            'stockQuantity'=>'8',
+            'description'=>'Bolsa mini realizada con lona reciclada de banderolas publicitarias con doble asa.',
+            'image'=>'https://hilodoble.com/wp-content/uploads/2021/03/Bolsamini_Fancine_1-scaled.jpg',
+            'stockQuantity'=>'1',
             'purchaseQuantity'=>'1',
-            'price'=>'40']);
+            'price'=>'14.90']);
+
+        Item::factory()->create([
+            'itemName'=> 'Bolso Ariana de Lona Reciclada',
+            'category'=>'bolsos',
+            'description'=>'Bolso bandolera ajustable realizado con lona reciclada. Cierre de solapa con clip imantado y apliques decorativos en los laterales de cámara de bicicleta reciclada.',
+            'image'=>'https://hilodoble.com/wp-content/uploads/2020/11/bolso-ariana-1-scaled.jpg',
+            'stockQuantity'=>'1',
+            'purchaseQuantity'=>'1',
+            'price'=>'29.90']);
+
+        Item::factory()->create([
+            'itemName'=> 'Alforjas de Lona Reciclada',
+            'category'=>'bolsos',
+            'description'=>'Alforjas dobles para bicicleta de formato universal. Realizada con banderolas publicitarias de Málaga. Impermeable con asa central reforzada de nylon y detalle hecho con cámara de bicicleta reciclada.',
+            'image'=>'https://hilodoble.com/wp-content/uploads/2021/03/Alforja_Colores_3-scaled.jpg',
+            'stockQuantity'=>'1',
+            'purchaseQuantity'=>'1',
+            'price'=>'39.90']);
     
         Item::factory(3)->create();
 
@@ -77,7 +131,5 @@ class DatabaseSeeder extends Seeder
         User::factory()->create(['name' => 'admin', 'email' => 'admin@admin.com', 'isAdmin' => true]);
 
         User::factory()->create(['name' => 'user1', 'email' => 'user1@user1.com', 'isAdmin' => false]);
-
-    
     }
 }
