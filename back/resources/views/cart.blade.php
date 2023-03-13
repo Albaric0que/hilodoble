@@ -21,12 +21,12 @@
                                     <td>{{ $cartItem->item->itemName }}</td>
                                     <td>{{ $cartItem->item->price }}</td>
                                     <td>{{ $cartItem->quantity }}</td>
-                                    <td>${{ $cartItem->item->price * $cartItem->quantity }}</td>
+                                    <td>{{ $cartItem->item->price * $cartItem->quantity }} €</td>
                                 </tr>
                             @endforeach
                             <tr>
                                 <td colspan="3" class="text-right"><strong>Total:</strong></td>
-                                <td><strong>${{ $cartItems->sum(function ($cartItem) { return $cartItem->item->price * $cartItem->quantity; }) }}</strong></td>
+                                <td><strong>{{ $cartItems->sum(function ($cartItem) { return $cartItem->item->price * $cartItem->quantity; }) }} €</strong></td>
                             </tr>
                     </tbody>
 
