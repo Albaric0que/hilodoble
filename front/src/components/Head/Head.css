@@ -13,7 +13,7 @@
 .smIcons {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     justify-items: center;
     border: 1px solid orange;
     width: 90px;
