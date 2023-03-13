@@ -90,10 +90,16 @@ class ItemController extends Controller
     }
 
     public function destroy($id)
-    {
-        Item::destroy($id);
+    { 
+        if (!auth()->user()->isAdmin) {
+            abort(403, 'Unauthorized action.');
+        }
+        
+        $item = Item::find($id);
 
-        return redirect()->route('home');
+        Item::destroy($id);
+        
+        return redirect()->route('home'); 
     }
 }
 

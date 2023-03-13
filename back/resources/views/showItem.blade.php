@@ -11,5 +11,6 @@
             <h4>Precio: {{$item->price}}€</h4>
             <h4>{{$item->stockQuantity}} Unidades disponibles</h4>
         </div>
+        <a href="{{ route('home') }}" class="btn btn-outline-secondary">Volver</a><br>
     </div>
 @endsection
