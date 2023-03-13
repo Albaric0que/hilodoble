@@ -5,16 +5,20 @@ import MyProfile from '../MyProfile/MyProfile';
 import Head from '../Head/Head';
 import Searchbar from '../Searchbar/Searchbar';
 import Navbar from '../Navbar/Navbar';
+import './Header.css';
 
 function Header() {
   return (
     <>
-      <link rel="stylesheet" type="text/css" href="Header.css" />
       <Head/>
-      <img src={logo} alt="logo" />
-      <img src={cart} alt="logo" />
-      <Searchbar/>
-      <MyProfile/>
+      <div className='mainIcons'>
+        <img className='logo' src={logo} alt="logo" />
+        <div className='rightIcons'>
+          <Searchbar/>
+          <img className='cart' src={cart} alt="logo" />
+          <MyProfile/>
+        </div>
+      </div>
       <Navbar/>
     </>
   )

@@ -1,11 +1,11 @@
 import React from 'react'
-import profile from '../img/profile.png'
+import profile from '../img/profile.png';
+import './MyProfile.css';
 
 function MyProfile() {
     return (
         <>
-            <link rel="stylesheet" type="text/css" href="MyProfile.css" />
-            <img src={profile} alt="logo" />
+            <img className='profile' src={profile} alt="Profile Section" />
         </>
     )
 }

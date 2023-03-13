@@ -1,9 +1,9 @@
 import React from 'react'
+import './Head.css';
 
 function Head() {
     return (
         <div className='purpleBox'>
-            <link rel="stylesheet" type="text/css" href="Head.css" />
             
         </div>
     )

@@ -1,0 +1,25 @@
+.logo {
+    display: flex;
+    align-self: flex-start;
+    width: 200px;
+    height: auto;
+}
+
+.mainIcons {
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+}
+
+.rightIcons {
+    border: 1px solid blue;
+    display: flex;
+    justify-content: flex-end;
+    height: 5rem;
+    width: 7rem;
+    align-items: center!important;
+}
+
+.cart {
+    width: 3rem;
+}
