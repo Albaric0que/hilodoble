@@ -25,9 +25,9 @@ Route::get('/', function () {
 }); 
 
 
-Auth::routes(); 
+Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home'); 
 
 //C del CRUD
 Route::get('/createItem', [ItemController::class, 'create'])->name('create')->middleware('isadmin', 'auth');
