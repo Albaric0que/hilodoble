@@ -8,8 +8,6 @@ use Tests\TestCase;
 use App\Models\Item;
 use App\Models\User;
 
-
-
 class CRUDItemTest extends TestCase
 {
     use RefreshDatabase;
@@ -27,7 +25,8 @@ class CRUDItemTest extends TestCase
         $response->assertStatus(200)
                 ->assertViewIs('home');
     }
-    public function test_anItemCanBeshowed()
+
+    public function test_anItemCanBeShowed()
     {
         $this->withExceptionHandling();
 
@@ -38,8 +37,8 @@ class CRUDItemTest extends TestCase
         $response->assertSee($item->itemName);
         $response->assertStatus(200)
                 ->assertViewIs('showItem');
-
     }
+
     public function test_AnItemCanBeUpdateJustByAnAdmin(){
         
         $this->withExceptionHandling();
@@ -74,24 +73,18 @@ class CRUDItemTest extends TestCase
         $this->assertCount(1, Item::all()); 
         $response->assertStatus(403); 
 
-
         $userAdmin = User::factory()->create(['isAdmin'=>true]);
         $this->actingAs($userAdmin);
 
         $response = $this->delete(route('deleteItem', $item->id));
         $this->assertCount(0, Item::all()); 
-
-
     }
 
-    
     public function test_anItemCanBeCreatedJustByAnAdmin(){
         $this->withExceptionHandling();
 
-
         $userAdmin = User::factory()->create(['isAdmin' => true]);
         $this->actingAs($userAdmin);
-
 
         $response = $this ->post(route('store'),[
                 'itemName'=> 'itemName',
@@ -119,8 +112,5 @@ class CRUDItemTest extends TestCase
         ]);
 
         $this->assertCount(1,Item::all()); 
-
 }
-
 }
-
