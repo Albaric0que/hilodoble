@@ -28,3 +28,15 @@ Route::post('/createUser',[UserController::class,'store'])->name('createUserApi'
 
 //U de CRUD
 Route::put('/updateUser/{id}', [UserController::class,'update'])->name('updateUserApi');
+
+//Auth group
+Route::group([
+    /* 'middleware' => 'api', */
+    'prefix' => 'auth'
+], function ($router) {
+    Route::post('/login', [AuthController::class, 'login'])->name('loginUserApi');
+    Route::post('/register', [AuthController::class, 'register'])->name('registerUserApi');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logoutUserApi');
+    Route::post('/refresh', [AuthController::class, 'refresh'])->name('refreshUserApi');
+    Route::get('/user-profile', [AuthController::class, 'userProfile'])->name('profileUserApi');    
+});
