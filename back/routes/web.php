@@ -1,9 +1,11 @@
 <?php
 
+use App\Models\Item;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CartController;
 
 
 /*
@@ -19,6 +21,7 @@ use App\Http\Controllers\ItemController;
 
 Route::resource('items', 'App\Http\Controllers\ItemController');
 Route::resource('users', 'App\Http\Controllers\UserController');
+Route::resource('carts', 'App\Http\Controllers\CartController');
 
 Route::get('/', function () {
     return view('welcome');
@@ -46,3 +49,9 @@ Route::post('/', [ItemController::class, 'store'])->name('store')->middleware('i
 // D del CRUD
 Route::delete('/items/{id}', [ItemController::class, 'destroy'])->name('deleteItem')->middleware('isadmin', 'auth');
 Route::get('/items/{id}', [ItemController::class, 'show'])->name('showItem')->middleware('isadmin', 'auth');
+
+Route::post('/cart/add', [CartController::class, 'add'])->name('add')->middleware('auth');
+Route::get('/cart', [CartController::class, 'show'])->name('cart')->middleware('auth');
+Route::post('/cart/remove', [CartController::class, 'remove'])->name('remove')->middleware('auth');
+
+

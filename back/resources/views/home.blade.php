@@ -46,6 +46,11 @@
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Estás seguro de querer borrar este producto?')">BORRAR</button>
                             </form>
+                            <form action="{{ route('add') }}" method="POST" style="display: inline-block;">
+                                @csrf
+                                <input type="hidden" name="item_id" value="{{ $item->id }}">
+                                <button type="submit" class="btn btn-primary btn-sm">Añadir al carrito</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

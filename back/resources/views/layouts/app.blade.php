@@ -53,6 +53,13 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
+                                <a href="{{ route('cart') }}" class="btn btn-link">
+                                    <i class="fa fa-shopping-cart"></i> Carrito 
+                                    @if (auth()->user() && auth()->user()->cart()->count() > 0)
+                                        <span class="badge badge-pill badge-danger">{{ auth()->user()->cart()->count() }}</span>
+                                    @endif
+                                </a>
+
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
