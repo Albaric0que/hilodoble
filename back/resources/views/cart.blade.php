@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Carrito de compras</h1>
+        <p>Carrito de compras de <strong style="font-size:20px;color:blueviolet;">{{ Auth::user()->name }}</strong></p>
         @if (count($cartItems) > 0)
             <table class="table">
                 <thead>

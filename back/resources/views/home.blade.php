@@ -3,8 +3,8 @@
 @section('content')
 
     <div class="container">
-        <h1>Bienvend@ a nuestra tienda!</h1>
-        <p>Hola Administrador! Puedes ver tus productos en la lista y crear uno nuevo.</p>
+        <h1>Listado de productos</h1>
+        <p>Hola <strong style="font-size:20px;color:blueviolet;">{{ Auth::user()->name }}</strong>. Puedes ver tus productos en la lista y crear uno nuevo.</p>
         @if (session('success'))
     <div class="alert alert-success"><br>
         {{ session('success') }}
