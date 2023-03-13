@@ -40,9 +40,8 @@ class ItemController extends Controller
         ]);
         
         $item->save();
-        return response()->json($item, 200)
-            ->with('success', 'Item created successfully');
-    }
+        return response()->json($item, 200);
+        }
 
     /**
      * Display the specified resource.
