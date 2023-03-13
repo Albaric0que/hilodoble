@@ -8,16 +8,17 @@
 .mainIcons {
     border: 1px solid red;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 120px;
 }
 
 .rightIcons {
     border: 1px solid blue;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     height: 5rem;
     width: 7rem;
-    align-items: center!important;
+    align-items: center;
 }
 
 .cart {
