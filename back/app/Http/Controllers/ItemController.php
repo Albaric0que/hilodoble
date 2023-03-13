@@ -42,6 +42,7 @@ class ItemController extends Controller
         $item->description = $request->description;
         $item->image = $request->image;
         $item->stockQuantity = $request->stockQuantity;
+        $item->purchaseQuantity = $request->purchaseQuantity;
         $item->price = $request->price;
         $item->save();
 
