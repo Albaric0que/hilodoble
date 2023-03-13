@@ -30,6 +30,25 @@ class ApiCRUDUsersTest extends TestCase
         ->assertJsonCount(2);
     }
 
+    public function test_aUserCanBeShowInJson(): void
+    {
+
+        $user = User::factory()->create();
+
+        $response = $this->get(route('showUserApi', $user->id));
+
+        $response->assertStatus(200)
+        ->assertJson([
+            'name' => $user->name,
+            'surname' => $user->surname,
+            'email' => $user->email,
+            'phone' => $user->phone,
+            'address' => $user->address,
+            'postcode' => $user->postcode,
+            'isAdmin' => $user->isAdmin,
+        ]);
+    }
+
 //No entiendo nada :c
 
     /* public function test_checkIfUserGetsDeleted(): void
@@ -102,7 +121,7 @@ class ApiCRUDUsersTest extends TestCase
                   ->assertJsonCount(1)
                   ->assertJsonFragment($data);
 
-        $response = $this->put('api/updateUser/4', [
+        $response = $this->put(route('updateUserApi', ['id' => 1]), [
             "name" => "Regina Patatita",
             "surname" => "Papita",
             "email" => "patata@example.com",

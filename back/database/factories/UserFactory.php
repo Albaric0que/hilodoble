@@ -27,7 +27,7 @@ class UserFactory extends Factory
             'phone' => $this->faker->e164PhoneNumber(),
             'address' => $this->faker->secondaryAddress(),
             'postcode' => $this->faker->postcode(),
-            'isAdmin' => false,
+            'isAdmin' => 0,
             'remember_token' => Str::random(10),
 
         ];
