@@ -60,14 +60,6 @@ class CRUDItemTest extends TestCase
         $this->assertEquals('New itemName', Item::first()->itemName);
     }  
 
-        /* public function test_anItemCanBeDeletedApi()
-    {
-        $item = factory(Item::class)->create();
-        $response = $this->json('DELETE', 'api/items/{$item->id}');
-        $response->assertStatus(200);
-        $response->assertJson(['message' => 'El producto se ha eliminado correctamente']);
-    }  */
-
     public function test_anItemCanBeDeleteJustByAnAdmin()
     {
         $this->withExceptionHandling();
