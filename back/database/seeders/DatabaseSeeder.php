@@ -123,8 +123,8 @@ class DatabaseSeeder extends Seeder
             'purchaseQuantity'=>'1',
             'price'=>'39.90']);
     
-        Item::factory(3)->create();
-
+/*         Item::factory(3)->create();
+ */
 
         User::factory()->create();
 
