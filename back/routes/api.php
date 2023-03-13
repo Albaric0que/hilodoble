@@ -6,3 +6,5 @@ use App\Http\Controllers\Api\ItemController;
 
 //R de ItemApi
 Route::get('/', [App\Http\Controllers\Api\ItemController::class, 'index'])->name('itemsApi');
+
+//S de ItemApi
