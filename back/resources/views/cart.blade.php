@@ -3,6 +3,11 @@
 @section('content')
     <div class="container">
         <p>Carrito de compras de <strong style="font-size:20px;color:blueviolet;">{{ Auth::user()->name }}</strong></p>
+
+        @if ($cartItems->isEmpty())
+            <p>No hay productos en tu carrito.</p>
+        @endif
+
         @if (count($cartItems) > 0)
             <table class="table">
                 <thead>
@@ -11,6 +16,7 @@
                         <th>Precio unitario</th>
                         <th>Cantidad</th>
                         <th>Precio total</th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -22,6 +28,13 @@
                                     <td>{{ $cartItem->item->price }}</td>
                                     <td>{{ $cartItem->quantity }}</td>
                                     <td>{{ $cartItem->item->price * $cartItem->quantity }} €</td>
+                                    <td>
+                                    <form action="{{ route('remove') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="item_id" value="{{ $cartItem->id }}">
+                    <button type="submit" class="btn btn-danger">Remove</button>
+                </form>
+                                    </td>
                                 </tr>
                             @endforeach
                             <tr>
@@ -35,8 +48,7 @@
                 <a href="/" class="btn btn-primary">Seguir comprando</a>
                 <a href="#" class="btn btn-success">Pagar</a>
             </div>
-        @else
-            <p>No hay productos en el carrito.</p>
+     
         @endif
     </div>
 @endsection

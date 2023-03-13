@@ -39,22 +39,21 @@ class CartController extends Controller
 }
 
 
-    public function remove(Request $request)
-    {
-        $user = auth()->user();
-        $item = Item::findOrFail($request->input('item_id'));
+public function remove(Request $request)
+{
+    $user = auth()->user();
+    $item = Item::findOrFail($request->input('item_id'));
 
-        $cartItem = $user->cart()->where('item_id', $item->id)->first();
+    $cartItem = $user->cart()->where('item_id', $item->id)->first();
 
-        if ($cartItem) {
-            if ($cartItem->quantity > 1) {
-                $cartItem->quantity--;
-                $cartItem->save();
-            } else {
-                $cartItem->delete();
-            }
-        }
-
-        return redirect('/cart');
+    if ($cartItem && $cartItem->quantity > 1) {
+        $cartItem->quantity--;
+        $cartItem->save();
+    } elseif ($cartItem) {
+        $cartItem->delete();
     }
+
+    return redirect('/cart');
+}
+
 }

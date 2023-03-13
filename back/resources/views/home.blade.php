@@ -4,20 +4,22 @@
 <div class="container">
     <h1>Listado de productos</h1>
     @if (Auth::check())
-        <p>Hola <strong style="font-size:16px;color:blueviolet;">{{ Auth::user()?->name }}</strong>. Puedes ver tus productos en la lista y crear uno nuevo.</p>
+        <p>Hola <strong style="font-size:16px;color:blueviolet;">{{ Auth::user()?->name }}</strong> Este es el listado de productos</p>
         @if (session('success'))
             <div class="alert alert-success"><br>
                 {{ session('success') }}
             </div>
         @endif
     @endif
-</div>
+
 
 
         <div class="mb-3">
             <a href="{{ route('items.create') }}" class="btn btn-primary">Create Item</a>
         </div>
+</div>
 
+<div>
         <table class="table">
             <thead>
                 <tr>
@@ -52,6 +54,8 @@
                             <form action="{{ route('add') }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 <input type="hidden" name="item_id" value="{{ $item->id }}">
+                                
+                                <input type="number" name="quantity" class="form-control" value="1" min="1">
                                 <button type="submit" class="btn btn-primary btn-sm">Añadir al carrito</button>
                             </form>
                         </td>
