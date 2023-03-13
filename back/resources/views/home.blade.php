@@ -1,15 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <div class="container">
-        <h1>Listado de productos</h1>
-        <p>Hola <strong style="font-size:20px;color:blueviolet;">{{ Auth::user()->name }}</strong>. Puedes ver tus productos en la lista y crear uno nuevo.</p>
+<div class="container">
+    <h1>Listado de productos</h1>
+    @if (Auth::check())
+        <p>Hola <strong style="font-size:16px;color:blueviolet;">{{ Auth::user()?->name }}</strong>. Puedes ver tus productos en la lista y crear uno nuevo.</p>
         @if (session('success'))
-    <div class="alert alert-success"><br>
-        {{ session('success') }}
-    </div>
-@endif
+            <div class="alert alert-success"><br>
+                {{ session('success') }}
+            </div>
+        @endif
+    @endif
+</div>
+
 
         <div class="mb-3">
             <a href="{{ route('items.create') }}" class="btn btn-primary">Create Item</a>
