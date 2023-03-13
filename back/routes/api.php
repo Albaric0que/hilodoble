@@ -15,12 +15,9 @@ use App\Http\Controllers\Api\UserController;
 |
 */
 
-/* Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-}); */
-
 //R de CRUD
-Route::get('/homeUser', [UserController::class, 'index'])->name('usersApi');
+Route::get('/', [UserController::class, 'index'])->name('usersApi');
+Route::get('/home', [UserController::class, 'index'])->name('usersApi');
 
 //D de CRUD
 Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('destroyUserApi');
