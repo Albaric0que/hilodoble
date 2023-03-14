@@ -22,24 +22,52 @@
 
                 <!-- Below we are iterating over the $cartItems variable and accessing the itemName, price, and quantity properties of each Item model associated with the current cart item using the item relationship. We are also calculating the total price of all cart items using the sum() method on the $cartItems collection, and multiplying the price and quantity properties of each Item model to get the total price for each cart item. -->
                 <tbody>
-                            @foreach ($cartItems as $cartItem)
+                @foreach ($cartItems as $cartItem)
+    <tr>
+        <td>{{ $cartItem->item->itemName }}</td>
+        <td>{{ $cartItem->item->price }}</td>
+        <td>
+            <form action="{{ route('update') }}" method="POST">
+                @csrf
+                <input type="number" name="purchaseQuantity" class="form-control" value="{{ $cartItem->purchaseQuantity }}" min="1">
+                <input type="hidden" name="item_id" value="{{ $cartItem->id }}">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </td>
+        <td>{{ $cartItem->item->price * $cartItem->purchaseQuantity }} €</td>
+        <td>
+            <form action="{{ route('remove') }}" method="POST">
+                @csrf
+                <input type="hidden" name="item_id" value="{{ $cartItem->id }}">
+                <button type="submit" class="btn btn-danger">Remove</button>
+            </form>
+        </td>
+    </tr>
+@endforeach
+
+
+
+
+
+                            <!-- @foreach ($cartItems as $cartItem)
                                 <tr>
                                     <td>{{ $cartItem->item->itemName }}</td>
                                     <td>{{ $cartItem->item->price }}</td>
-                                    <td>{{ $cartItem->quantity }}</td>
-                                    <td>{{ $cartItem->item->price * $cartItem->quantity }} €</td>
+                                    <td>{{ $cartItem->purchaseQuantity }}</td>
+                                    <td>{{ $cartItem->item->price * $cartItem->purchaseQuantity }} €</td>
                                     <td>
                                     <form action="{{ route('remove') }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="item_id" value="{{ $cartItem->id }}">
-                    <button type="submit" class="btn btn-danger">Remove</button>
-                </form>
+                                        @csrf
+                                        <input type="number" name="purchaseQuantity" class="form-control" value="1" min="1">
+                                        <input type="hidden" name="item_id" value="{{ $cartItem->id }}">
+                                        <button type="submit" class="btn btn-danger">Remove</button>
+                                    </form>
                                     </td>
                                 </tr>
-                            @endforeach
+                            @endforeach -->
                             <tr>
                                 <td colspan="3" class="text-right"><strong>Total:</strong></td>
-                                <td><strong>{{ $cartItems->sum(function ($cartItem) { return $cartItem->item->price * $cartItem->quantity; }) }} €</strong></td>
+                                <td><strong>{{ $cartItems->sum(function ($cartItem) { return $cartItem->item->price * $cartItem->purchaseQuantity; }) }} €</strong></td>
                             </tr>
                     </tbody>
 

@@ -53,5 +53,8 @@ Route::get('/items/{id}', [ItemController::class, 'show'])->name('showItem')->mi
 Route::post('/cart/add', [CartController::class, 'add'])->name('add')->middleware('auth');
 Route::get('/cart', [CartController::class, 'show'])->name('cart')->middleware('auth');
 Route::post('/cart/remove', [CartController::class, 'remove'])->name('remove')->middleware('auth');
+Route::post('/cart/update', [CartController::class, 'update'])->name('update')->middleware('auth');
+
+
 
 

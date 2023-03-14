@@ -55,7 +55,7 @@
                                 @csrf
                                 <input type="hidden" name="item_id" value="{{ $item->id }}">
                                 
-                                <input type="number" name="quantity" class="form-control" value="1" min="1">
+                                <input type="number" name="purchaseQuantity" class="form-control" value="1" min="1">
                                 <button type="submit" class="btn btn-primary btn-sm">Añadir al carrito</button>
                             </form>
                         </td>
