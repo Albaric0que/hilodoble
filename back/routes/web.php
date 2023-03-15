@@ -57,13 +57,10 @@ Route::delete('/items/{id}', [ItemController::class, 'destroy'])->name('deleteIt
 //R del USER
 Route::get('/usersList',[UserController::class,'usersList'])->name('usersList')->middleware('isadmin', 'auth');
 
-//Show User
-Route::get('/showUser/{id}', [ItemController::class, 'show'])->name('showUser');
-
-
 //D del user
-Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('deleteUser');
+Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('deleteUser')->middleware('isadmin', 'auth');
 
 //U del user
-Route::get('/usersList/{id}', [UserController::class, 'edit'])->name('editUser');
-Route::patch('/userList/{id}', [UserController::class, 'update'])->name('updateUser');
+/* Route::get('/usersList/{id}', [UserController::class, 'edit'])->name('editUser')->middleware('isadmin', 'auth');
+ */
+Route::patch('/userList/{id}', [UserController::class, 'update'])->name('updateUser')->middleware('isadmin', 'auth');

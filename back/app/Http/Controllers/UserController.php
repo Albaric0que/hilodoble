@@ -42,7 +42,7 @@ class UserController extends Controller
 
         return view('editUser', compact('user'));
     }
-
+/*
     public function storeUser(Request $request)
     {
         $validatedData = $request->validate([
@@ -52,6 +52,7 @@ class UserController extends Controller
         ]);
 
         $user = new User($validatedData);
+        $surname = $request->file('image');
         $image = $request->file('image');
         $imageName = time() . '_' . $image->getClientOriginalName();
         $image->storeAs('public/images', $imageName);
@@ -60,4 +61,5 @@ class UserController extends Controller
         return redirect()->route('index')
             ->with('success', 'Estudiante creado.');
     }
+*/
 }

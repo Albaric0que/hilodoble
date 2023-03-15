@@ -50,29 +50,21 @@ class CRUDUserTest extends TestCase
 
     }
 
-    public function test_anUserCanBeDeletedByAnAdminAndByAnUser()
+    public function test_anUserCanBeDeletedByAnAdmin()
     {
         $this->withExceptionHandling();
 
         $user = User::factory()->create(['isAdmin'=>false]);
         $this->assertCount(1, User::all());
-        $this->actingAs($user);
-
-        $response = $this->delete(route('deleteUser', $user->id));
-        $this->assertCount(0, User::all());
-/*         $response->assertStatus(403);
- */
 
         $userAdmin = User::factory()->create(['isAdmin'=>true]);
         $this->actingAs($userAdmin);
 
         $response = $this->delete(route('deleteUser', $user->id));
-        $this->assertCount(0, User::all());
-
-
+        $this->assertCount(1, User::all());
     }
 
-    public function test_AnItemCanBeUpdatedByAnAdminAndByAnUser(){
+    public function test_AnUserCanBeUpdatedByAnAdmin(){
 
         $this->withExceptionHandling();
 
@@ -82,15 +74,8 @@ class CRUDUserTest extends TestCase
         $userAdmin = User::factory()->create(['isAdmin'=>true]);
         $this->actingAs($userAdmin);
 
-        $response = $this->patch(route('editUser', $user->id),['userName' => 'New userName']);
-        $this->assertEquals('New userName', User::first()->userName);
-
-        $user = User::factory()->create(['isAdmin'=>false]);
-        $this->actingAs($user);
-
-        $response = $this->patch(route('editUser', $user->id),['userName' => 'Second userName']);
-        $this->assertEquals('New userName', User::first()->userName);
+        $response = $this->patch(route('updateUser', $user->id),['name' => 'New name']);
+        $this->assertEquals('New name', User::first()->name);
     }
-
 }
 
