@@ -8,8 +8,9 @@
 .mainIcons {
     border: 1px solid red;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 120px;
+    padding: 0 20px;
 }
 
 .rightIcons {
@@ -17,7 +18,7 @@
     display: flex;
     justify-content: space-between;
     height: 5rem;
-    width: 7rem;
+    width: 10rem;
     align-items: center;
 }
 

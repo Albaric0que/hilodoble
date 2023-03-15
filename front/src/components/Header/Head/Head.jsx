@@ -1,8 +1,8 @@
 import React from 'react'
 import './Head.css';
-import fbIcon from '../img/fbIcon.png'
-import twIcon from '../img/twIcon.png'
-import igIcon from '../img/igIcon.png'
+import fbIcon from '../../img/fbIcon.png'
+import twIcon from '../../img/twIcon.png'
+import igIcon from '../../img/igIcon.png'
 
 function Head() {
     return (

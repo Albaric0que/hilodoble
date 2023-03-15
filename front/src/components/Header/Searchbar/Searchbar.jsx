@@ -1,10 +1,14 @@
 import React from 'react'
+import searchIcon from '../../img/searchIcon.png';
+import './Searchbar.css';
 
 function Searchbar() {
     return (
-        <>
-            <link rel="stylesheet" type="text/css" href="Searchbar.css" />
-        </>
+        <div>
+            <input className="searchBox" type="search"/>
+            <img className='searchIcon' src={searchIcon} alt="logo" />
+        </div>
+        
     )
 }
 
