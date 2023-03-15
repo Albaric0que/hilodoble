@@ -151,6 +151,7 @@
 <h3>Go to the front folder with the command <b>cd front</b> and type in the terminal the ss command</h3>
 <li>Type in the IDE terminal: <b>npm install</b> and press intro</li>
 <li>Type in the IDE terminal: <b>npm i react-router-dom</b> and press intro</li>
+<li>Type in the IDE terminal: <b>npm install axios</b> and press intro</li>
 <li>Type in the IDE terminal: <b>npm start</b> and press intro</li>
 
 <h3>Warning & Testing</h3>
