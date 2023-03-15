@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Models\Item;
 use App\Models\User;
@@ -10,6 +10,17 @@ use App\Http\Controllers\Controller;
 
 class CartController extends Controller
 {
+
+
+    public function index()
+    {
+        $items = Item::get();
+        return response()->json($items,200); 
+    }
+
+
+
+
     public function add(Request $request)
 {
     $user = auth()->user();
@@ -27,8 +38,8 @@ class CartController extends Controller
             'purchaseQuantity' => $purchaseQuantity,
         ]);
     }
-    
-    return redirect('/cart');
+    return response()->json(['message' => 'Item added to cart']);
+    // return redirect('/cart');
 }
 
 
@@ -53,8 +64,8 @@ public function remove(Request $request)
     if ($cartItem !== null) {
         $cartItem->delete();
     }
-    
-    return redirect('/cart');
+    return response()->json(['message' => 'Item removed from cart']);
+    // return redirect('/cart');
 }
 
 public function update(Request $request)
@@ -68,8 +79,8 @@ public function update(Request $request)
         $cartItem->purchaseQuantity = $newQuantity;
         $cartItem->save();
     }
-    
-    return redirect('/cart');
+    return response()->json(['message' => 'Item updated in cart']);
+    // return redirect('/cart');
 }
 
 
