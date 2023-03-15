@@ -43,6 +43,7 @@ class ApiCRUDUsersTest extends TestCase
             'surname' => $user->surname,
             'email' => $user->email,
             'phone' => $user->phone,
+            'country' => $user->country,
             'address' => $user->address,
             'postcode' => $user->postcode,
             'isAdmin' => $user->isAdmin,
@@ -73,6 +74,8 @@ class ApiCRUDUsersTest extends TestCase
             "email" => "patata@example.com",
             "password" => "patata",
             "phone" =>  "+14075775576",
+            "country" =>  "España",
+            "city" =>  "Málaga",
             "address" => "La calle",
             "postcode" => "29007",
             "isAdmin" => 0,
@@ -93,6 +96,10 @@ class ApiCRUDUsersTest extends TestCase
          $response ->assertJsonFragment($data);
          $data = [ "phone" => "+14075775576"];
          $response ->assertJsonFragment($data);
+         $data = [ "country" => "España"];
+         $response ->assertJsonFragment($data);
+         $data = [ "city" => "Málaga"];
+         $response ->assertJsonFragment($data);
          $data = [ "address" => "La calle"];
          $response ->assertJsonFragment($data);
          $data = [ "postcode" => "29007"];
@@ -109,6 +116,8 @@ class ApiCRUDUsersTest extends TestCase
             "email" => "patata@example.com",
             "password" => "patata",
             "phone" =>  "+14075775576",
+            "country" =>  "España",
+            "city" =>  "Málaga",
             "address" => "La calle",
             "postcode" => "29007",
             "isAdmin" => 0,
@@ -127,6 +136,8 @@ class ApiCRUDUsersTest extends TestCase
             "email" => "patata@example.com",
             "password" => "patata",
             "phone" =>  "+14075775576",
+            "country" =>  "España",
+            "city" =>  "Málaga",
             "address" => "La calle",
             "postcode" => "29007",
             "isAdmin" => 0,
