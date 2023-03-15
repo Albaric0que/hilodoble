@@ -8,7 +8,6 @@ function Searchbar() {
             <input className="searchBox" type="search"/>
             <img className='searchIcon' src={searchIcon} alt="logo" />
         </div>
-        
     )
 }
 
