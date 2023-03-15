@@ -36,12 +36,16 @@ class UserController extends Controller
         return redirect()->route('usersList');
     }
 
-    public function edit($id)
+    public function update(Request $request, $id)
     {
-        $user = User::find($id);
+        $user=request()->except('_token', '_method');
 
-        return view('editUser', compact('user'));
+        User::where('id', '=', $id)->update($user);
+
+        return redirect()->route('usersList')
+            ->with('success', 'User updated successfully');
     }
+
 /*
     public function storeUser(Request $request)
     {

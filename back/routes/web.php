@@ -61,6 +61,6 @@ Route::get('/usersList',[UserController::class,'usersList'])->name('usersList')-
 Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('deleteUser')->middleware('isadmin', 'auth');
 
 //U del user
-/* Route::get('/usersList/{id}', [UserController::class, 'edit'])->name('editUser')->middleware('isadmin', 'auth');
+/* Route::get('/usersList/{id}', [UserController::class, 'edit'])->name('updateUser')->middleware('isadmin', 'auth');
  */
-Route::patch('/userList/{id}', [UserController::class, 'update'])->name('updateUser')->middleware('isadmin', 'auth');
+Route::patch('/usersList/{id}', [UserController::class, 'update'])->name('updateUser')->middleware('isadmin', 'auth');

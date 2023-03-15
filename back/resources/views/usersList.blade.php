@@ -2,7 +2,7 @@
 @foreach ($users as $user)
     <div>Juan</div>
 
-    <a href="{{ route('editUser', ['id' => $user->id]) }}">Edit</a>
+    <a href="{{ route('updateUser', ['id' => $user->id]) }}">Edit</a>
 
     <form action="{{ route('deleteUser', $user->id) }}" method="POST">
 
