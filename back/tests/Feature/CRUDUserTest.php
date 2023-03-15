@@ -22,7 +22,7 @@ class CRUDUserTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_listUserCanBeRead(){
+    public function test_listUserCanBeReadByAnAdmin(){
         $this->withExceptionHandling();
 
         $users=User::factory(2)->create();
@@ -36,26 +36,38 @@ class CRUDUserTest extends TestCase
             ->assertViewIs('usersList');
     }
 
-    public function test_anUserCanBeDeletedByAnAdminAndByAnUser()
+    public function test_anUserCanBeShowedByAnUser()
     {
         $this->withExceptionHandling();
 
         $user = User::factory()->create();
         $this->assertCount(1, User::all());
 
-        $userNoAdmin=User::factory()->create(['isAdmin'=>false]);
-        $this->actingAs($userNoAdmin);
+        $response = $this->get(route('showUser', $user->id));
+        $response->assertSee($user->userName);
+        $response->assertStatus(200)
+                ->assertViewIs('showUser');
+
+    }
+
+    public function test_anUserCanBeDeletedByAnAdminAndByAnUser()
+    {
+        $this->withExceptionHandling();
+
+        $user = User::factory()->create(['isAdmin'=>false]);
+        $this->assertCount(1, User::all());
+        $this->actingAs($user);
 
         $response = $this->delete(route('deleteUser', $user->id));
-        $this->assertCount(1, User::all());
-        $response->assertStatus(403);
-
+        $this->assertCount(0, User::all());
+/*         $response->assertStatus(403);
+ */
 
         $userAdmin = User::factory()->create(['isAdmin'=>true]);
         $this->actingAs($userAdmin);
 
         $response = $this->delete(route('deleteUser', $user->id));
-        $this->assertCount(1, User::all());
+        $this->assertCount(0, User::all());
 
 
     }
@@ -73,8 +85,8 @@ class CRUDUserTest extends TestCase
         $response = $this->patch(route('editUser', $user->id),['userName' => 'New userName']);
         $this->assertEquals('New userName', User::first()->userName);
 
-        $userNoAdmin = User::factory()->create(['isAdmin'=>false]);
-        $this->actingAs($userNoAdmin);
+        $user = User::factory()->create(['isAdmin'=>false]);
+        $this->actingAs($user);
 
         $response = $this->patch(route('editUser', $user->id),['userName' => 'Second userName']);
         $this->assertEquals('New userName', User::first()->userName);

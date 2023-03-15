@@ -1,6 +1,6 @@
 
 @foreach ($users as $user)
-    <div>Juan</div>
+    <div>Juan pero en su página</div>
 
     <a href="{{ route('editUser', ['id' => $user->id]) }}">Edit</a>
 

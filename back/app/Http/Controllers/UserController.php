@@ -16,21 +16,27 @@ class UserController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
     }
 
+    public function show(string $id)
+    {
+        $user = User::find($id);
+        return view('showUser',compact('user'));
+    }
+
     public function createUser()
     {
         $user = new User();
         return view('createUser', compact('user'));
     }
 
-    public function deleteUser($id)
+    public function destroy($id)
     {
 
-        User::deleteUser($id);
+        User::destroy($id);
 
         return redirect()->route('usersList');
     }
 
-    public function editUser($id)
+    public function edit($id)
     {
         $user = User::find($id);
 

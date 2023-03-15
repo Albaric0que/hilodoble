@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers; 
+namespace App\Http\Controllers;
 
 use App\Models\Item;
 use App\Models\User;
@@ -67,18 +67,18 @@ class ItemController extends Controller
 
 
         public function destroy($id)
-        { 
+        {
             if (!auth()->user()->isAdmin) {
                 abort(403, 'Unauthorized action.');
             }
-        
+
             $item = Item::find($id);
            /*  $item->delete();
-        
-            return redirect()->back(); */ 
+
+            return redirect()->back(); */
             Item::destroy($id);
-        
-            return redirect()->route('home'); 
+
+            return redirect()->route('home');
         }
 
 
