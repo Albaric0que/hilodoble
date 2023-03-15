@@ -1,6 +1,7 @@
 import React from 'react'
-import '../showCard/ShowCard.css'
-function showCard() {
+import '../showItem/ShowItem.css'
+
+function ShowItem() {
   return (
     <div className= "container">
 
@@ -13,7 +14,7 @@ function showCard() {
             
             <p className= "description-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate architecto facilis, deserunt nobis fuga, nulla similique cumque fugit earum voluptates illum, ducimus harum laudantium cum dignissimos vel delectus sapiente eveniet.</p>
 
-            <button className= "button">Añadir al carrito</button>
+            <button className= "cartBtn">Añadir al carrito</button>
           </div>
         </div>
 
@@ -23,4 +24,4 @@ function showCard() {
   )
 }
 
-export default showCard
+export default ShowItem

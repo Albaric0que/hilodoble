@@ -1,28 +1,18 @@
 import React from 'react';
 import './App.css';
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Card from './components/card/Card';
-import ShowCard from './components/showCard/ShowCard';
-import Catalog from './components/catalog/Catalog';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ItemCard from './components/itemCard/ItemCard';
+import ShowItem from './components/showItem/ShowItem';
 
 function App() {
-  const router = createBrowserRouter([/* {
-    path: "/",
-    element: <HomePage/>
-  }, */ {
-    path: "/Catalog",
-    element: <Catalog/>
-  }, {
-    path: "/ShowCard",
-    element: <ShowCard/>
-  }, {
-    path: "/Card",
-    element: <Card/>
-  },
-  ])
   return (
-    <div>
-      <RouterProvider router={router} />
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path='/itemCard' element={<ItemCard/>}></Route>
+          <Route path='/showItem' element={<ShowItem/>}></Route>
+        </Routes>
+      </BrowserRouter> 
     </div>
   );
 }
