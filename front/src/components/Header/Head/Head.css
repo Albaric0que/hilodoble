@@ -12,10 +12,10 @@
 
 .smIcons {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    justify-items: center;
+    justify-content: flex-end;
     border: 1px solid orange;
-    width: 90px;
-    margin-right: 50%;
+    width: auto;
+    position: relative;
+    padding: 0 1rem 0 1rem;
+    right: 0px;
 }
