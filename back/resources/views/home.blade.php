@@ -14,9 +14,7 @@
 
 
 
-        <div class="mb-3">
-            <a href="{{ route('items.create') }}" class="btn btn-primary">Create Item</a>
-        </div>
+     
 </div>
 
 <div>
