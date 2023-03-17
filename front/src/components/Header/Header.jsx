@@ -1,10 +1,10 @@
 import React from 'react'
 import logo from '../img/logo.png';
 import cart from '../img/cart.png';
-import MyProfile from './MyProfile/MyProfile';
-import Head from './Head/Head';
-import Searchbar from './Searchbar/Searchbar';
-import Navbar from './Navbar/Navbar';
+import MyProfile from './myProfile/MyProfile';
+import Head from './head/Head';
+import Searchbar from './searchbar/Searchbar';
+import Navbar from './navbar/Navbar';
 import './Header.css';
 
 function Header() {
