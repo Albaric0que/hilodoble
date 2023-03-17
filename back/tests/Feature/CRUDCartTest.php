@@ -26,7 +26,10 @@ public function test_anAuthUserCanAddOneItemToTheCart()
     $user = User::factory()->create();
     $item = Item::factory()->create();
 
-    $this->actingAs($user)->post(route('add'), [        'item_id' => $item->id,        'purchaseQuantity' => 1,    ]);
+    $this->actingAs($user)->post(route('add'), [       
+        'item_id' => $item->id,        
+        'purchaseQuantity' => 1,    
+    ]);
 
     $cartItem = $user->cart()->where('item_id', $item->id)->first();
 
