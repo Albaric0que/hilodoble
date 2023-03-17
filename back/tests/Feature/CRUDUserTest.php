@@ -15,40 +15,37 @@ class CRUDUserTest extends TestCase
 
     use RefreshDatabase;
 
-    public function test_example(): void
-    {
-        $response = $this->get('/');
 
-        $response->assertStatus(200);
-    }
 
-    public function test_listUserCanBeReadByAnAdmin(){
+    public function test_usersListCanBeReadByAnAdmin(){
         $this->withExceptionHandling();
 
-        $users=User::factory(2)->create();
-        $user=$users[0];
+        $admin = User::factory()->create(['isAdmin'=>true]);
+        $this->actingAs($admin);
+
+        $users = User::factory()->create();
 
         $response = $this->get('/usersList');
 
-        $response->assertSee($user->name);
-
+        $response->assertSee($users->name);
         $response->assertStatus(200)
-            ->assertViewIs('usersList');
+                ->assertViewIs('usersList');
     }
-
-    public function test_anUserCanBeShowedByAnUser()
+/*
+    public function test_anUserCanBeShowedToAnAdmin()
     {
         $this->withExceptionHandling();
 
+        $admin = User::factory()->create(['isAdmin'=>true]);
+        $this->actingAs($admin);
+
         $user = User::factory()->create();
-        $this->assertCount(1, User::all());
 
         $response = $this->get(route('showUser', $user->id));
         $response->assertSee($user->userName);
         $response->assertStatus(200)
                 ->assertViewIs('showUser');
-
-    }
+    } */
 
     public function test_anUserCanBeDeletedByAnAdmin()
     {
@@ -77,5 +74,24 @@ class CRUDUserTest extends TestCase
         $response = $this->patch(route('updateUser', $user->id),['name' => 'New name']);
         $this->assertEquals('New name', User::first()->name);
     }
+
+    public function test_anItemCanBeStoredByAnAdmin(){
+        $this->withExceptionHandling();
+
+
+        $userAdmin = User::factory()->create(['isAdmin' => true]);
+        $this->actingAs($userAdmin);
+
+
+        $response = $this ->post(route('store'),[
+                'name'=> 'name',
+                'email'=>'email',
+                'password'=>'password',
+
+            ]);
+
+        $this->assertCount(1,User::all());
+}
+
 }
 

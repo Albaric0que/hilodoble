@@ -6,10 +6,10 @@
         <h1>Bienvend@ a nuestra tienda!</h1>
         <p>Hola Administrador! Puedes ver tus productos en la lista y crear uno nuevo.</p>
         @if (session('success'))
-    <div class="alert alert-success"><br>
-        {{ session('success') }}
-    </div>
-@endif
+            <div class="alert alert-success"><br>
+                {{ session('success') }}
+            </div>
+        @endif
 
         <div class="mb-3">
             <a href="{{ route('items.create') }}" class="btn btn-primary">Create Item</a>
@@ -54,6 +54,6 @@
 
     </div>
 
-    
+
 </div>
 @endsection

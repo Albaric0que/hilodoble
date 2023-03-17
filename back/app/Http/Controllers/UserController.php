@@ -16,11 +16,11 @@ class UserController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
     }
 
-    public function show(string $id)
+    /* public function show(string $id)
     {
         $user = User::find($id);
         return view('showUser',compact('user'));
-    }
+    } */
 
     public function createUser()
     {
@@ -30,13 +30,20 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-    
+
         User::destroy($id);
 
         return redirect()->route('usersList');
     }
 
-    public function update(Request $request, $id)
+    public function editUser($id)
+    {
+        $user = User::find($id);
+
+        return view('editUser', compact('user'));
+    }
+
+    public function updateUser(Request $request, $id)
     {
         $user=request()->except('_token', '_method');
 
@@ -46,24 +53,26 @@ class UserController extends Controller
             ->with('success', 'User updated successfully');
     }
 
-/*
+
     public function storeUser(Request $request)
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
+            'surname' => 'required|string|max:255',
             'email' => 'required|string|email|unique:users|max:255',
             'password' => 'required|string|min:6|confirmed',
         ]);
 
         $user = new User($validatedData);
-        $surname = $request->file('image');
-        $image = $request->file('image');
-        $imageName = time() . '_' . $image->getClientOriginalName();
-        $image->storeAs('public/images', $imageName);
-        $user->image = 'storage/images/' . $imageName;
+        $user->name = $validatedData['name'];
+        $user->surname = $validatedData['surname'];
+        $user->email = $validatedData['email'];
+        $user->password = bcrypt($validatedData['password']);
         $user->save();
-        return redirect()->route('index')
-            ->with('success', 'Estudiante creado.');
+        return response()->json([
+            'message' => 'User edited successfully',
+            'data' => $user
+        ], 201);
     }
-*/
+
 }

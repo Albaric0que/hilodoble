@@ -61,6 +61,14 @@ Route::get('/usersList',[UserController::class,'usersList'])->name('usersList')-
 Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('deleteUser')->middleware('isadmin', 'auth');
 
 //U del user
-/* Route::get('/usersList/{id}', [UserController::class, 'edit'])->name('updateUser')->middleware('isadmin', 'auth');
+Route::get('/editUser/{id}', [UserController::class, 'editUser'])->name('editUser')->middleware('isadmin', 'auth');
+Route::patch('/user/{id}', [UserController::class, 'updateUser'])->name('updateUser')->middleware('isadmin', 'auth');
+
+//store
+Route::post('/user', [UserController::class, 'storeUser'])->name('storeUser')->middleware('isadmin', 'auth');
+
+
+/* //Show
+Route::get('/showUser', [UserController::class, 'show'])->name('showUser');
+Route::get('/showUser/{id}', [UserController::class, 'show'])->name('showUser')->middleware('isadmin', 'auth');
  */
-Route::patch('/usersList/{id}', [UserController::class, 'update'])->name('updateUser')->middleware('isadmin', 'auth');

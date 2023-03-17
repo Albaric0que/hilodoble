@@ -1,14 +1,23 @@
+@extends('layouts.app')
 
-@foreach ($users as $user)
-    <div>Juan</div>
+@section('content')
+    <div class="container">
 
-    <a href="{{ route('updateUser', ['id' => $user->id]) }}">Edit</a>
+    @foreach ($users as $user)
 
-    <form action="{{ route('deleteUser', $user->id) }}" method="POST">
+        <h2>Nombre:{{$user->name}}</h2>
+        <h3>{{$user->email}}</h3>
 
-        @csrf
-        @method('DELETE')
+        <a href="{{ route('editUser', ['id' => $user->id]) }}">Edit</a>
 
-        <button type="submit" class="bt-adm m-1 d-flex justify-content-center align-items-center" onclick="return confirm('¿Seguro que quieres borrar est usuario? {{ $user->name }} - ID {{ $user->id }}')">Remove</button>
-    </form>
-@endforeach
+        <form action="{{ route('deleteUser', $user->id) }}" method="POST">
+
+            @csrf
+            @method('DELETE')
+
+            <button type="submit" class="bt-adm m-1 d-flex justify-content-center align-items-center" onclick="return confirm('¿Seguro que quieres borrar est usuario? {{ $user->name }} - ID {{ $user->id }}')">Remove</button>
+        </form>
+    @endforeach
+    </div>
+
+@endsection
