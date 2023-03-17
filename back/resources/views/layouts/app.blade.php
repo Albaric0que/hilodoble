@@ -12,6 +12,11 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/showItem.css') }}" rel="stylesheet">
+    
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -27,27 +32,32 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="selection" id="">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        {{-- <li class="nav-item">
+                            <a class="nav-link" href="{{ route('items.index') }}"><button class="itemsList">{{ __('Productos') }}</a>
+                        </li> --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('users.index') }}"><button class="usersList">{{ __('Clientes') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-                        @guest
+                    @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
-                            @if (Route::has('register'))
+                        {{--  @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
+                            @endif --}}
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -66,15 +76,16 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
+                        @endguest 
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>
+    @include('footer')
 </body>
 </html>
