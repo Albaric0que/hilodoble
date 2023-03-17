@@ -21,7 +21,7 @@ label{
     justify-content: center;
     gap:20px;
 }
-.saveButton, .cancelButton {
+.saveButton, .cancelButton, .addButton {
     color: #6a09b5 !important;;
     border:1px solid #6a09b5; 
     font-weight: 600;

@@ -10,7 +10,7 @@
     <form method="POST" action="{{ route('updateItem', $item->id) }}" enctype="multipart/form-data">
         @csrf
         {{ method_field('PATCH') }}
-<div class="itemData">
+        <div class="itemData">
             <div class="form-group">
                 <label for="itemName">Nombre del producto</label>
                 <input type="text" name="itemName" id="itemName" class="form-control{{ $errors->has('itemName') ? ' is-invalid' : '' }}" value="{{ $item->itemName }}" required>
@@ -59,12 +59,12 @@
                 @endif
             </div>
         </div>
-        </div>
+    </div>
         <div class="buttons">
         <button type="submit" class="saveButton">Guardar</button>
         <a href="{{ route('home') }}"><button class="cancelButton">Cancelar</a>
         </div>
     </form>
-
+</div>
 
 @endsection
