@@ -32,7 +32,8 @@ class CartController extends Controller
     if ($cartItem) {
         $cartItem->purchaseQuantity += $purchaseQuantity;
         $cartItem->save();
-    } else {
+    } 
+    if (!$cartItem){
         $user->cart()->create([
             'item_id' => $item->id,
             'purchaseQuantity' => $purchaseQuantity,

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Item;
 use App\Models\User;
 use App\Models\Cart;
@@ -21,7 +22,8 @@ class CartController extends Controller
     if ($cartItem) {
         $cartItem->purchaseQuantity += $purchaseQuantity;
         $cartItem->save();
-    } else {
+    } 
+    if (!$cartItem) {
         $user->cart()->create([
             'item_id' => $item->id,
             'purchaseQuantity' => $purchaseQuantity,
