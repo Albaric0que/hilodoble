@@ -135,6 +135,7 @@
 
 <h2>9. Required:</h2>
 <li>NPM installed.</li>
+<li>Axios npm installed.</li>
 <li>PHP (Minimum, version 8.1).</li>
 <li>React.js installed.</li>
 <li>Composer & Laravel installed and updated to latest version.</li>
@@ -185,7 +186,8 @@
 <li>Implement responsive design for different devices.</li>
 <li>Implement user functions.</li>
 <li>Determine product categories.</li>
-<li>Add shopping cart functionalities.</li>
+<li>Connect API with React</li>
+<li>React home, shop and item components</li>
+<li>Test Admin + User</li>
+<li>Finish admin blade + users list</li>
 </ul>
-
-
