@@ -1,27 +1,26 @@
 .logo {
     display: flex;
     align-self: flex-start;
-    width: 200px;
+    width: 12rem;
     height: auto;
+    align-items: center;
 }
 
 .mainIcons {
-    border: 1px solid red;
+    border:1px solid #6a09b5;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     padding: 0 20px;
 }
 
 .rightIcons {
-    border: 1px solid blue;
     display: flex;
     justify-content: space-between;
-    height: 5rem;
-    width: 10rem;
     align-items: center;
 }
 
 .cart {
-    width: 3rem;
+    width: 2rem;
 }

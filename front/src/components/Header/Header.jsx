@@ -13,8 +13,8 @@ function Header() {
       <Head/>
       <div className='mainIcons'>
         <img className='logo' src={logo} alt="logo" />
-        <Searchbar/>
         <div className='rightIcons'>
+          <Searchbar/>
           <img className='cart' src={cart} alt="logo" />
           <MyProfile/>
         </div>

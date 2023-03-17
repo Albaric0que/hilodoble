@@ -4,9 +4,9 @@ import './Searchbar.css';
 
 function Searchbar() {
     return (
-        <div>
-            <input className="searchBox" type="search"/>
-            <img className='searchIcon' src={searchIcon} alt="logo" />
+        <div className='searchAll'>
+            <img className='searchIcon' src={searchIcon} alt='logo' />
+            <input className='searchBox' type='search'/>
         </div>
     )
 }
