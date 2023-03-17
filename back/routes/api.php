@@ -17,18 +17,19 @@ use App\Http\Controllers\AuthController;
 */
 
 //R de CRUD
-Route::get('/', [UserController::class, 'index'])->name('usersApi');
-Route::get('/home', [UserController::class, 'index'])->name('usersApi');
+/* Route::get('/', [UserController::class, 'index'])->name('usersApi');
+Route::get('/home', [UserController::class, 'index'])->name('usersApi'); */
 Route::get('/showUser/{id}', [UserController::class, 'show'])->name('showUserApi');
 
 //D de CRUD
 Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('destroyUserApi');
 
 //C de CRUD
-Route::post('/createUser',[UserController::class,'store'])->name('createUserApi');
+/* Route::post('/createUser',[UserController::class,'store'])->name('createUserApi'); */
 
 //U de CRUD
 Route::put('/updateUser/{id}', [UserController::class,'update'])->name('updateUserApi');
+
 
 //Auth group
 Route::group([
