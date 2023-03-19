@@ -1,0 +1,22 @@
+.text{
+    margin-left: 20%;
+    margin-right:20%;
+}
+p{
+    text-align: center;
+}
+.target{
+    background-color: #6a09b5;
+    display:flex;
+    gap: 150px;
+    color:white;
+    padding-left: 20%;   
+    padding-right: 20%;
+}
+h4{
+    text-transform:uppercase;
+}
+.socials, .goals, .natural{
+    width: 20%;
+
+}
