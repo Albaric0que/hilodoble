@@ -3,24 +3,30 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 
 class UserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth:api']);
+    }
     /**
      * Display a listing of the resource.
      */
-    public function index()
+   /*  public function index()
     {
         $user = User::get();
         return response()->json($user);
-    }
+    } */
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    /* public function store(Request $request)
     {
 
         $user = User::create([
@@ -38,17 +44,17 @@ class UserController extends Controller
 
         $user->save();
         return response()->json($user, 200);
-    }
+    } */
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    /* public function show(string $id)
     {
         $user = User::find($id);
 
         return response()->json($user);
-    }
+    } */
 
     /**
      * Update the specified resource in storage.

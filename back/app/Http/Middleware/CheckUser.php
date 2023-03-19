@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Middleware\JwtAuth;
+namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
-class JwtAuth
+class CheckUser 
 {
     /**
      * Handle an incoming request.
@@ -16,11 +17,10 @@ class JwtAuth
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user = Auth::user();
-        $requestedUserId = $request->route('id');
-        
-        if ($user->id !== (int)$requestedUserId) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+       $user = $request->user();
+
+        if (! $user || $user->id !== $request->route('id')) {
+            return response()->json(['error' => 'No autorizado'], 403);
         }
 
         return $next($request);
