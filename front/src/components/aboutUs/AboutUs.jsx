@@ -5,6 +5,7 @@ function AboutUs(){
 
     return(
         <section class="main">
+            <div class="topImage"></div>
             <h3>Sobre nosotros</h3>
             <div class="text">
                 <div>
