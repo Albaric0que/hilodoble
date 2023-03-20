@@ -16,7 +16,8 @@
     <link href="{{ asset('css/form.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
     <link href="{{ asset('css/showItem.css') }}" rel="stylesheet">
-    
+    <link href="{{ asset('css/user.css') }}" rel="stylesheet">
+
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -76,7 +77,7 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest 
+                        @endguest
                     </ul>
                 </div>
             </div>
