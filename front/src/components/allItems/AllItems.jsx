@@ -5,7 +5,7 @@ import '../allItems/AllItems.css'
 
 function AllItems() {
 
-  const [ items, setItems ] = useState([])
+  const [ items, setItems ] = useState([]);
 
   useEffect(()=>{
     axios.get(`http://127.0.0.1:8000/api`)
@@ -17,7 +17,6 @@ function AllItems() {
         console.error(error);
       });
   }, []);
-
 
   return (
     <div className='container'>
@@ -34,7 +33,7 @@ function AllItems() {
             </div>
           </div>
         ) 
-      })}
+      })}  
     </div>
   )
 }
