@@ -25,7 +25,7 @@
 .imgContainer{
   height: 300px;
   width: 900px;
-  background-image: url("https://hilodoble.com/wp-content/uploads/2021/06/rinonera_colorful_1-scaled.jpg");
+ /*  background-image: url("https://hilodoble.com/wp-content/uploads/2021/06/rinonera_colorful_1-scaled.jpg"); */
   background-position: center;
   background-size: cover;
 }
