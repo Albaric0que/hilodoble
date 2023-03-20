@@ -64,4 +64,14 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims() {
         return [];
     }    
+    public function items()
+    {
+        return $this->hasMany('App\Models\Item', 'user_id', 'id');
+    }
+
+    public function cart()
+{
+    return $this->hasOne('App\Models\Cart', 'user_id');
+}
+
 }

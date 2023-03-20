@@ -30,7 +30,6 @@ class UserFactory extends Factory
             'postcode' => $this->faker->postcode(),
             'isAdmin' => 0,
             'remember_token' => Str::random(10),
-
         ];
     }
 
