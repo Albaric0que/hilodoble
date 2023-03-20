@@ -11,8 +11,8 @@ function AllItems() {
   useEffect(()=>{
     axios.get(`http://127.0.0.1:8000/api`)
       .then((response) =>  {
-        const api = response.api;
-        setItems(api);
+        const data = response.data;
+        setItems(data);
       })
       .catch(error => {
         console.error(error);
@@ -20,18 +20,19 @@ function AllItems() {
   }, []);
 
 
-
   return (
-    <div key={item.id} className= 'container'>
-      {items.map((item)=>{
-        return(
-          <h1>Nuestra tienda</h1>
-          <h3>Artesanía, reciclaje y diseños exclusivos</h3>
-          <div src={item.image} alt={item.itemName} className= 'imgContainer'></div>
-          <div>
-            <h3 className= 'nameItem'>{item.itemName}</h3>
-            <h3 className= 'priceItem'>{item.price}</h3>
-            <button className= 'cartBtn'>Añadir al carrito</button>
+    <div className='container'>
+      <h1>Nuestra tienda</h1>
+      <h3>Artesanía, reciclaje y diseños exclusivos</h3>
+      {items.map((item) => {
+        return (
+          <div key={item.id}>
+            <div src={item.image} alt={item.itemName} className='imgContainer'></div>
+            <div>
+              <h3 className='nameItem'>{item.itemName}</h3>
+              <h3 className='priceItem'>{item.price}</h3>
+              <button className='cartBtn'>Añadir al carrito</button>
+            </div>
           </div>
         )
       })}
