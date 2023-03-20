@@ -6,13 +6,19 @@
 }
 
 .searchIcon {
-    height: 2rem;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .searchAll {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 13rem;
+    width: 12rem;
     justify-content: center;
+    position: relative;
 }
