@@ -78,4 +78,4 @@ Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('delet
 /* //Show
 Route::get('/showUser', [UserController::class, 'show'])->name('showUser');
 Route::get('/showUser/{id}', [UserController::class, 'show'])->name('showUser')->middleware('isadmin', 'auth');
- */
+ */ 
