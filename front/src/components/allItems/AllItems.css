@@ -1,0 +1,14 @@
+.containerCard{
+  display:flex;
+  justify-content: space-around;
+  width: 289px;
+  height: 323.07px;
+  margin-top: 40px;
+  /* estohayquemodificarlo */
+}
+
+.imgContainer{
+width: 289px;
+height: 200px;
+}
+
