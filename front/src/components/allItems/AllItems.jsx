@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 import '../allItems/AllItems.css'
 
 function AllItems() {
 
-  const param = useParams()
   const [ items, setItems ] = useState([])
 
   useEffect(()=>{
@@ -34,7 +33,7 @@ function AllItems() {
               <button className='cartBtn'>Añadir al carrito</button>
             </div>
           </div>
-        )
+        ) 
       })}
     </div>
   )
