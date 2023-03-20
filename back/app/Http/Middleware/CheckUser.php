@@ -17,9 +17,9 @@ class CheckUser
      */
     public function handle(Request $request, Closure $next): Response
     {
-       $user = $request->user();
+        $user = auth()->user();
 
-        if (! $user || $user->id !== $request->route('id')) {
+        if (! $user || $user->id != $request->route('id')) {
             return response()->json(['error' => 'No autorizado'], 403);
         }
 
