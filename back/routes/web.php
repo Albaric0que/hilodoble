@@ -79,7 +79,7 @@ Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('delet
 Route::get('/editUser/{id}', [UserController::class, 'editUser'])->name('editUser')->middleware('isadmin', 'auth');
 Route::patch('/user/{id}', [UserController::class, 'updateUser'])->name('updateUser')->middleware('isadmin', 'auth');
 
-//store 
+//store  
 Route::post('/user', [UserController::class, 'storeUser'])->name('storeUser')->middleware('isadmin', 'auth');
 
 
