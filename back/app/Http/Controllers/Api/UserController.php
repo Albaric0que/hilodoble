@@ -14,48 +14,7 @@ class UserController extends Controller
     {
         $this->middleware(['auth:api']);
     }
-    /**
-     * Display a listing of the resource.
-     */
-   /*  public function index()
-    {
-        $user = User::get();
-        return response()->json($user);
-    } */
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    /* public function store(Request $request)
-    {
-
-        $user = User::create([
-            'name' => $request->name,
-            'surname' => $request->surname,
-            'email' => $request->email,
-            'password' => $request->password,
-            'phone' => $request->phone,
-            'country' => $request->country,
-            'city' => $request->city,
-            'address' => $request->address,
-            'postcode'  => $request->postcode,
-            'isAdmin' => $request->isAdmin,
-        ]);
-
-        $user->save();
-        return response()->json($user, 200);
-    } */
-
-    /**
-     * Display the specified resource.
-     */
-    /* public function show(string $id)
-    {
-        $user = User::find($id);
-
-        return response()->json($user);
-    } */
-
+  
     /**
      * Update the specified resource in storage.
      */
@@ -69,7 +28,6 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $request->password,
             'phone' => $request->phone,
-            'country' => $request->country,
             'city' => $request->city,
             'address' => $request->address,
             'postcode'  => $request->postcode,

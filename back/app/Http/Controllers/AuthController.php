@@ -48,7 +48,6 @@ class AuthController extends Controller
             'email' => 'required|string|email|max:100|unique:users',
             'password' => 'required|string|confirmed|min:6',
             'phone' => 'nullable|string|max:20',
-            'country' => 'nullable|string|max:100',
             'city' => 'nullable|string|max:100',
             'address' => 'nullable|string|max:255',
             'postcode' => 'nullable|string|max:20',

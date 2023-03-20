@@ -41,7 +41,7 @@ class AuthUsersTest extends TestCase
         $this->assertTrue(Auth::check());
     }
 
-    public function test_UserCanRegisterRegister()
+    public function test_UserCanRegister()
     {
         $userData = [
             'name' => 'Juanita',
@@ -50,7 +50,6 @@ class AuthUsersTest extends TestCase
             'password' => 'password',
             'password_confirmation' => 'password',
             'phone' => '123456789',
-            'country' => 'Spain',
             'city' => 'Malaga',
             'address' => 'Calle mandarina',
             'postcode' => '08001',
@@ -67,7 +66,6 @@ class AuthUsersTest extends TestCase
                     'surname' => 'Mandarina',
                     'email' => 'juanita@example.com',
                     'phone' => '123456789',
-                    'country' => 'Spain',
                     'city' => 'Malaga',
                     'address' => 'Calle mandarina',
                     'postcode' => '08001',
@@ -80,7 +78,6 @@ class AuthUsersTest extends TestCase
             'surname' => 'Mandarina',
             'email' => 'juanita@example.com',
             'phone' => '123456789',
-            'country' => 'Spain',
             'city' => 'Malaga',
             'address' => 'Calle mandarina',
             'postcode' => '08001',
@@ -150,8 +147,7 @@ class AuthUsersTest extends TestCase
             'surname', 
             'email', 
             'email_verified_at', 
-            'phone', 
-            'country', 
+            'phone',  
             'city', 
             'address', 
             'postcode', 

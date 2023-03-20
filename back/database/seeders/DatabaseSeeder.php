@@ -29,7 +29,6 @@ class DatabaseSeeder extends Seeder
          'email' => 'admin@admin.com',
          'password' => 'password', // password
          'phone' => '666123456',
-         'country' => 'España',
          'city' => 'Málaga',
          'address' => 'Calle hilodoble, número 7',
          'postcode' => '29010',
