@@ -15,60 +15,55 @@ class ApiCRUDUsersTest extends TestCase
      */
     use RefreshDatabase;
 
-//No entiendo nada :c
+     public function test_checkIfUserCanDeleteItsProfile(): void
+     {
+        $user = User::factory()->create();
+        $token = auth()->login($user);
 
-    /* public function test_checkIfUserGetsDeleted(): void
-    {
-        User::factory(2)->create();
-        $response = $this->get(route('usersApi'));
-        $response->assertStatus(200)
-            ->assertJsonCount(2);
+        $response = $this->withHeaders([
+            'Authorization' => 'Bearer' . $token,
+        ])->delete(route('destroyUserApi', [$user->id]));
 
-        $response = $this->delete(route('destroyUserApi', 1));
+         $response->assertStatus(200)
+            ->assertJson([
+                    'message' => 'Tu perfil se ha eliminado correctamente',
+                ]);
+     }
 
-        $response = $this->get(route('usersApi'));
-        $response->assertStatus(200)
-            ->assertJsonCount(1);
-    } */
+     public function test_checkIfUserCanUpdateItsProfile(): void
+     {
+        $user = User::factory()->create();
 
-   /*  public function test_checkIfUserCanBeUpdated(): void
-    {
-        $response = $this->post(route('registerUserApi'), [
-            "name" => "Regina Patata",
-            "surname" => "Papita",
-            "email" => "patata@example.com",
-            "password" => "patata",
-            "phone" =>  "+14075775576",
-            "city" =>  "Málaga",
-            "address" => "La calle",
-            "postcode" => "29007",
-            "isAdmin" => 0,
-        ]);
+        $newUserData = [
+            'name' => 'name',
+            'surname' => 'surname',
+            'email' => 'email',
+            'password' => 'password',
+            'phone' => 'phone',
+            'city' => 'city',
+            'address' => 'address',
+            'postcode' => 'postcode',
+            'isAdmin' => false
+        ];
 
-        $data = [ "name" => "Regina Patata"];
+        $token = auth()->login($user);
 
-        $response = $this->get(route('profileUserApi'));
-        $response ->assertStatus(200)
-                  ->assertJsonCount(1)
-                  ->assertJsonFragment($data);
+        $response = $this->withHeaders([
+            'Authorization' => 'Bearer ' . $token,
+        ])->put(route('updateUserApi', [$user->id]), $newUserData);
 
-        $response = $this->put(route('updateUserApi', ['id' => 1]), [
-            "name" => "Regina Patatita",
-            "surname" => "Papita",
-            "email" => "patata@example.com",
-            "password" => "patata",
-            "phone" =>  "+14075775576",
-            "city" =>  "Málaga",
-            "address" => "La calle",
-            "postcode" => "29007",
-            "isAdmin" => 0,
-        ]);
+        $response->assertStatus(200);
 
-        $data = ['name' => 'Regina Patatita'];
+        $user->refresh();
 
-        $response = $this->get(route('profileUserApi'));
-        $response ->assertStatus(200)
-                  ->assertJsonCount(1)
-                  ->assertJsonFragment($data);
-    } */
+        $this->assertEquals($newUserData['name'], $user->name);
+        $this->assertEquals($newUserData['surname'], $user->surname);
+        $this->assertEquals($newUserData['email'], $user->email);
+        $this->assertEquals($newUserData['password'], $user->password);
+        $this->assertEquals($newUserData['phone'], $user->phone);
+        $this->assertEquals($newUserData['city'], $user->city);
+        $this->assertEquals($newUserData['address'], $user->address);
+        $this->assertEquals($newUserData['postcode'], $user->postcode);
+        $this->assertEquals(0, $user->isAdmin);
+     }
 }
