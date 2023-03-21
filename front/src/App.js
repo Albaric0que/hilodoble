@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
 import Header from './components/header/Header';
 import ItemCard from './components/itemCard/ItemCard';
 import ShowItem from './components/showItem/ShowItem';
 import AllItems from './components/allItems/AllItems';
 import CartUser from './components/cartUser/CartUser';
-import './App.css';
 import Footer from './components/Footer/Footer';
 
 function App() {

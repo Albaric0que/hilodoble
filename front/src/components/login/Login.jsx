@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import axios from 'axios';
+import api from '../../services/api';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -9,21 +9,19 @@ function Login() {
     const [error, setError] = useState('');
     const history = useHistory();
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
-        axios
-        .post('http://127.0.0.1:8000/api/login', {
-            email: email,
-            password: password,
-            remember: remember,
-        })
-        .then((response) => {
-            localStorage.setItem('token', response.data.token);
+        try {
+            const response = await api.post('/login', {
+                email: email,
+                password: password,
+                remember: remember,
+            });
+            localStorage.setItem('token', response.data.access_token);
             history.push('/');
-        })
-        .catch((error) => {
+        } catch (error) {
             setError(error.response.data.message);
-        });
+        }
     };
 
     return (

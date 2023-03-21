@@ -53,7 +53,7 @@ function AllItems() {
         );
       })}
       {message && <p className="message">{message}</p>}
-      <Link to='/cartUser'>Ir al carrito</Link>
+    
     </div>
   );
 }

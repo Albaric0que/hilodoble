@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import logo from '../img/logo.png';
 import cart from '../img/cart.png';
 import MyProfile from './myProfile/MyProfile';
@@ -15,7 +16,7 @@ function Header() {
         <img className='logo' src={logo} alt="logo" />
         <div className='rightIcons'>
           <Searchbar/>
-          <img className='cart' src={cart} alt="logo" />
+          <a href={`/cartUser`}><img className='cart' src={cart} alt="logo" /> </a>
           <MyProfile/>
         </div>
       </div>
