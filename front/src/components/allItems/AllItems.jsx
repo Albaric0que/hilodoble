@@ -37,7 +37,7 @@ function AllItems() {
       <div className='containerCard'>
       {items.map((item) => {
         return (
-          <Link to={`/showItem/${item.id}`} /* className= 'productContainer' */ key={item.id}>
+          <Link to={`/showItem/${item.id}`} className= 'productContainer' key={item.id}>
             <img src={item.image} alt={item.itemName} className='imgSize'></img>
             <div>
               <h3 className='nameItem'>{item.itemName}</h3>
