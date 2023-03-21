@@ -5,61 +5,66 @@
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
-        <div class="">
-            <div class="col-md-12">
+<div class="container">
+    <h1>Editar Producto</h1>
+    <form method="POST" action="{{ route('updateItem', $item->id) }}" enctype="multipart/form-data">
+        @csrf
+        {{ method_field('PATCH') }}
+        <div class="itemData">
+            <div class="form-group">
+                <label for="itemName">Nombre del producto</label>
+                <input type="text" name="itemName" id="itemName" class="form-control{{ $errors->has('itemName') ? ' is-invalid' : '' }}" value="{{ $item->itemName }}" required>
+                @if ($errors->has('itemName'))
+                    <span class="invalid-feedback">{{ $errors->first('itemName') }}</span>
+                @endif
+            </div>
 
-                <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">Update Item</span>
-                    </div>
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('updateItem', $item->id) }}"  role="form" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
-                            @csrf
-                            <h3 class="topTitle">Item details</h3>
-                            <div>
-                                <label class="form-label">Item Name</label>
-                                <input value="{{$item->itemName}}" type="text" class="" name="itemName">
-                            </div>
-                            <div>
-                                <label class="form-label">Category</label>
-                                <input value="{{$item->category}}" type="text" class="" name="category">
-                            </div>
-                            <div>
-                                <label class="form-label">Description</label>
-                                <input value="{{$item->description}}" type="text" class="" name="description">
-                            </div>
-                            <div>
-                                <label class="form-label">Image</label>
-                                <input value="{{$item->image}}" type="text" class="" name="image">
-                            </div>
-                            <div>
-                                <label class="form-label">Stock Quantity</label>
-                                <input value="{{$item->stockQuantity}}" type="number" class="" name="stockQuantity">
-                            </div>
-                            <div>
-                                <label class="form-label">Purchase Quantity</label>
-                                <input value="{{$item->purchaseQuantity}}" type="number" class="" name="purchaseQuantity">
-                            </div>
-                            <div>
-                                <label class="form-label">Price</label>
-                                <input value="{{$item->price}}" type="number" class="" name="price">
-                            </div>
+            <div class="form-group">
+                <label for="category">Categoría</label>
+                <input type="text" name="category" id="category" class="form-control{{ $errors->has('category') ? ' is-invalid' : '' }}" value="{{ $item->category }}" required>
+                @if ($errors->has('category'))
+                    <span class="invalid-feedback">{{ $errors->first('category') }}</span>
+                @endif
+            </div>
 
-                            <div class="buttonsCreateForm" style="text-decoration:none">    
-                                <div class="btnCreateBox">
-                                    <button type="submit" class="buttonCreateForm" style="text-decoration:none" value="create">Save</button>
-                                </div>
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <textarea name="description" id="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" rows="5" required>{{ $item->description }}</textarea>
+                @if ($errors->has('description'))
+                    <span class="invalid-feedback">{{ $errors->first('description') }}</span>
+                @endif
+            </div>
 
-                                <div class="btnCancelBox">
-                                    <a style="text-decoration:none" href="{{ route('home') }}">Cancel</a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+            <div class="form-group">
+                <label for="image">Imagen URL</label>
+                <input type="url" name="image" id="image" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}" value="{{ $item->image }}" required>
+                @if ($errors->has('image'))
+                    <span class="invalid-feedback">{{ $errors->first('image') }}</span>
+                @endif
+            </div>
+
+            <div class="form-group">
+                <label for="stockQuantity">Stock</label>
+                <input type="number" name="stockQuantity" id="stockQuantity" class="form-control{{ $errors->has('stockQuantity') ? ' is-invalid' : '' }}" value="{{ $item->stockQuantity }}" min="0" required>
+                @if ($errors->has('stockQuantity'))
+                    <span class="invalid-feedback">{{ $errors->first('stockQuantity') }}</span>
+                @endif
+            </div>
+
+            <div class="form-group">
+                <label for="price">Precio</label>
+                <input type="number" name="price" id="price" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" value="{{ $item->price }}" min="0" required>
+                @if ($errors->has('price'))
+                    <span class="invalid-feedback">{{ $errors->first('price') }}</span>
+                @endif
             </div>
         </div>
-    </section>
+    </div>
+        <div class="buttons">
+        <button type="submit" class="saveButton">Guardar</button>
+        <a href="{{ route('home') }}"><button class="cancelButton">Cancelar</a>
+        </div>
+    </form>
+</div>
+
 @endsection

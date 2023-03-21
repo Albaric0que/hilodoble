@@ -19,8 +19,13 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'surname',
         'email',
         'password',
+        'phone',
+        'address',
+        'postcode',
+        'isAdmin',
     ];
 
     /**
@@ -41,4 +46,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function items()
+    {
+        return $this->hasMany('App\Models\Item', 'user_id', 'id');
+    }
+
+    public function cart()
+{
+    return $this->hasOne('App\Models\Cart', 'user_id');
+}
+
 }
