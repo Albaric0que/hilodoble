@@ -23,20 +23,22 @@ use App\Http\Controllers\UserController;
 Route::resource('items', 'App\Http\Controllers\ItemController');
 Route::resource('users', 'App\Http\Controllers\UserController');
 Route::resource('carts', 'App\Http\Controllers\CartController');
+/* Route::resource('index', 'App\Http\Controllers\HomeController'); */
 
-/* Route::get('/', function () {
+Route::get('/', function () {
     return view('welcome');
-}); */
+});
+
 Auth::routes();
 
 //C del CRUD Item
 Route::get('/createItem', [ItemController::class, 'create'])->name('create')->middleware('isadmin', 'auth');
-Route::post('/', [ItemController::class, 'store'])->name('store')->middleware('isadmin', 'auth');
+Route::post('/', [ItemController::class, 'store'])->name('store')->middleware('isadmin', 'auth')->middleware('auth');
 
 //R del CRUD Item
 Route::get('/',[ItemController::class,'index'])->name('home');
-Route::get('/home',[ItemController::class,'index']);
-
+/* Route::get('/home',[ItemController::class,'index']);
+ */
 //U del CRUD Item
 Route::get('/edit/{id}', [ItemController::class, 'edit'])->name('editItem')->middleware('isadmin', 'auth');
 Route::patch('/item/{id}', [ItemController::class, 'update'])->name('updateItem')->middleware('isadmin', 'auth');
@@ -47,7 +49,7 @@ Route::get('/items/{id}', [ItemController::class, 'show'])->name('showItem')->mi
 
 //Show Item
 Route::get('/showItem/{id}', [ItemController::class, 'show'])->name('showItem')->middleware('isadmin', 'auth');
-Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
+/* Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth'); */
 //S Show
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/show/{id}',[ItemController::class,'show'])->name('showItem');
@@ -78,4 +80,4 @@ Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('delet
 /* //Show
 Route::get('/showUser', [UserController::class, 'show'])->name('showUser');
 Route::get('/showUser/{id}', [UserController::class, 'show'])->name('showUser')->middleware('isadmin', 'auth');
- */ 
+ */

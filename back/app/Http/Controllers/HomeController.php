@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         $items = Item::all();
-        return view('home', compact('items'));
+        return view('home', compact('user','items'));
     }
 }
