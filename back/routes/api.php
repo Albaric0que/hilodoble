@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\CartController;
 
 //Endpoints Item
 Route::get('/', [App\Http\Controllers\Api\ItemController::class, 'index'])->name('itemsApi');
+Route::get('showItem/{id}', [ItemController::class, 'show'])->name('showItemApi');
 
 //Endpoints User
 Route::group([
