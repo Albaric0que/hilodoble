@@ -1,14 +1,53 @@
-.containerCard{
+.main{
   display:flex;
-  justify-content: space-around;
-  width: 289px;
-  height: 323.07px;
-  margin-top: 40px;
-  /* estohayquemodificarlo */
 }
 
-.imgContainer{
-width: 289px;
-height: 200px;
+.categories{
+  border: 2px solid blue;
+  margin: 40px 20px 40px 20px;
+  width: 20%;
+}
+
+.categories h3{
+  color: #6A09B5;
+}
+
+.categories h4{
+  color:#383838;
+}
+
+ul{
+  list-style: none;
+}
+
+.titleContainer{
+  text-align: center;
+}
+
+.containerCard{
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid red;
+  justify-content: space-around;
+  width: 100%;
+  margin: 40px 20px 40px 20px;
+}
+
+.productContainer{
+  padding-bottom: 20px; 
+  border: 2px solid green;
+  text-align: center;
+}
+
+.productContainer h3.nameItem{
+border:1px solid purple;
+width:20vw;
+}
+
+.imgSize{
+width: 20vw;
+height: 25vh;
+display:flex;
+justify-content: flex-start;
 }
 

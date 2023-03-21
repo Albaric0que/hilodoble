@@ -20,13 +20,25 @@ function AllItems() {
 
   return (
       <>
+      <div className='titleContainer'>
       <h1>Nuestra tienda</h1>
       <h3>Artesanía, reciclaje y diseños exclusivos</h3>
+      </div>
+      <div className='main'>
+      <div className= 'categories'>
+      <h3>Categorías</h3>
+      <h4>Todos los productos</h4>
+      <ul>
+        <li>Bolsos de viaje</li>
+        <li>Accesorios</li>
+        <li>Material de oficina</li>
+      </ul>
+      </div>
       <div className='containerCard'>
       {items.map((item) => {
         return (
-          <div key={item.id}>
-            <img src={item.image} alt={item.itemName} className='imgContainer'></img>
+          <div className= 'productContainer' key={item.id}>
+            <img src={item.image} alt={item.itemName} className='imgSize'></img>
             <div>
               <h3 className='nameItem'>{item.itemName}</h3>
               <h3 className='priceItem'>{item.price}€</h3>
@@ -37,7 +49,8 @@ function AllItems() {
             </div>
           </div>
         ) 
-      })}  
+      })} 
+      </div> 
     </div>
     </>
   )
