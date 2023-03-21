@@ -1,0 +1,20 @@
+.purpleBox {
+    height: 30px;
+    width: auto;
+    background-color: #6A09B5;
+}
+
+.fbIcon, .twIcon, .igIcon {
+    height: 1.3rem;
+    width: auto;
+}
+
+.smIcons {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    width: 100px;
+    position: relative;
+    left: 85.7rem;
+    padding-top: 3px;
+}
