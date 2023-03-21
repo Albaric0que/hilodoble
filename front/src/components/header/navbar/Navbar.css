@@ -8,9 +8,10 @@
 }
 
 #navbar li {
+    display: flex;
+    flex-direction: row;
     list-style: none;
-    padding: 0 60px;
-/*     margin: auto; */
+    margin: 0 auto 0 auto;
     position: relative;
 }
 
@@ -30,12 +31,12 @@
 #navbar li a:hover::after,
 #navbar li a.active::after {
     content: "";
-    width: 15%;
+    width: 20%;
     height: 2px;
     background: #6A09B5;
     position: absolute;
     bottom: -4px;
-    left: 60px;
+    left: 0px;
 }
 
 #mobile {

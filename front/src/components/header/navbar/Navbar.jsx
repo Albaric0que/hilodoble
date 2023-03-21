@@ -12,7 +12,7 @@ class Navbar extends Component {
                 <nav>
                     <ul id='navbar'>
                         <li><a className='active' href="index.html">INICIO</a></li>
-                        <li><a href="index.html">TIENDA</a></li>
+                        <li><a href={`/allItems`}>TIENDA</a></li>
                         <li><a href="index.html">SOBRE NOSOTROS</a></li>
                         <li><a href="index.html">TIENDAS AMIGAS</a></li>
                         <li><a href="index.html">CONTACTA</a></li>

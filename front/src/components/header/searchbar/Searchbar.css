@@ -3,13 +3,14 @@
     background-repeat: no-repeat;
     background-position: 10px center;
     height: 50px;
+    padding-left:40px;
 }
 
 .searchIcon {
     position: absolute;
     width: 20px;
     height: 20px;
-    left: 12px;
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
 }
