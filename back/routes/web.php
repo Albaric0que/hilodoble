@@ -47,7 +47,7 @@ Route::get('/items/{id}', [ItemController::class, 'show'])->name('showItem')->mi
 
 //Show Item
 Route::get('/showItem/{id}', [ItemController::class, 'show'])->name('showItem')->middleware('isadmin', 'auth');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
 //S Show
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/show/{id}',[ItemController::class,'show'])->name('showItem');
