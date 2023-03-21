@@ -11,13 +11,13 @@ function App() {
   
     <div className="App">
       <Header/>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/itemCard' element={<ItemCard/>}/>
-          <Route path='/showItem/:id' element={<ShowItem/>}/>
-          <Route path='/allItems' element={<AllItems/>}/>
-        </Routes>
-      </BrowserRouter> 
+        <BrowserRouter>
+          <Routes>
+            <Route path='/itemCard' element={<ItemCard/>}/>
+            <Route path='/showItem/:id' element={<ShowItem/>}/>
+            <Route path='/allItems' element={<AllItems/>}/>
+          </Routes>
+        </BrowserRouter> 
       </div>
 );
 }
