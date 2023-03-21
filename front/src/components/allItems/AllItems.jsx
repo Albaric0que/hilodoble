@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-/* import { Link } from 'react-router-dom' */
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 import '../allItems/AllItems.css'
 
@@ -37,17 +37,14 @@ function AllItems() {
       <div className='containerCard'>
       {items.map((item) => {
         return (
-          <div className= 'productContainer' key={item.id}>
+          <Link to={`/showItem/${item.id}`} /* className= 'productContainer' */ key={item.id}>
             <img src={item.image} alt={item.itemName} className='imgSize'></img>
             <div>
               <h3 className='nameItem'>{item.itemName}</h3>
               <h3 className='priceItem'>{item.price}€</h3>
               <button className='cartBtn'>Añadir al carrito</button>
-              {/* <Link to={`/item/${item.id}`}>
-            <img src={item.image} alt={item.name} className= ''/>
-            </Link> */}
             </div>
-          </div>
+          </Link>
         ) 
       })} 
       </div> 
