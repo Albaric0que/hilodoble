@@ -9,12 +9,17 @@
   width: 900px;
 }
 
-.containerText{
+.containerProduct{
   display:flex;
   align-items: center;
-  height: 900px;
+  height: 500px;
   width: 700px;
+  padding: 3em;
   background-color: rgb(156, 151, 151);
+}
+
+.containerText{
+  padding-left: 10px;
 }
 
 .secondContainer{
