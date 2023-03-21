@@ -31,7 +31,7 @@
 #navbar li a:hover::after,
 #navbar li a.active::after {
     content: "";
-    width: 20%;
+    width: 100;
     height: 2px;
     background: #6A09B5;
     position: absolute;
