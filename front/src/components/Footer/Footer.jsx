@@ -31,7 +31,7 @@ function Footer() {
           <ul className='footerSocialList'>
             <li><a href="#"><img src={fb} alt="fb" /></a></li>
             <li><a href="#"><img src={tw} alt="tw" /></a></li>
-            <li><a href="#"><img src={ig} alt="ig" /></a></li>
+            <li><a href="#"><img src={ig} alt="ig" /></a></li>  
           </ul>
         </div>
       </div>
