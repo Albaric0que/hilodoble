@@ -29,7 +29,7 @@ function Footer() {
         <div className='footerBlock'>
         <h3>Síguenos en:</h3>
           <ul className='footerSocialList'>
-            <li><a href="#"><img src={fb} alt="fb" /></a></li>
+            <li><a href="#"><img src={fb} alt="fb" /></a></li>  
             <li><a href="#"><img src={tw} alt="tw" /></a></li>
             <li><a href="#"><img src={ig} alt="ig" /></a></li>  
           </ul>
