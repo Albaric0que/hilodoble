@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ItemCard from './components/itemCard/ItemCard';
+import ShowItem from './components/showItem/ShowItem';
+import AllItems from './components/allItems/AllItems.jsx';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/itemCard' element={<ItemCard/>}/>
+          <Route path='/showItem/:id' element={<ShowItem/>}/>
+          <Route path='/allItems' element={<AllItems/>}/>
+        </Routes>
+      </BrowserRouter> 
     </div>
   );
 }
