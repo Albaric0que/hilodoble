@@ -48,23 +48,6 @@
 
 
 
-
-                            <!-- @foreach ($cartItems as $cartItem)
-                                <tr>
-                                    <td>{{ $cartItem->item->itemName }}</td>
-                                    <td>{{ $cartItem->item->price }}</td>
-                                    <td>{{ $cartItem->purchaseQuantity }}</td>
-                                    <td>{{ $cartItem->item->price * $cartItem->purchaseQuantity }} €</td>
-                                    <td>
-                                    <form action="{{ route('remove') }}" method="POST">
-                                        @csrf
-                                        <input type="number" name="purchaseQuantity" class="form-control" value="1" min="1">
-                                        <input type="hidden" name="item_id" value="{{ $cartItem->id }}">
-                                        <button type="submit" class="btn btn-danger">Remove</button>
-                                    </form>
-                                    </td>
-                                </tr>
-                            @endforeach -->
                             <tr>
                                 <td colspan="3" class="text-right"><strong>Total:</strong></td>
                                 <td><strong>{{ $cartItems->sum(function ($cartItem) { return $cartItem->item->price * $cartItem->purchaseQuantity; }) }} €</strong></td>
