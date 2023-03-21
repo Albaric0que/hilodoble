@@ -34,7 +34,11 @@ Auth::routes();
 Route::get('/createItem', [ItemController::class, 'create'])->name('create')->middleware('isadmin', 'auth');
 Route::post('/', [ItemController::class, 'store'])->name('store')->middleware('isadmin', 'auth');
 
-//R del CRUD Item
+//C del CRUD
+Route::get('/createItem', [ItemController::class, 'create'])->name('create')->middleware('isadmin', 'auth');
+Route::post('/', [ItemController::class, 'store'])->name('store')->middleware('isadmin', 'auth');
+
+//R del CRUD
 Route::get('/',[ItemController::class,'index'])->name('home');
 Route::get('/home',[ItemController::class,'index']);
 
@@ -49,6 +53,10 @@ Route::get('/items/{id}', [ItemController::class, 'show'])->name('showItem')->mi
 //Show Item
 Route::get('/showItem/{id}', [ItemController::class, 'show'])->name('showItem')->middleware('isadmin', 'auth');
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
+// D del CRUD
+Route::delete('/items/{id}', [ItemController::class, 'destroy'])->name('deleteItem')->middleware('isadmin', 'auth');
+Route::get('/items/{id}', [ItemController::class, 'show'])->name('showItem')->middleware('isadmin', 'auth');
+
 //S Show
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/show/{id}',[ItemController::class,'show'])->name('showItem');
