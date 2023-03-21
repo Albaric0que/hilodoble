@@ -10,12 +10,14 @@ class Navbar extends Component {
         return (
             <>
                 <nav>
-                    <ul id='navbar'>
+                    <ul id='navbar' className={this.state.clicked ? "#navbar active" : "#navbar"}>
                         <li><a className='active' href="index.html">INICIO</a></li>
                         <li><a href="index.html">TIENDA</a></li>
                         <li><a href="index.html">SOBRE NOSOTROS</a></li>
                         <li><a href="index.html">TIENDAS AMIGAS</a></li>
                         <li><a href="index.html">CONTACTA</a></li>
+                        <li><a href="index.html">CARRITO</a></li>
+                        <li><a href="index.html">MI PERFIL</a></li>
                     </ul>
                 </nav>
                 <div id='mobile' onClick={this.handleClick}>

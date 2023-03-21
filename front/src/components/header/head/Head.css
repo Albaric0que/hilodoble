@@ -1,12 +1,12 @@
 .purpleBox {
     height: 30px;
-    width: auto;
     background-color: #6A09B5;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .fbIcon, .twIcon, .igIcon {
     height: 1.3rem;
-    width: auto;
 }
 
 .smIcons {
@@ -15,6 +15,12 @@
     justify-items: center;
     width: 100px;
     position: relative;
-    left: 85.7rem;
-    padding-top: 3px;
+    padding-top: 4px;
+    margin-right: 87px;
+}
+
+@media screen and (max-width:769px){
+    .smIcons {
+        margin-right: 30px;
+    }
 }

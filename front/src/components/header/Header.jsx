@@ -10,16 +10,36 @@ import './Header.css';
 function Header() {
   return (
     <>
-      <Head/>
-      <div className='mainIcons'>
-        <img className='logo' src={logo} alt="logo" />
-        <div className='rightIcons'>
-          <Searchbar/>
-          <img className='cart' src={cart} alt="logo" />
-          <MyProfile/>
+      <div className='headerDesktop'>
+        <Head/>
+        <div className='mainIcons'>
+          <img className='logo' src={logo} alt="logo" />
+          <div className='rightIcons'>
+            <Searchbar/>
+            <img className='cart' src={cart} alt="logo" />
+            <MyProfile/>
+          </div>
+          <div className='toggleMenu'>
+            <Navbar/>
+          </div>
+        </div>
+        <div className='navbarDesktop'>
+          <Navbar/>
         </div>
       </div>
-      <Navbar/>
+
+{/*       <div className='headerMobile'>
+        <Head/>
+        <div className='mainIcons'>
+          <img className='logo' src={logo} alt="logo" />
+          <div className='rightIcons'>
+            <Searchbar/>
+            <img className='cart' src={cart} alt="logo" />
+            <MyProfile/>
+          </div>
+        </div>
+        <Navbar/>
+      </div> */}
     </>
   )
 }
