@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-
-
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 
 function CartUser() {
     const [cartItems, setCartItems] = useState([]);
     const [newQuantity, setNewQuantity] = useState('');
+    
+
 
     useEffect(() => {
         axios
@@ -17,7 +17,7 @@ function CartUser() {
             })
             .catch((error) => {
                 if (error.response && error.response.status === 401) {
-                history.push('/login'); // Redirect to login page
+                    this.props.history.push('/login'); // Redirect to login page
                 } else {
                 console.error(error);
                 }
