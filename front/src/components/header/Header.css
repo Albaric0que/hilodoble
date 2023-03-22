@@ -1,12 +1,8 @@
-.logo {
-    width: 12rem;
-}
-
 .mainIcons {
-    border:1px solid #6a09b5;
+    border-bottom: 1px solid #6a09b5;
     display: flex;
     justify-content: space-between;
-    padding: 0 60px;
+    padding: 9px 87px;
 }
 
 .toggleMenu {
@@ -17,8 +13,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 280px;
-    padding-right: 25px;
 }
 
 .cart {
@@ -37,12 +31,12 @@
     }
 
     .mainIcons {
-        padding: 0 20px;
+        padding: 0 30px;
     }
 
     .toggleMenu {
-        display: block;
-        bottom: 80px;
+        display: flex;
+        align-items: center;
     }
 
     .navbarDesktop {

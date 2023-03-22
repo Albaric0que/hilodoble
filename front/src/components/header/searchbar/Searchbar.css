@@ -1,8 +1,9 @@
 .searchBox{
-    border:1px solid #6a09b5;
-    height: 50px;
+    border: 1px solid #6a09b5;
+    height: 40px;
     width: 200px;
     padding: 0 40px;
+    margin-right: 20px;
 }
 
 .searchIcon {
@@ -18,4 +19,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
+}
+
+.searchAll img {
+    cursor: pointer;
 }

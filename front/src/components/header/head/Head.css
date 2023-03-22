@@ -1,28 +1,30 @@
 .purpleBox {
-    height: 30px;
-    width: 100%;
     background-color: #6A09B5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 4px 87px 0 87px;
 }
 
-.fbIcon, .twIcon, .igIcon {
-    height: 1.3rem;
-    width: auto;
+.smIcons a img {
+    width: 20px;
+    padding: 0 5px;
+}
+
+.smIcons a:first-child img {
+    padding-left: 0;
+}
+
+.smIcons a:last-child img{
+    padding-right: 0;
 }
 
 .smIcons {
     display: flex;
-    justify-content: space-between;
-    width: 100px;
-/*     position: relative;
-    padding-top: 4px; */
-    margin-right: 87px;
-    position: absolute;
-    right: 5px;
-    top: 5px;
 }
 
-/* @media screen and (max-width:769px){
-    .smIcons {
-        margin-right: 30px;
+@media screen and (max-width:768px){
+    .purpleBox {
+        padding: 4px 30px 0 30px;
     }
-} */
+} 
