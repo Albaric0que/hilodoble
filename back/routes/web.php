@@ -45,14 +45,12 @@ Route::patch('/item/{id}', [ItemController::class, 'update'])->name('updateItem'
 //D del CRUD Item
 Route::delete('/items/{id}', [ItemController::class, 'destroy'])->name('deleteItem');
 
-
 //Show Item
 Route::get('/showItem/{id}', [ItemController::class, 'show'])->name('showItem');
 
 
 //CRUD del User
 
-//C del user
 //R del USER
 Route::get('/usersList',[UserController::class,'usersList'])->name('usersList');
 
