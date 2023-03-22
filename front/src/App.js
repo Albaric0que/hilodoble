@@ -15,7 +15,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Collabs/> 
       <BrowserRouter>
         <Routes>
           <Route path='/itemCard' element={<ItemCard />} />
@@ -23,6 +22,7 @@ function App() {
           <Route path='/allItems' element={<AllItems />} />
           <Route path='/cartUser' element={<CartUser />} />
           <Route path='/aboutUs' element={<AboutUs />} />
+          <Route path='/friendsShops' element={<Collabs />} />
         </Routes>
       </BrowserRouter>
 
