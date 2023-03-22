@@ -1,122 +1,48 @@
-import React, { Component, useState } from 'react';
-import { Form, Text } from 'react-validation';
-import validator from 'validator';
-import { useHistory, Link } from 'react-router-dom';
-import api from './api';
+import React from "react";
+import axios from "axios";
+import { setAuthToken } from "../helpers/setAuthToken"
 
 function Login() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [remember, setRemember] = useState(false);
-    const [error, setError] = useState('');
-    const history = useHistory();
 
-    const handleLogin = async (e) => {
-        e.preventDefault();
-        try {
-        const response = await api.post('/login', {
-            email: email,
-            password: password,
-            remember: remember,
-        });
-
-        // Save the JWT access token in local storage
-        localStorage.setItem('accessToken', response.data.access_token);
-
-        // Redirect to the previous page
-        history.goBack();
-        } catch (error) {
-        setError(error.response.data.message);
+    const handleSubmit = (email, password) => {
+        //reqres registered sample user
+        const loginPayload = {
+        email: 'eve.holt@reqres.in',
+        password: 'cityslicka'
         }
+
+        axios.post("https://reqres.in/api/login", loginPayload)
+        .then(response => {
+            //get token from response
+            const token = response.data.token;
+
+            //set JWT token to local
+            localStorage.setItem("token", token);
+
+            //set token to axios common header
+            setAuthToken(token);
+
+            //redirect user to home page
+            window.location.href = '/'
+
+        })
+        .catch(err => console.log(err));
     };
 
     return (
-        <div className="container">
-        <div className="row justify-content-center">
-            <div className="col-md-8">
-            <div className="card">
-                <div className="card-header">Login</div>
-
-                <div className="card-body">
-                {error && <div className="alert alert-danger">{error}</div>}
-
-                <form onSubmit={handleLogin}>
-                    <div className="row mb-3">
-                    <label htmlFor="email" className="col-md-4 col-form-label text-md-end">
-                        Email Address
-                    </label>
-
-                    <div className="col-md-6">
-                        <input
-                        id="email"
-                        type="email"
-                        className="form-control"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                        autoComplete="email"
-                        autoFocus
-                        />
-                    </div>
-                    </div>
-
-                    <div className="row mb-3">
-                    <label htmlFor="password" className="col-md-4 col-form-label text-md-end">
-                        Password
-                    </label>
-
-                    <div className="col-md-6">
-                        <input
-                        id="password"
-                        type="password"
-                        className="form-control"
-                        name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        autoComplete="current-password"
-                        />
-                    </div>
-                    </div>
-
-                    <div className="row mb-3">
-                    <div className="col-md-6 offset-md-4">
-                        <div className="form-check">
-                        <input
-                            className="form-check-input"
-                            type="checkbox"
-                            name="remember"
-                            id="remember"
-                            checked={remember}
-                            onChange={(e) => setRemember(e.target.checked)}
-                        />
-
-                        <label className="form-check-label" htmlFor="remember">
-                            Remember Me
-                        </label>
-                        </div>
-                    </div>
-                    </div>
-
-                    <div className="row mb-0">
-                    <div className="col-md-8 offset-md-4">
-                        <button type="submit" className="btn btn-primary">
-                        Login
-                        </button>
-
-                        <Link to="/password/reset" className="btn btn-link">
-                        Forgot Your Password?
-                        </Link>
-                    </div>
-                    </div>
-                </form>
-                </div>
-            </div>
-            </div>
-        </div>
-        </div>
+        <form
+        onSubmit={(event) => {
+            event.preventDefault()
+            const [email, password] = event.target.children;
+            handleSubmit(email, password);
+        }}
+        >
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="email"/><br />
+        <label for="password">Password</label><br />
+        <input type="password" id="password" name="password"/><br></br>
+        <input type="submit" value="Submit" />
+        </form>
     );
 }
-
-export default Login;
+export default Login

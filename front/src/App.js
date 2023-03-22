@@ -1,7 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, } from 'react-router-dom';
+import Routers from './routes'
+import {setAuthToken} from './helpers/setAuthToken'
 import './App.css';
 import Header from './components/header/Header';
+import Login from './components/login/Login';
 import ItemCard from './components/itemCard/ItemCard';
 import ShowItem from './components/showItem/ShowItem';
 import AllItems from './components/allItems/AllItems';
@@ -14,6 +16,7 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
+          <Route path='/login' element={<Login />} />
           <Route path='/itemCard' element={<ItemCard />} />
           <Route path='/showItem/:id' element={<ShowItem />} />
           <Route path='/allItems' element={<AllItems />} />
