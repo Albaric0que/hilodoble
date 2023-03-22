@@ -23,7 +23,7 @@ class ItemFactory extends Factory
             'image' => $this->faker->imageUrl($width = 640, $height = 480),
             'stockQuantity' => $this->faker->biasedNumberBetween($min = 1, $max = 10, $function = 'sqrt'),
             'purchaseQuantity' => $this->faker->biasedNumberBetween($min = 1, $max = 10, $function = 'sqrt'),
-            'price' => $this->faker->biasedNumberBetween($min = 1, $max = 10, $function = 'sqrt'),
+            'price' => $this->faker->numberBetween($min = 1, $max = 10, $function = 'sqrt'),
         ];
     }
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import logo from '../img/logo.png';
 import cart from '../img/cart.svg';
 import MyProfile from './myProfile/MyProfile';

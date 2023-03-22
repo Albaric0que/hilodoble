@@ -1,4 +1,9 @@
 .purpleBox {
+<<<<<<< HEAD
+=======
+    height: 30px;
+    width: 100%;
+>>>>>>> MVP3
     background-color: #6A09B5;
     display: flex;
     justify-content: flex-end;
@@ -21,6 +26,7 @@
 
 .smIcons {
     display: flex;
+<<<<<<< HEAD
 }
 
 @media screen and (max-width:992px){
@@ -28,3 +34,11 @@
         padding: 4px 30px 0 30px;
     }
 } 
+=======
+    justify-content: space-between;
+    width: 100px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+>>>>>>> MVP3
