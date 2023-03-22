@@ -1,5 +1,4 @@
 import React from 'react'
-/* import searchIcon from '../../img/searchIcon.png'; */
 import './Searchbar.css';
 
 function Searchbar() {

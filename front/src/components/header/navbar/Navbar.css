@@ -36,6 +36,15 @@
     left: 0px;
 }
 
+#navbar li:first-child {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#navbar :nth-child(1, 2) {
+    display:none;
+}
+
 #mobile {
     display: none;
 }
@@ -44,12 +53,12 @@
     color: black;
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:992px){
     #navbar {
         display: flex;
         flex-direction: column;
         position: fixed;
-        top: 90px;
+        top: 82px;
         right: -340px;
         background: #6A09B5;
         transition: 0.3s ease-in-out;
