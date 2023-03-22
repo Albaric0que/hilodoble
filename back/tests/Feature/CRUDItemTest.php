@@ -11,7 +11,7 @@ use App\Models\User;
 class CRUDItemTest extends TestCase
 {
     use RefreshDatabase;
-    
+
     public function test_listItemAppearInHomeView()
     {
         $this->withExceptionHandling();
@@ -38,9 +38,8 @@ class CRUDItemTest extends TestCase
         $response->assertStatus(200)
                 ->assertViewIs('showItem');
     }
-
     public function test_AnItemCanBeUpdateJustByAnAdmin(){
-        
+
         $this->withExceptionHandling();
 
         $item = Item::factory()->create();
@@ -54,12 +53,12 @@ class CRUDItemTest extends TestCase
 
         $userNoAdmin = User::factory()->create(['isAdmin'=>false]);
         $this->actingAs($userNoAdmin);
-        
+
         $response = $this->patch(route('updateItem', $item->id),['itemName' => 'Second itemName']);
         $this->assertEquals('New itemName', Item::first()->itemName);
-    }  
+    }
 
-    public function test_anItemCanBeDeleteJustByAnAdmin()
+    public function test_anItemCanBeDeletedJustByAnAdmin()
     {
         $this->withExceptionHandling();
 
@@ -68,17 +67,20 @@ class CRUDItemTest extends TestCase
 
         $userNoAdmin=User::factory()->create(['isAdmin'=>false]);
         $this->actingAs($userNoAdmin);
-    
+
         $response = $this->delete(route('deleteItem', $item->id));
-        $this->assertCount(1, Item::all()); 
-        $response->assertStatus(403); 
+        $this->assertCount(1, Item::all());
+        $response->assertStatus(403);
 
         $userAdmin = User::factory()->create(['isAdmin'=>true]);
         $this->actingAs($userAdmin);
 
         $response = $this->delete(route('deleteItem', $item->id));
-        $this->assertCount(0, Item::all()); 
+        $this->assertCount(0, Item::all());
+
+
     }
+
 
     public function test_anItemCanBeCreatedJustByAnAdmin(){
         $this->withExceptionHandling();
@@ -93,13 +95,13 @@ class CRUDItemTest extends TestCase
                 'image'=>'https://hilodoble.com/wp-content/uploads/2021/06/bolsaviaje_museum_3-300x300.jpg',
                 'stockQuantity'=>'4',
                 'purchaseQuantity'=>'5',
-                'price'=>'14' 
+                'price'=>'14'
             ]);
 
         $this->assertCount(1,Item::all());
 
         $userNoAdmin = User::factory()->create(['isAdmin' => false]);
-        $this->actingAs($userNoAdmin); 
+        $this->actingAs($userNoAdmin);
 
         $response = $this->post(route('store'),[
             'itemName'=> 'itemName',
@@ -108,9 +110,9 @@ class CRUDItemTest extends TestCase
             'image'=>'https://hilodoble.com/wp-content/uploads/2021/06/bolsaviaje_museum_3-300x300.jpg',
             'stockQuantity'=>'4',
             'purchaseQuantity'=>'5',
-            'price'=>'4' 
+            'price'=>'4'
         ]);
 
-        $this->assertCount(1,Item::all()); 
+        $this->assertCount(1,Item::all());
 }
 }

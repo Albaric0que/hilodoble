@@ -1,19 +1,22 @@
 @extends('layouts.app')
 @section('content')
-
-    <div class="container">
-        <h1>Bienvend@ a nuestra tienda!</h1>
-        <p>Hola Administrador! Puedes ver tus productos en la lista y crear uno nuevo.</p>
+<div class="container">
+    <h1>Listado de productos</h1>
+    @if (Auth::check())
+        <p>Hola <strong style="font-size:16px;color:blueviolet;">{{ Auth::user()?->name }}</strong> Este es el listado de productos</p>
         @if (session('success'))
-    <div class="alert alert-success"><br>
-        {{ session('success') }}
-    </div>
-@endif
+            <div class="alert alert-success"><br>
+                {{ session('success') }}
+            </div>
+        @endif
+    @endif
 
         <div class="mb-3">
-            <a href="{{ route('items.create') }}" class="btn btn-primary">Create Item</a>
+            <a href="{{ route('items.create') }}"> <button class="createItem">Añadir producto</button></a>
         </div>
+</div>
 
+<div>
         <table class="table">
             <thead>
                 <tr>
@@ -38,21 +41,25 @@
                         <td>{{ $item->purchaseQuantity }}</td>
                         <td>{{ $item->price }}</td>
                         <td>
-                            <a href="{{ route('items.show', $item->id) }}" class="btn btn-info btn-sm">VER</a><br>
-                            <a href="{{ route('editItem',['id'=>$item->id]) }}" class="btn btn-success btn-sm">EDITAR</a><br>
+                            <a href="{{ route('items.show', $item->id) }}" ><img src="../images/show.png" alt="eye button"></a><br>
+                            <a href="{{ route('editItem',['id'=>$item->id]) }}" ><img src="../images/editPencil.png" alt="Pencil button"></a><br>
                             <form action="{{ route('items.destroy', $item->id) }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Estás seguro de querer borrar este producto?')">BORRAR</button>
+                                <button class="deleteItem" type="submit"  onclick="return confirm('Estás seguro de querer borrar este producto?')"><img src="../images/deleteBin.png" alt="Bin button"></button>
+                            </form>
+                            <form action="{{ route('add') }}" method="POST" style="display: inline-block;">
+                                @csrf
+                                <input type="hidden" name="item_id" value="{{ $item->id }}">
+                                
+                                <input type="number" name="purchaseQuantity" class="form-control" value="1" min="1">
+                                <button type="submit" class="btn btn-primary btn-sm">Añadir al carrito</button>
                             </form>
                         </td>
                     </tr>
                 @endforeach
             </tbody> 
         </table>
-
     </div>
-
-    
 </div>
 @endsection

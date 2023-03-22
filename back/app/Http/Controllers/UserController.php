@@ -8,35 +8,71 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    public function index()
+    public function usersList()
     {
         $users = User::paginate();
 
-        return view('index', compact('users'))
+        return view('usersList', compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
     }
 
-    public function create()
+    /* public function show(string $id)
+    {
+        $user = User::find($id);
+        return view('showUser',compact('user'));
+    } */
+
+    public function createUser()
     {
         $user = new User();
-        return view('create', compact('user'));
+        return view('createUser', compact('user'));
     }
 
-    public function store(Request $request)
+    public function destroy($id)
+    {
+
+        User::destroy($id);
+
+        return redirect()->route('usersList');
+    }
+
+    public function editUser($id)
+    {
+        $user = User::find($id);
+
+        return view('editUser', compact('user'));
+    }
+
+    public function updateUser(Request $request, $id)
+    {
+        $user=request()->except('_token', '_method');
+
+        User::where('id', '=', $id)->update($user);
+
+        return redirect()->route('usersList')
+            ->with('success', 'User updated successfully');
+    }
+
+
+    public function storeUser(Request $request)
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
+            'surname' => 'required|string|max:255',
             'email' => 'required|string|email|unique:users|max:255',
             'password' => 'required|string|min:6|confirmed',
         ]);
 
         $user = new User($validatedData);
-        $image = $request->file('image');
-        $imageName = time() . '_' . $image->getClientOriginalName();
-        $image->storeAs('public/images', $imageName);
-        $user->image = 'storage/images/' . $imageName;
+        $user->name = $validatedData['name'];
+        $user->surname = $validatedData['surname'];
+        $user->email = $validatedData['email'];
+        $user->password = bcrypt($validatedData['password']);
         $user->save();
-        return redirect()->route('index')
-            ->with('success', 'Estudiante creado.');
+        return response()->json([
+            'message' => 'User edited successfully',
+            'data' => $user
+        ], 201);
     }
+
 }
