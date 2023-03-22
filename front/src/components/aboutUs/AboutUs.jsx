@@ -8,7 +8,7 @@ function AboutUs(){
             <div class="topImage"></div>
             <h3>Sobre nosotros</h3>
             <div class="text">
-                <div>
+                <div >
                     <p>Mochilas, bandoleras, carpetas, estuches, fundas... Como regalo de empresa o como idea de cumpleaños, todas las propuestas son creadas de manera única y con originalidad.</p>
                     <p>HiloDoble es la oportunidad de <strong>compartir solidaridad llevando diseños con materiales reciclados y ofrecer un empleo a colectivos en vulnerabilidad.</strong></p>
                 </div>
@@ -17,17 +17,22 @@ function AboutUs(){
                 </div>
             </div>
             <div class="target">
-                <div class="socials">
-                    <h4>Sociales</h4>
-                    <p>Una nueva vida no solo a los materiales reciclados de los productos, también es la segunda oportunidad de las personas que los crean.</p>
-                </div>
-                <div class="goals">
-                    <h4>Metas</h4>
-                    <p>Tenemos clara nuestra meta: la incorporación social y laboral de las personas, junto a la conservación y desarrollo del entorno.</p>
-                </div>
-                <div class="natural">
-                    <h4>Naturales</h4>
-                    <p>Favorecemos la economía circular del entorno, aprovechando recursos, respetando a las personas y conservando el planeta.</p>
+                <div class="containerBlocks">
+                    <div class="socials">
+                        <h4>Sociales</h4>
+                        <div class="circle"></div>
+                        <p>Una nueva vida no solo a los materiales reciclados de los productos, también es la segunda oportunidad de las personas que los crean.</p>
+                    </div>
+                    <div class="goals">
+                        <h4>Metas</h4>
+                        <div class="circle"></div>
+                        <p>Tenemos clara nuestra meta: la incorporación social y laboral de las personas, junto a la conservación y desarrollo del entorno.</p>
+                    </div>
+                    <div class="natural">
+                        <h4>Naturales</h4>
+                        <div class="circle"></div>
+                        <p>Favorecemos la economía circular del entorno, aprovechando recursos, respetando a las personas y conservando el planeta.</p>
+                    </div>
                 </div>
             </div>
             <div class="text">
