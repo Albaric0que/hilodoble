@@ -1,26 +1,28 @@
 .purpleBox {
     height: 30px;
+    width: 100%;
     background-color: #6A09B5;
-    display: flex;
-    justify-content: flex-end;
 }
 
 .fbIcon, .twIcon, .igIcon {
     height: 1.3rem;
+    width: auto;
 }
 
 .smIcons {
     display: flex;
     justify-content: space-between;
-    justify-items: center;
     width: 100px;
-    position: relative;
-    padding-top: 4px;
+/*     position: relative;
+    padding-top: 4px; */
     margin-right: 87px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
 }
 
-@media screen and (max-width:769px){
+/* @media screen and (max-width:769px){
     .smIcons {
         margin-right: 30px;
     }
-}
+} */

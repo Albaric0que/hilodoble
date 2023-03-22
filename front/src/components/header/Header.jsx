@@ -10,7 +10,7 @@ import './Header.css';
 function Header() {
   return (
     <>
-      <div className='headerDesktop'>
+      <div>
         <Head/>
         <div className='mainIcons'>
           <img className='logo' src={logo} alt="logo" />
