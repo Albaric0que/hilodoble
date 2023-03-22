@@ -36,9 +36,9 @@
                 <div class="selection" id="">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="{{ route('items.index') }}"><button class="itemsList">{{ __('Productos') }}</a>
-                        </li> --}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('home') }}"><button class="itemsList">{{ __('Productos') }}</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('usersList') }}"><button class="usersList">{{ __('Clientes') }}</a>
                         </li>
