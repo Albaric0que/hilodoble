@@ -34,3 +34,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/cart/update', [CartController::class, 'update'])->name('update');
 });
 
+//ShowItem API
+
+Route::get('showItem/{id}', [ItemController::class, 'show'])->name('showItemApi');
