@@ -12,9 +12,8 @@
 .smIcons {
     display: flex;
     justify-content: space-between;
-    justify-items: center;
     width: 100px;
-    position: relative;
-    left: 85.7rem;
-    padding-top: 3px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
 }

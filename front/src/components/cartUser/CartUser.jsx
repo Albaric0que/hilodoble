@@ -1,16 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+
 import axios from 'axios';
+
 
 function CartUser() {
     const [cartItems, setCartItems] = useState([]);
     const [newQuantity, setNewQuantity] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/cart').then((response) => {
-        setCartItems(response.data);
-        });
-    }, []);
+        axios
+            .get('http://localhost:8000/api/cart')
+            .then((response) => {
+                setCartItems(response.data);
+            })
+            .catch((error) => {
+                if (error.response && error.response.status === 401) {
+                history.push('/login'); // Redirect to login page
+                } else {
+                console.error(error);
+                }
+            });
+        }, []);
+    
 
     const handleUpdateQuantity = (event) => {
         event.preventDefault();

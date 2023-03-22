@@ -18,11 +18,12 @@ function Login() {
                 remember: remember,
             });
             localStorage.setItem('token', response.data.access_token);
-            history.push('/');
-        } catch (error) {
+            history.goBack(); // Redirect to the previous page
+            } catch (error) {
             setError(error.response.data.message);
-        }
-    };
+            }
+        };
+        
 
     return (
         <div className="container">
