@@ -26,6 +26,7 @@ use App\Http\Controllers\UserController;
 Route::resource('items', 'App\Http\Controllers\ItemController');
 Route::resource('users', 'App\Http\Controllers\UserController');
 Route::resource('carts', 'App\Http\Controllers\CartController');
+/* Route::resource('index', 'App\Http\Controllers\HomeController'); */
 
 Auth::routes();
 
