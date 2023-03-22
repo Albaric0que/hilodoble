@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import api from '../../services/api';
+import React, { Component, useState } from 'react';
+import { Form, Text } from 'react-validation';
+import validator from 'validator';
+import { useHistory, Link } from 'react-router-dom';
+import api from './api';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -12,18 +14,21 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await api.post('/login', {
-                email: email,
-                password: password,
-                remember: remember,
-            });
-            localStorage.setItem('token', response.data.access_token);
-            history.goBack(); // Redirect to the previous page
-            } catch (error) {
-            setError(error.response.data.message);
-            }
-        };
-        
+        const response = await api.post('/login', {
+            email: email,
+            password: password,
+            remember: remember,
+        });
+
+        // Save the JWT access token in local storage
+        localStorage.setItem('accessToken', response.data.access_token);
+
+        // Redirect to the previous page
+        history.goBack();
+        } catch (error) {
+        setError(error.response.data.message);
+        }
+    };
 
     return (
         <div className="container">
