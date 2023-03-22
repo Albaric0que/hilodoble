@@ -75,7 +75,7 @@ class CRUDUserTest extends TestCase
         $this->assertEquals('New name', User::first()->name);
     }
 
-    public function test_anItemCanBeStoredByAnAdmin(){
+    /* public function test_anItemCanBeStoredByAnAdmin(){
         $this->withExceptionHandling();
 
 
@@ -91,7 +91,6 @@ class CRUDUserTest extends TestCase
             ]);
 
         $this->assertCount(1,User::all());
-}
-
+} */
 }
 

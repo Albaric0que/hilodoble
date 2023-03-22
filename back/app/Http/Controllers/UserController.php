@@ -22,11 +22,11 @@ class UserController extends Controller
         return view('showUser',compact('user'));
     } */
 
-    public function createUser()
+    /* public function createUser()
     {
         $user = new User();
         return view('createUser', compact('user'));
-    }
+    } */
 
     public function destroy($id)
     {
@@ -54,7 +54,7 @@ class UserController extends Controller
     }
 
 
-    public function storeUser(Request $request)
+   /*  public function storeUser(Request $request)
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
@@ -73,6 +73,5 @@ class UserController extends Controller
             'message' => 'User edited successfully',
             'data' => $user
         ], 201);
-    }
-
+    } */
 }
