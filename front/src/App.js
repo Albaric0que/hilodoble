@@ -1,6 +1,6 @@
 import React from 'react';
-import Routers from './routes'
-import {setAuthToken} from './helpers/setAuthToken'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { setAuthToken } from './helpers/setAuthToken';
 import './App.css';
 import Header from './components/header/Header';
 import Login from './components/login/Login';
@@ -11,6 +11,13 @@ import CartUser from './components/cartUser/CartUser';
 import Footer from './components/Footer/Footer';
 
 function App() {
+
+  //check jwt token
+  const token = localStorage.getItem("token");
+  if (token) {
+      setAuthToken(token);
+  }
+
   return (
     <div className="App">
       <Header />

@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, Switch, Route, Router } from "react-router-dom";
+import { Navigate, Routes, Route, Router } from "react-router-dom";
 import RouteGuard from "./components/RouteGuard"
 
 //history
@@ -9,23 +9,21 @@ import { history } from './helpers/history';
 import HomePage from "./components/home/Home"
 import LoginPage from "./components/login/Login"
 
-function Routes() {
+export default function Routes() {
     return (
         <Router history={history}>
-            <Switch>
+            <Routes>
                 <RouteGuard
                     exact
                     path="/"
-                    component={Home}
+                    component={HomePage}
                 />
                 <Route
                     path="/login"
-                    component={Login}
+                    component={LoginPage}
                 />
-                <Redirect to="/" />
-            </Switch>
+                <Navigate to="/" />
+            </Routes>
         </Router>
     );
 }
-
-export default Routes
