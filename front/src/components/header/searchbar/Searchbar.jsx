@@ -1,11 +1,10 @@
 import React from 'react'
-/* import searchIcon from '../../img/searchIcon.png'; */
 import './Searchbar.css';
 
 function Searchbar() {
     return (
         <div className='searchAll'>
-            <input className='searchBox' type='search'/>
+            <input className='searchBox' type='search' placeholder="Buscar..."/>
             <svg 
                 xmlns='/front/src/components/img/searchIcon.png'
                 class='searchIcon'

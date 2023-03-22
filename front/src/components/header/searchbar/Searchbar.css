@@ -1,25 +1,39 @@
 .searchBox{
+<<<<<<< HEAD
+    border: 1px solid #6a09b5;
+    height: 40px;
+    width: 200px;
+    padding: 0 40px;
+    margin-right: 20px;
+=======
     border:1px solid #6a09b5;
     background-repeat: no-repeat;
     background-position: 10px center;
     height: 50px;
     padding-left:40px;
+>>>>>>> MVP3
 }
 
 .searchIcon {
     position: absolute;
     width: 20px;
+<<<<<<< HEAD
+    left: 12px;
+=======
     height: 20px;
     left: 15px;
+>>>>>>> MVP3
     top: 50%;
     transform: translateY(-50%);
 }
 
 .searchAll {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    width: 12rem;
     justify-content: center;
     position: relative;
+}
+
+.searchAll img {
+    cursor: pointer;
 }

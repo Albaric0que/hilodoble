@@ -1,19 +1,44 @@
 .purpleBox {
+<<<<<<< HEAD
+=======
     height: 30px;
     width: 100%;
+>>>>>>> MVP3
     background-color: #6A09B5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 4px 87px 0 87px;
 }
 
-.fbIcon, .twIcon, .igIcon {
-    height: 1.3rem;
-    width: auto;
+.smIcons a img {
+    width: 20px;
+    padding: 0 5px;
+}
+
+.smIcons a:first-child img {
+    padding-left: 0;
+}
+
+.smIcons a:last-child img{
+    padding-right: 0;
 }
 
 .smIcons {
     display: flex;
+<<<<<<< HEAD
+}
+
+@media screen and (max-width:992px){
+    .purpleBox {
+        padding: 4px 30px 0 30px;
+    }
+} 
+=======
     justify-content: space-between;
     width: 100px;
     position: absolute;
     right: 5px;
     top: 5px;
 }
+>>>>>>> MVP3

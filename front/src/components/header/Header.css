@@ -1,30 +1,45 @@
-.logo {
+.mainIcons {
+    border-bottom: 1px solid #6a09b5;
     display: flex;
-    align-self: flex-start;
-    width: 12rem;
-    height: auto;
-    align-items: center;
+    justify-content: space-between;
+    padding: 9px 87px;
 }
 
-.mainIcons {
-    border:1px solid #6a09b5;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 60px;
+.toggleMenu {
+    display: none;
 }
 
 .rightIcons {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 280px;
-    padding-right: 25px;
 }
 
 .cart {
     height: 1.3rem;
-    width: auto;
     padding-right: 20px;
+}
+
+.headerMobile {
+    display: none;
+}
+
+@media screen and (max-width:992px){
+
+    .rightIcons {
+        display: none;
+    }
+
+    .mainIcons {
+        padding: 0 30px;
+    }
+
+    .toggleMenu {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbarDesktop {
+        display: none;
+    }
 }

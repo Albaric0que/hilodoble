@@ -1,17 +1,14 @@
 #navbar {
     display: flex;
     align-items: center!important;
-    flex-direction: row;
     justify-content: space-between;
-    margin-left: -20px;
-    margin-right: 25px;
+    margin: 0 87px;
+    padding-left: 0;
 }
 
 #navbar li {
     display: flex;
-    flex-direction: row;
     list-style: none;
-    margin: 0 auto 0 auto;
     position: relative;
 }
 
@@ -31,12 +28,21 @@
 #navbar li a:hover::after,
 #navbar li a.active::after {
     content: "";
-    width: 100;
+    width: 20px;
     height: 2px;
     background: #6A09B5;
     position: absolute;
-    bottom: -4px;
+    bottom: -5px;
     left: 0px;
+}
+
+#navbar li:first-child {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#navbar li:nth-child(1), #navbar li:nth-child(2) {
+    display:none;
 }
 
 #mobile {
@@ -44,14 +50,56 @@
 }
 
 #mobile i {
-    color: black;
+    color: black;  
 }
 
-@media screen and (max-width:769px){
+@media screen and (max-width:992px){
     #navbar {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-direction: row;
+        flex-direction: column; 
+        position: fixed;
+        top: 82px;
+        right: -340px;
+        background: #6A09B5;
+        transition: 0.3s ease-in-out;
+        margin-right: 0;
+        padding: 25px;
+    }   
+
+    #navbar.active {
+        right: 0px;
+    }
+
+    #navbar li {
+        padding: 9px;
+    }
+
+    #navbar li a {
+    color:white;
+    }
+
+    #navbar li a.active {
+        color:white;
+    }
+
+    #navbar li:first-child a img {
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(335deg) brightness(107%) contrast(102%);
+    }
+
+    #navbar li:nth-child(2) .searchBox {
+        margin-right: 0px;
+    }
+
+    #navbar li:first-child, #navbar li:nth-child(2) {
+        display:block;
+    }
+
+    #mobile {
+        display: block;
+    }
+
+    #mobile i {
+        font-size: 24px;
+        cursor: pointer;
     }
 }
