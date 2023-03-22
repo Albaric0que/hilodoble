@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 import './App.css';
 import Header from './components/header/Header';
+import Home from './components/Home/home';
 import ItemCard from './components/itemCard/ItemCard';
 import ShowItem from './components/showItem/ShowItem';
 import AllItems from './components/allItems/AllItems';
@@ -17,6 +18,7 @@ function App() {
           <Route path='/itemCard' element={<ItemCard />} />
           <Route path='/showItem/:id' element={<ShowItem />} />
           <Route path='/allItems' element={<AllItems />} />
+          <Route path='/home' element={<Home />} />
           <Route path='/cartUser' element={<CartUser />} />
         </Routes>
       </BrowserRouter>
