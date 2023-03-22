@@ -72,7 +72,7 @@ function AllItems() {
             <img src={item.image} alt={item.itemName} className="imgContainer"></img>
             <div>
               <h3 className="nameItem">{item.itemName}</h3>
-              <h3 className="priceItem">{item.price}</h3>
+              <h3 className="priceItem">{item.price} €</h3>
               <button className="cartBtn" onClick={() => handleAddToCart(item.id)}>
                 Añadir al carrito
               </button>
