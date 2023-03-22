@@ -1,13 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 import './App.css';
 import AboutUs from './components/aboutUs/AboutUs';
+import Header from './components/header/Header';
+import ItemCard from './components/itemCard/ItemCard';
+import ShowItem from './components/showItem/ShowItem';
+import AllItems from './components/allItems/AllItems';
+import CartUser from './components/cartUser/CartUser';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <AboutUs/>
-     
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/itemCard' element={<ItemCard />} />
+          <Route path='/showItem/:id' element={<ShowItem />} />
+          <Route path='/allItems' element={<AllItems />} />
+          <Route path='/cartUser' element={<CartUser />} />
+          <Route path='/aboutUs' element={<AboutUs />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
     </div>
   );
 }

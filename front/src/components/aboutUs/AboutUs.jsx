@@ -4,7 +4,7 @@ import './AboutUs.css';
 function AboutUs(){
 
     return(
-        <section class="main">
+        <section class="aboutUs">
             <div class="topImage"></div>
             <h3>Sobre nosotros</h3>
             <div class="text">
@@ -19,18 +19,18 @@ function AboutUs(){
             <div class="target">
                 <div class="containerBlocks">
                     <div class="socials">
-                        <h4>Sociales</h4>
                         <div class="circle"></div>
+                        <h4>Sociales</h4>
                         <p>Una nueva vida no solo a los materiales reciclados de los productos, también es la segunda oportunidad de las personas que los crean.</p>
                     </div>
                     <div class="goals">
-                        <h4>Metas</h4>
                         <div class="circle"></div>
+                        <h4>Metas</h4>
                         <p>Tenemos clara nuestra meta: la incorporación social y laboral de las personas, junto a la conservación y desarrollo del entorno.</p>
                     </div>
                     <div class="natural">
-                        <h4>Naturales</h4>
                         <div class="circle"></div>
+                        <h4>Naturales</h4>
                         <p>Favorecemos la economía circular del entorno, aprovechando recursos, respetando a las personas y conservando el planeta.</p>
                     </div>
                 </div>

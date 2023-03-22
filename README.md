@@ -81,28 +81,37 @@
 <h2>7. Mockup</h2> 
 <h3 align="center">Figma Mobile</h3>
 <div style="heigth:auto; display:flex; flex-wrap: wrap; justify-content:center; padding:1rem">
-<img style="width:25px"; src="https://user-images.githubusercontent.com/116546625/223278003-0f74829f-f2b9-4942-b505-f0540529ebf5.png" alt="Pallete Color sketch"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/223281975-111f090f-0a9c-4871-b0a0-948720f4e333.png" alt="Home desktop sketch"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/223282005-b7909a9d-44a1-4475-be9d-35235fdabbbf.png" alt="Shop desktop sketch"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/223281992-695cb396-ad45-448f-817d-314912a7878a.png" alt="Product desktop sketch"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/223279545-297ecaa4-d14e-46c6-bc27-4addf07e78ef.png" alt="About us desktop sketch"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/223280449-faec6201-1c69-4349-a9a1-0cd7472b852c.png" alt="Friendly store desktop sketch"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/223279609-a19799b2-8726-4810-917b-8a56b543c9f2.png" alt="Contact desktop sketch"/>
+<img style="width:25px"; src="https://user-images.githubusercontent.com/116546625/223278003-0f74829f-f2b9-4942-b505-f0540529ebf5.png" alt="Pallete Color"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225426359-0c6df4b1-e67d-46f0-ad4e-75c6dab871a7.png" alt="Home Mobile"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225426489-1ef979cc-a24b-477e-a0d0-ace2489076e3.png" alt="Shop Mobile"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225426674-203f9d53-df1d-4b4f-9af2-49d22fc96de9.png" alt="Product Mobile"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225426807-449e788a-c323-4985-b6cd-c0d1ceb07e4a.png" alt="About us Mobile"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225427184-d263982e-4590-4016-abe7-9219f79bceef.png" alt="Friendly store Mobile"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225427320-4cecdb47-646d-4dac-af1c-a88ad0c7e469.png" alt="Contact desktop"/>
 </div>
 
 <h3 align="center">Figma Desktop</h3>
 <div style="heigth:auto; display:flex; flex-wrap: wrap; justify-content:center; padding:1rem">
-<img style="width:25px"; src="https://user-images.githubusercontent.com/116546625/223278003-0f74829f-f2b9-4942-b505-f0540529ebf5.png" alt="Pallete Color sketch"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/223279405-d554abbc-1fc3-4e64-b45f-aa72eb8706cc.png" alt="Home desktop sketch"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/223279429-538c5669-1f7a-4617-9a1c-7f3c8fb79aaa.png" alt="Shop desktop sketch"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/223279455-0d8c89ac-2175-494e-936b-0d22134fed83.png" alt="Product desktop sketch"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/223279545-297ecaa4-d14e-46c6-bc27-4addf07e78ef.png" alt="About us desktop sketch"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/223280449-faec6201-1c69-4349-a9a1-0cd7472b852c.png" alt="Friendly store desktop sketch"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/223279609-a19799b2-8726-4810-917b-8a56b543c9f2.png" alt="Contact desktop sketch"/>
+<img style="width:25px"; src="https://user-images.githubusercontent.com/116546625/223278003-0f74829f-f2b9-4942-b505-f0540529ebf5.png" alt="Pallete Color"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225424904-86f4fba7-a3e2-4071-93c4-a7aed5c3478b.png" alt="Home desktop"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225425061-86954397-6431-4d20-aaa2-e65af34e66ba.png" alt="Shop desktop"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225425248-191127dc-5aab-47d5-80e1-550dac7d10df.png" alt="Product desktop"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225425404-37ba7981-3d88-4d9a-9178-7ef6b0d0e0bd.png" alt="About us desktop"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225425719-19b90cdd-a0ca-4f98-a42f-2d1a757e3eee.png" alt="Friendly store desktop"/>   
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225425891-28100a58-e27d-43cd-a425-d97d225af2c8.png" alt="Contact desktop"/>
+</div>
+
+<h3 align="center">Figma Desktop Admin</h3>
+<div style="heigth:auto; display:flex; flex-wrap: wrap; justify-content:center; padding:1rem">
+<img style="width:25px"; src="https://user-images.githubusercontent.com/116546625/223278003-0f74829f-f2b9-4942-b505-f0540529ebf5.png" alt="Pallete Color"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225428987-c0717c80-5b2e-43d7-a710-1cf87e3588a8.png" alt="Home desktop"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225429302-792e3dd5-77c5-4c65-a5d5-5bf8ecd4bfd5.png" alt="Shop desktop"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225429455-aa9a7873-68a8-4bc1-a9a8-e909792bddd5.png" alt="Create Product Admin"/>
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225429919-aadfdf6f-b486-4073-99cf-67849074abec.png" alt="Friendly store desktop"/>   
+<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225430007-e0b305b1-bde0-488f-98d1-78f678ccddf1.png" alt="Contact desktop"/>
 </div>
 
 <h2>8. Stacks</h2>
-
 * **Frontend:** HTML5, CSS3, SASS,REACT <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="30" /></a>
 <a href="https://www.w3schools.com/css/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="30" /></a>
 <a href="https://sass-lang.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/sass-original.svg" alt="Sass" height="30" /></a> <a href="https://sass-lang.com/" target="_blank"><img style="margin: 10px" src="https://download.logo.wine/logo/React_(web_framework)/React_(web_framework)-Logo.wine.png" alt="React" height="30" /></a>
@@ -126,6 +135,7 @@
 
 <h2>9. Required:</h2>
 <li>NPM installed.</li>
+<li>Axios npm installed.</li>
 <li>PHP (Minimum, version 8.1).</li>
 <li>React.js installed.</li>
 <li>Composer & Laravel installed and updated to latest version.</li>
@@ -151,6 +161,7 @@
 <h3>Go to the front folder with the command <b>cd front</b> and type in the terminal the ss command</h3>
 <li>Type in the IDE terminal: <b>npm install</b> and press intro</li>
 <li>Type in the IDE terminal: <b>npm i react-router-dom</b> and press intro</li>
+<li>Type in the IDE terminal: <b>npm install axios</b> and press intro</li>
 <li>Type in the IDE terminal: <b>npm start</b> and press intro</li>
 
 <h3>Warning & Testing</h3>
@@ -159,11 +170,11 @@
 <li><b>Test</b>: Run in the IDE <b>php artisan test</b> & <b>vendor/bin/phpunit</b> where it should return the following result:<b> 5 passed</b> and <b> OK (5 test, 12 assertions)</b></li>
 </ol>
 <div style="display:flex; flex-wrap:wrap; justify-content:center; margin:auto">
-<img style="width:500px;; margin:12px" src="https://user-images.githubusercontent.com/116546625/223657132-7decdb6a-c62c-4397-ac7f-1892c614ec9c.png" alt="finalTest"/>
+<img style="width:350px;; margin:12px" src="https://user-images.githubusercontent.com/116546625/225853266-d6b82c55-7f41-4d7e-a70d-a2efcfeee535.PNG" alt="finalTest"/>
 </div>
 
 <h2>10. Methodology:</h2>
-<ul>
+
 <li>Pair programming.</li>
 <li>Solo programming.</li>
 <li>Agile with SCRUM</li>
@@ -175,7 +186,8 @@
 <li>Implement responsive design for different devices.</li>
 <li>Implement user functions.</li>
 <li>Determine product categories.</li>
-<li>Add shopping cart functionalities.</li>
+<li>Connect API with React</li>
+<li>React home, shop and item components</li>
+<li>Test Admin + User</li>
+<li>Finish admin blade + users list</li>
 </ul>
-
-

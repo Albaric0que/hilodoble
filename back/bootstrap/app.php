@@ -1,5 +1,9 @@
 <?php
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: *');
+header('Access-Control-Allow-Headers: *');
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application
@@ -25,6 +29,8 @@ $app = new Illuminate\Foundation\Application(
 | incoming requests to this application from both the web and CLI.
 |
 */
+
+
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
