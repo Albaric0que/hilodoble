@@ -77,7 +77,7 @@ function AllItems() {
                 Añadir al carrito
               </button>
             </div>
-          </div>
+          </div>   
 
         );
       })}
