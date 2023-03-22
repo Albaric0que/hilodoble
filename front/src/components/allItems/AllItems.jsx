@@ -50,6 +50,7 @@ function AllItems() {
     <>
       <div className='titleContainer'>
         <h1>Nuestra tienda</h1>
+        <div className="purpleRec"> </div>
         <h3>Artesanía, reciclaje y diseños exclusivos</h3>
       </div>
       <div className='main'>
@@ -68,17 +69,16 @@ function AllItems() {
       {items.map((item) => {
         return (
         
-          <div key={item.id} className="productContainer">
+          <Link key={item.id} to={`/showItem/${item.id}`} className="productContainer">
             <img src={item.image} alt={item.itemName} className="imgContainer"></img>
             <div>
               <h3 className="nameItem">{item.itemName}</h3>
-              <h3 className="priceItem">{item.price} €</h3>
+              <h3 className="priceItem">{item.price}€</h3>
               <button className="cartBtn" onClick={() => handleAddToCart(item.id)}>
                 Añadir al carrito
               </button>
             </div>
-          </div>
-
+          </Link>
         );
       })}
       {message && <p className="message">{message}</p>}

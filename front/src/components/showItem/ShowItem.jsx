@@ -8,7 +8,7 @@ function ShowItem() {
   const [ item, setItem ] = useState([]);
 
   useEffect(()=>{
-    axios.get(`http://127.0.0.1:8000/api/item/${param.id}`)
+    axios.get(`http://127.0.0.1:8000/api/showItem/${param.id}`) 
       .then((response) =>  {
 
         console.log(response)
@@ -23,19 +23,21 @@ function ShowItem() {
   }, [param.id]);
 
   return (
-    <div>
-    <h1 className='nameItem'>{item.itemName}</h1>
-    <div className= "containerProduct" key={item.id}>
-        <div className= "secondContainer">
-          <img src={item.image} alt={item.itemName} className='imgSize'></img>
-          <div className= "containerText">
-            <p className= "descriptionItem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate architecto facilis, deserunt nobis fuga, nulla similique cumque fugit earum voluptates illum, ducimus harum laudantium cum dignissimos vel delectus sapiente eveniet.</p>
-            <h3 className= "priceItem">{item.price}€</h3>
-            <button className= "cartBtn">Añadir al carrito</button>
+    <>
+    <h1 className='nameItemShow'>{item.itemName}</h1>
+    <div className= 'bigContainer'>
+    <div className= 'containerProduct' key={item.id}>
+        <div className= 'secondContainer'>
+          <img src={item.image} alt={item.itemName} className='imgShow'></img>
+          <div className= 'containerText'>
+            <p className= 'descriptionItem'>{item.description}</p>
+            <h3 className= 'priceItem'>{item.price}€</h3>
+            <button className= 'cartBtn'>Añadir al carrito</button>
           </div>
         </div>
     </div>
     </div>
+    </>
     )
 }
 
