@@ -63,6 +63,16 @@ ul{
 width:100%;
 }
 
+.cartBtn{
+  width: auto;
+  padding:0 7px 0 7px;
+  height: 3.5vh;
+  border-color: #6A09B5;
+  background: white;
+  color:#6A09B5;
+  border-style: solid;
+}
+
 .imgSize{
 width: 100%;
 height: 25vh;
