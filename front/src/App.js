@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { setAuthToken } from './helpers/setAuthToken';
 import './App.css';
-import Header from './components/header/Header';
 import Login from './components/login/Login';
 import Header from './components/headeer/Header';
 import Collabs from './components/collabs/Collabs'
