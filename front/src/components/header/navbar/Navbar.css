@@ -45,7 +45,7 @@
     flex-wrap: wrap;
 }
 
-#navbar :nth-child(1, 2) {
+#navbar .iconsSearchbar {
     display:none;
 }
 
