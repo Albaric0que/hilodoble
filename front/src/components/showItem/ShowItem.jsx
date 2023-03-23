@@ -32,7 +32,7 @@ function ShowItem() {
           <div className= 'containerText'>
             <p className= 'descriptionItem'>{item.description}</p>
             <h3 className= 'priceItemShow'>{item.price}€</h3>
-            <button className= 'cartBtn'>Añadir al carrito</button>
+            <button className= 'cartBtnShow'>Añadir al carrito</button>
           </div>
         </div>
     </div>
