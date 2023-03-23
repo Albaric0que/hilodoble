@@ -8,6 +8,15 @@ use App\Http\Middleware\CheckUser;
 use App\Http\Controllers\Api\ItemController;
 use App\Http\Controllers\Api\CartController;
 
+
+
+
+Route::middleware(['cors'])->group(function () {
+    Route::post('/', 'Controller@127.0.0.1:8000/api/');
+});
+
+
+
 //Endpoints Item
 Route::get('/', [App\Http\Controllers\Api\ItemController::class, 'index'])->name('itemsApi');
 
