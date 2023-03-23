@@ -31,7 +31,7 @@ function ShowItem() {
           <img src={item.image} alt={item.itemName} className='imgShow'></img>
           <div className= 'containerText'>
             <p className= 'descriptionItem'>{item.description}</p>
-            <h3 className= 'priceItem'>{item.price}€</h3>
+            <h3 className= 'priceItemShow'>{item.price}€</h3>
             <button className= 'cartBtn'>Añadir al carrito</button>
           </div>
         </div>

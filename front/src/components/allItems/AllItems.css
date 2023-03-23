@@ -74,8 +74,9 @@ a{
   text-decoration: none;
 }
 
-.price{
+.priceItem{
   margin: 1vh;
+  color: #D9D9D9;
 }
 
 @media (max-width:400px){
