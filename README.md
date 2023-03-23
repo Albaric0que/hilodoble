@@ -112,7 +112,8 @@
 </div>
 
 <h2>8. Stacks</h2>
-* **Frontend:** HTML5, CSS3, SASS,REACT <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="30" /></a>
+
+* **Frontend:**  HTML5, CSS3, SASS,REACT <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="30" /></a>
 <a href="https://www.w3schools.com/css/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="30" /></a>
 <a href="https://sass-lang.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/sass-original.svg" alt="Sass" height="30" /></a> <a href="https://sass-lang.com/" target="_blank"><img style="margin: 10px" src="https://download.logo.wine/logo/React_(web_framework)/React_(web_framework)-Logo.wine.png" alt="React" height="30" /></a>
 
@@ -156,7 +157,12 @@
 <li>Type in the IDE terminal: <b>php artisan migrate:fresh --seed</b> and press intro.</li>
 <li>Type in the IDE terminal: <b>npm run dev</b> and press intro. Then open another terminal in the IDE without closing the previous one</li>
 <li>Type in the IDE terminal: <b>php artisan migrate</b> and press intro</li>
-<li>Type in the IDE terminal: <b>php artisan serve</b> and press intro.</li><br>
+<li>Type in the IDE terminal: <b>php artisan serve</b> and press intro.</li>
+<li>To install the <b>JWT library<b> you have to pass the following commands in back:<br></li>
+    <ol>
+    <li><b>composer require tymon/jwt-auth<b></li>
+    <li><b>php artisan jwt:secret<b></li>
+    </ol>
 
 <h3>Go to the front folder with the command <b>cd front</b> and type in the terminal the ss command</h3>
 <li>Type in the IDE terminal: <b>npm install</b> and press intro</li>
