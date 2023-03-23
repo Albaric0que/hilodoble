@@ -23,7 +23,7 @@ function Login() {
                 setAuthToken(token);
         
         //redirect user to home page
-                window.location.href = '/'
+                window.location.href = '/allItems'
             })
             .catch(err => console.log(err));
         };

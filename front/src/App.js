@@ -6,7 +6,6 @@ import Login from './components/login/Login';
 import Header from './components/headeer/Header';
 import Collabs from './components/collabs/Collabs'
 import AboutUs from './components/aboutUs/AboutUs';
-import ItemCard from './components/itemCard/ItemCard';
 import ShowItem from './components/showItem/ShowItem';
 import AllItems from './components/allItems/AllItems';
 import CartUser from './components/cartUser/CartUser';
@@ -27,7 +26,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/login' element={<Login />} />
-          <Route path='/itemCard' element={<ItemCard />} />
           <Route path='/showItem/:id' element={<ShowItem />} />
           <Route path='/allItems' element={<AllItems />} />
           <Route path='/cartUser' element={<CartUser />} />

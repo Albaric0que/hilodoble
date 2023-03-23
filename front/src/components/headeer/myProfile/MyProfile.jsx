@@ -5,7 +5,7 @@ import './MyProfile.css';
 function MyProfile() {
     return (
         <>
-            <img className='profile' src={profile} alt="Profile Section" />
+            <a href={`/login`}><img className='profile' src={profile} alt="Profile Section" /></a>
         </>
     )
 }
