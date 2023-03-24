@@ -1,8 +1,8 @@
 import './Footer.css'
-import logo from '../img/logo.png';
-import ig from '../img/ig.svg';
-import tw from '../img/tw.svg';
-import fb from '../img/fb.svg';
+import logo from '../img/imgHeader/logo.png';
+import ig from '../img/imgHeader/ig.svg';
+import tw from '../img/imgHeader/tw.svg';
+import fb from '../img/imgHeader/fb.svg';
 import * as React from 'react';
 
 function Footer() {
