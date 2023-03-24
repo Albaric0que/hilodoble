@@ -154,6 +154,10 @@ class DatabaseSeeder extends Seeder
             'stockQuantity'=>'1',
             'purchaseQuantity'=>'1',
             'price'=>'39.90']);
+
+            User::factory()->create(['name' => 'admin', 'email' => 'admin@admin.com', 'isAdmin' => true]);
+
+            User::factory()->create(['name' => 'user1', 'email' => 'user1@user1.com', 'isAdmin' => false]);
     
 /*         Item::factory(3)->create();
  */
