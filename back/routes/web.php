@@ -19,13 +19,13 @@ use App\Http\Controllers\UserController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-/* Route::get('/', function () {
+Route::get('/', function () {
     return view('/login');
 });
- */
-Route::resource('items', 'App\Http\Controllers\ItemController');
+
+/* Route::resource('items', 'App\Http\Controllers\ItemController');
 Route::resource('users', 'App\Http\Controllers\UserController');
-Route::resource('carts', 'App\Http\Controllers\CartController');
+Route::resource('carts', 'App\Http\Controllers\CartController'); */
 /* Route::resource('index', 'App\Http\Controllers\HomeController'); */
 
 Auth::routes();
@@ -35,7 +35,7 @@ Route::get('/',[ItemController::class,'index'])->name('home');
 Route::get('/home',[ItemController::class,'index']);
 
 //C del CRUD Item
-Route::post('/', [ItemController::class, 'store'])->name('store');
+Route::post('/storeItem', [ItemController::class, 'store'])->name('store');
 Route::get('/createItem', [ItemController::class, 'create'])->name('create');
 
 //U del CRUD Item
@@ -65,10 +65,8 @@ Route::patch('/user/{id}', [UserController::class, 'updateUser'])->name('updateU
 Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('deleteUser');
 
 
-/* //Show
-Route::get('/showUser', [UserController::class, 'show'])->name('showUser');
-Route::get('/showUser/{id}', [UserController::class, 'show'])->name('showUser')->middleware('isadmin', 'auth');
- */ 
+//Show
+/* Route::get('/showUser/{id}', [UserController::class, 'show'])->name('showUser')->middleware('isadmin', 'auth'); */
 
  //Routes Cart
 Route::post('/cart/add', [CartController::class, 'add'])->name('add')->middleware('auth');

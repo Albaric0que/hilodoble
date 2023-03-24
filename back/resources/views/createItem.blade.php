@@ -43,7 +43,7 @@
 
                 <div class="form-group">
                     <label for="stockQuantity">Stock</label>
-                    <input type="number" name="stockQuantity" id="stockQuantity" class="form-control{{ $errors->has('stockQuantity') ? ' is-invalid' : '' }}" value="{{ old('stockQuantity') }}" min="0" required>
+                    <input type="number" name="stockQuantity" id="stockQuantity" class="form-control{{ $errors->has('stockQuantity') ? ' is-invalid' : '' }}" {{-- value="{{ old('stockQuantity') }}" --}} min="0" required>
                     @if ($errors->has('stockQuantity'))
                         <span class="invalid-feedback">{{ $errors->first('stockQuantity') }}</span>
                     @endif
@@ -60,11 +60,9 @@
             </div>
         </div>          
             <div class="buttons">
-            <button type="submit" class="addButton">Añadir</button>
+            <button type="submit" class="addButton">Guardar</button>
             <a href="{{ route('home') }}"><button class="cancelButton">Cancelar</a>
             </div>
-        </form>
+    </form>
 </div>
-
-
-    @endsection
+@endsection

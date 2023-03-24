@@ -16,7 +16,7 @@ class UserController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $users->perPage());
     }
 
-    /* public function show(string $id)
+   /*  public function show(string $id)
     {
         $user = User::find($id);
         return view('showUser',compact('user'));

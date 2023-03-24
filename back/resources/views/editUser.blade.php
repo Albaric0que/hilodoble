@@ -58,12 +58,12 @@
                 <span class="invalid-feedback">{{ $errors->first('postcode') }}</span>
             @endif
         </div>
+        
+        <div class="buttons">
+            <button id="save" type="submit" class="btn btn-primary">Guardar</button>
+            <a id="cancel" href="{{ route('usersList') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
     </form>
-
-    <div class="buttons">
-        <button id="save" type="submit" class="btn btn-primary">Save</button>
-        <a id="cancel" href="{{ route('usersList') }}" class="btn btn-secondary">Cancel</a>
-    </div>
 </div>
 
 @endsection
