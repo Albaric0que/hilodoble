@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 import './App.css';
-import Header from './components/headeer/Header';
+import Header from './components/header/Header';
 import Collabs from './components/collabs/Collabs'
 import AboutUs from './components/aboutUs/AboutUs';
 import ItemCard from './components/itemCard/ItemCard';
