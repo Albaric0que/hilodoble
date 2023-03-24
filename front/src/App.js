@@ -8,6 +8,7 @@ import ShowItem from './components/showItem/ShowItem';
 import AllItems from './components/allItems/AllItems';
 import CartUser from './components/cartUser/CartUser';
 import Footer from './components/Footer/Footer';
+import Profile from './components/profile/Profile';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='/cartUser' element={<CartUser />} />
           <Route path='/aboutUs' element={<AboutUs />} />
           <Route path='/friendsShops' element={<Collabs />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes>
       </BrowserRouter>
 
