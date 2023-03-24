@@ -1,5 +1,5 @@
 import React from 'react'
-import profile from '../../img/profile.svg';
+import profile from '../../img/imgHeader/profile.svg';
 import './MyProfile.css';
 
 function MyProfile() {

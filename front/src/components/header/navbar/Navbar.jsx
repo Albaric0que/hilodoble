@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import "./Navbar.css"
 import Searchbar from '../searchbar/Searchbar';
-import cart from '../../img/cart.svg';
-import profile from '../../img/profile.svg';
+import cart from '../../img/imgHeader/cart.svg';
+import profile from '../../img/imgHeader/profile.svg';
 
 
 class Navbar extends Component {
@@ -15,13 +15,15 @@ class Navbar extends Component {
             <>
                 <nav>
                     <ul id='navbar' className={this.state.clicked ? "#navbar active" : "#navbar"}>
-                        <li>
-                            <a href="index.html"><img className='cart' src={cart} alt="logo" /></a>
-                            <a href="index.html"><img className='profile' src={profile} alt="Profile Section" /></a>
-                        </li>
-                        <li>
-                            <Searchbar/>
-                        </li>
+                        <div className='iconsSearchbar'>
+                            <li>
+                                <a href="index.html"><img className='cart' src={cart} alt="logo" /></a>
+                                <a href="index.html"><img className='profile' src={profile} alt="Profile Section" /></a>
+                            </li>
+                            <li>
+                                <Searchbar/>
+                            </li>
+                        </div>
                         <li><a className='active' href="index.html">INICIO</a></li>
                         <li><a href={`/allItems`}>TIENDA</a></li>
                         <li><a href={`/aboutUs`}>SOBRE NOSOTROS</a></li>

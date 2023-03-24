@@ -4,7 +4,7 @@ import axios from 'axios';
 import '../allItems/AllItems.css';
 
 axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
-
+ 
 function AllItems() {
   const [items, setItems] = useState([]);
   const [message, setMessage] = useState('');
