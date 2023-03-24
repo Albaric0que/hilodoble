@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 import Header from './components/header/Header';
+import Home from './components/home/Home';
 import Collabs from './components/collabs/Collabs'
 import AboutUs from './components/aboutUs/AboutUs';
 import ShowItem from './components/showItem/ShowItem';
@@ -16,11 +17,12 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path='/showItem/:id' element={<ShowItem />} />
-          <Route path='/allItems' element={<AllItems />} />
-          <Route path='/cartUser' element={<CartUser />} />
-          <Route path='/aboutUs' element={<AboutUs />} />
-          <Route path='/friendsShops' element={<Collabs />} />
+          <Route path='/home' element={<Home/>} />
+          <Route path='/showItem/:id' element={<ShowItem/>} />
+          <Route path='/allItems' element={<AllItems/>} />
+          <Route path='/cartUser' element={<CartUser/>} />
+          <Route path='/aboutUs' element={<AboutUs/>} />
+          <Route path='/friendsShops' element={<Collabs/>} />
         </Routes>
       </BrowserRouter>
 
