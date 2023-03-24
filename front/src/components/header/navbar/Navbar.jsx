@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import "./Navbar.css"
 import Searchbar from '../searchbar/Searchbar';
-import cart from '../../img/cart.svg';
-import profile from '../../img/profile.svg';
+import cart from '../../img/imgHeader/cart.svg';
+import profile from '../../img/imgHeader/profile.svg';
 
 
 class Navbar extends Component {
@@ -25,9 +25,9 @@ class Navbar extends Component {
                             </li>
                         </div>
                         <li><a className='active' href="index.html">INICIO</a></li>
-                        <li><a href="index.html">TIENDA</a></li>
-                        <li><a href="index.html">SOBRE NOSOTROS</a></li>
-                        <li><a href="index.html">TIENDAS AMIGAS</a></li>
+                        <li><a href={`/allItems`}>TIENDA</a></li>
+                        <li><a href={`/aboutUs`}>SOBRE NOSOTROS</a></li>
+                        <li><a href={`/friendsShops`}>TIENDAS AMIGAS</a></li>
                         <li><a href="index.html">CONTACTA</a></li>
                     </ul>
                 </nav>

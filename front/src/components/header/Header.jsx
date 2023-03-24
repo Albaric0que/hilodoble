@@ -1,6 +1,7 @@
 import React from 'react'
-import logo from '../img/logo.png';
-import cart from '../img/cart.svg';
+import { Link } from 'react-router-dom';
+import logo from '../img/imgHeader/logo.png';
+import cart from '../img/imgHeader/cart.svg';
 import MyProfile from './myProfile/MyProfile';
 import Head from './head/Head';
 import Searchbar from './searchbar/Searchbar';
