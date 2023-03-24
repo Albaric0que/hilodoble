@@ -22,7 +22,7 @@ class Navbar extends Component {
                         <li>
                             <Searchbar/>
                         </li>
-                        <li><a className='active' href="index.html">INICIO</a></li>
+                        <li><a href={`/home`}>INICIO</a></li>
                         <li><a href={`/allItems`}>TIENDA</a></li>
                         <li><a href={`/aboutUs`}>SOBRE NOSOTROS</a></li>
                         <li><a href={`/friendsShops`}>TIENDAS AMIGAS</a></li>

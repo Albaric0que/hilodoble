@@ -4,38 +4,32 @@ import { setAuthToken } from "../../helpers/setAuthToken"
 
 function Login() {
 
-    const handleSubmit = (email, pass) => {
-        //reqres registered sample user
-        const loginPayload = {
-            email: 'eve.holt@reqres.in',
-            password: 'cityslicka'
-            }
-        
-            axios.post("https://reqres.in/api/login", loginPayload)
-            .then(response => {
-                //get token from response
-                const token  =  response.data.token;
-        
-                //set JWT token to local
-                localStorage.setItem("token", token);
-        
-                //set token to axios common header
-                setAuthToken(token);
-        
-        //redirect user to home page
-                window.location.href = '/allItems'
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const email = event.target.elements.email.value;
+        const password = event.target.elements.password.value;
+    
+        axios
+            .post("http://127.0.0.1:8000/api/auth/login", {
+            email,
+            password
             })
-            .catch(err => console.log(err));
+            .then(response => {
+            const token = response.data.accessToken;
+            localStorage.setItem("user", JSON.stringify(response.data));
+            setAuthToken(token);
+            window.location.href = '/profile'
+            })
+            .catch((error) => {
+                console.error(error);
+                alert("No está registrado");
+            });
         };
 
+        
+
     return (
-        <form
-        onSubmit={(event) => {
-            event.preventDefault()
-            const [email, password] = event.target.children;
-            handleSubmit(email, password);
-        }}
-        >
+        <form onSubmit={handleSubmit}>
         <label for="email">Email</label><br />
         <input type="email" id="email" name="email"/><br />
         <label for="password">Password</label><br />

@@ -14,7 +14,7 @@ function Header() {
       <div>
         <Head/>
         <div className='mainIcons'>
-          <img className='logo' src={logo} alt="logo" />
+        <a href={`/home`}><img className='logo' src={logo} alt="logo" /></a>
           <div className='rightIcons'>
             <Searchbar/>
             <a href={`/allItems`}><img className='cart' src={cart} alt="logo" /></a>
