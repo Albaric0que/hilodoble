@@ -1,8 +1,12 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route, } from 'react-router-dom';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Login from './components/login.component'
+import SignUp from './components/signup.component'
+import Dashboard from './components/dashboard.component'
+import Logout from './components/logout.component'
 import Header from './components/header/Header';
-import Profile from './components/profile/Profile';
 import Collabs from './components/collabs/Collabs'
 import AboutUs from './components/aboutUs/AboutUs';
 import ShowItem from './components/showItem/ShowItem';
@@ -15,16 +19,20 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <BrowserRouter>
+      <Router>
         <Routes>
-          <Route path='/profile' element={<Profile />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route path="/sign-in" element={<Login />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path='/showItem/:id' element={<ShowItem />} />
           <Route path='/allItems' element={<AllItems />} />
           <Route path='/cartUser' element={<CartUser />} />
           <Route path='/aboutUs' element={<AboutUs />} />
           <Route path='/friendsShops' element={<Collabs />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
 
       <Footer />
     </div>
