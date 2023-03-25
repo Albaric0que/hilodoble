@@ -18,8 +18,7 @@ class Navbar extends Component {
                         <div className='iconsSearchbar'>
                             <li>
                             <a href={`/allItems`}><img className='cart' src={cart} alt="logo" /></a>
-                                <a href={`/profile`}><img className='profile' src={profile} alt="Profile Section" /></a>
-                                
+                            <a href={`/profile`}><img className='profile' src={profile} alt="Profile Section" /></a>
                             </li>
                             <li>
                                 <Searchbar/>
