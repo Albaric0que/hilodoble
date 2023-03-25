@@ -1,0 +1,31 @@
+.purpleBox {
+    background-color: #6A09B5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 4px 87px 0 87px;
+}
+
+.smIcons a img {
+    width: 20px;
+    padding: 0 5px;
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(335deg) brightness(107%) contrast(102%);
+}
+
+.smIcons a:first-child img {
+    padding-left: 0;
+}
+
+.smIcons a:last-child img{
+    padding-right: 0;
+}
+
+.smIcons {
+    display: flex;
+}
+
+@media screen and (max-width:992px){
+    .purpleBox {
+        padding: 4px 30px 0 30px;
+    }
+}
