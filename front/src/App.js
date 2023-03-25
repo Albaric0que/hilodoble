@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 import Header from './components/header/Header';
-import MyProfile from './components/myProfile/MyProfile';
+import Profile from './components/profile/Profile';
 import Collabs from './components/collabs/Collabs'
 import AboutUs from './components/aboutUs/AboutUs';
 import ShowItem from './components/showItem/ShowItem';
@@ -17,7 +17,7 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path='/myProfile' element={<ShowItem />} />
+          <Route path='/profile' element={<Profile />} />
           <Route path='/showItem/:id' element={<ShowItem />} />
           <Route path='/allItems' element={<AllItems />} />
           <Route path='/cartUser' element={<CartUser />} />

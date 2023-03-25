@@ -1,10 +1,19 @@
 import React from 'react'
-import './MyProfile.css';
+import './Profile.css';
 
 function MyProfile() {
     return (
         <>
-            <a href={`/login`}>Login</a>
+        Este es el perfil de USUARIO
+           
+
+
+           
+
+
+
+
+
         </>
     )
 }
