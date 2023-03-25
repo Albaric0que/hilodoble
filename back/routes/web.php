@@ -64,9 +64,8 @@ Route::patch('/user/{id}', [UserController::class, 'updateUser'])->name('updateU
 //D del user
 Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('deleteUser');
 
-
 //Show
-/* Route::get('/showUser/{id}', [UserController::class, 'show'])->name('showUser')->middleware('isadmin', 'auth'); */
+Route::get('/showUser/{id}', [UserController::class, 'show'])->name('showUser')/* ->middleware('isadmin', 'auth') */;
 
  //Routes Cart
 Route::post('/cart/add', [CartController::class, 'add'])->name('add')->middleware('auth');

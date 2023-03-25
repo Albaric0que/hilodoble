@@ -15,6 +15,7 @@
         
 
         <a href="{{ route('editUser', ['id' => $user->id]) }}">Editar</a>
+        <a href="{{ route('showUser',['id'=>$user->id]) }}" >Mostrar</a>
 
         <form action="{{ route('deleteUser', $user->id) }}" method="POST">
 
