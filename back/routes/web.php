@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Item;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -19,9 +20,9 @@ use App\Http\Controllers\UserController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('/login');
-});
+}); */
 
 /* Route::resource('items', 'App\Http\Controllers\ItemController');
 Route::resource('users', 'App\Http\Controllers\UserController');
@@ -35,7 +36,7 @@ Route::get('/',[ItemController::class,'index'])->name('home');
 Route::get('/home',[ItemController::class,'index']);
 
 //C del CRUD Item
-Route::post('/storeItem', [ItemController::class, 'store'])->name('store');
+Route::post('/storeItem', [ItemController::class, 'store'])->name('storeItem');
 Route::get('/createItem', [ItemController::class, 'create'])->name('create');
 
 //U del CRUD Item

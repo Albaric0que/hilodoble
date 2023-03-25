@@ -88,7 +88,7 @@ class CRUDItemTest extends TestCase
         $userAdmin = User::factory()->create(['isAdmin' => true]);
         $this->actingAs($userAdmin);
 
-        $response = $this ->post(route('store'),[
+        $response = $this ->post(route('storeItem'),[
                 'itemName'=> 'itemName',
                 'category'=>'category',
                 'description'=>'description',
@@ -103,7 +103,7 @@ class CRUDItemTest extends TestCase
         $userNoAdmin = User::factory()->create(['isAdmin' => false]);
         $this->actingAs($userNoAdmin);
 
-        $response = $this->post(route('store'),[
+        $response = $this->post(route('storeItem'),[
             'itemName'=> 'itemName',
             'category'=>'category',
             'description'=>'description',

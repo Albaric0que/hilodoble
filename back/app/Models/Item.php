@@ -15,7 +15,7 @@ class Item extends Model
         'description' => 'required',
         'image' => 'required|url',
         'stockQuantity' => 'required|integer|min:0',
-        'purchaseQuantity' => 'required|numeric|min:1',
+        'purchaseQuantity' => 'numeric|min:1',
         'price' => 'required|numeric|min:0.01',
     ];
 
