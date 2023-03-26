@@ -22,12 +22,6 @@ class UserController extends Controller
         return view('showUser',compact('user'));
     }
 
-    /* public function createUser()
-    {
-        $user = new User();
-        return view('createUser', compact('user'));
-    } */
-
     public function destroy($id)
     {
 
@@ -52,26 +46,4 @@ class UserController extends Controller
         return redirect()->route('usersList')
             ->with('success', 'User updated successfully');
     }
-
-
-   /*  public function storeUser(Request $request)
-    {
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'surname' => 'required|string|max:255',
-            'email' => 'required|string|email|unique:users|max:255',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
-
-        $user = new User($validatedData);
-        $user->name = $validatedData['name'];
-        $user->surname = $validatedData['surname'];
-        $user->email = $validatedData['email'];
-        $user->password = bcrypt($validatedData['password']);
-        $user->save();
-        return response()->json([
-            'message' => 'User edited successfully',
-            'data' => $user
-        ], 201);
-    } */
 }

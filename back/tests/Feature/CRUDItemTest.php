@@ -19,7 +19,7 @@ class CRUDItemTest extends TestCase
         $items =Item::factory(2)->create();
         $item =$items[0];
 
-        $response = $this->get('/');
+        $response = $this->get(route('home'));
         $response -> assertSee($item->name);
 
         $response->assertStatus(200)
