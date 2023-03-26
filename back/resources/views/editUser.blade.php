@@ -52,7 +52,7 @@
         </div>
 
          <div class="form-group">
-            <label for="postcode">Ciudad</label>
+            <label for="postcode">Código postal</label>
             <input type="text" name="postcode" id="postcode" class="form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" placeholder="{{ $user->postcode }}" value="{{ $user->postcode}}" required>
             @if ($errors->has('postcode'))
                 <span class="invalid-feedback">{{ $errors->first('postcode') }}</span>
