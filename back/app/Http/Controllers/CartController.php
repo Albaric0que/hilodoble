@@ -74,5 +74,15 @@ public function update(Request $request)
     return redirect('/cart');
 }
 
+public function getCartItemsByUserId($userId)
+{
+    $cartItems = Cart::with('item')
+        ->where('user_id', $userId)
+        ->get();
+
+    return response()->json($cartItems);
+}
+}
+
 
 }
