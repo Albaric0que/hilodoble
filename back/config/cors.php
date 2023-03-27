@@ -15,8 +15,8 @@ return [
     |
     */
 
-    'paths' => ['api/showItem/*','api/', 'sanctum/csrf-cookie'],
-
+    'paths' => ['/api/showItem/*', '/login', '/cart/add/', '/api','/loginUserApi' , '/api/auth/login', '/api/auth/updateUser/*', '/api/auth/', '/api/auth/cart/','/api/auth/cart/add','/cart/add/*','api/*', 'sanctum/csrf-cookie'],
+    
     'allowed_methods' => ['*'],
 
     'allowed_origins' => ['*'],
