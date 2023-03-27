@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 import './App.css';
-import Header from './components/headeer/Header';
+import { BrowserRouter, Routes, Route, } from 'react-router-dom';
+import Header from './components/header/Header';
 import Collabs from './components/collabs/Collabs'
 import AboutUs from './components/aboutUs/AboutUs';
 import ShowItem from './components/showItem/ShowItem';

@@ -176,13 +176,14 @@
 <li><b>Test</b>: Run in the IDE <b>php artisan test</b> & <b>vendor/bin/phpunit</b> where it should return the following result:<b> 5 passed</b> and <b> OK (5 test, 12 assertions)</b></li>
 </ol>
 <div style="display:flex; flex-wrap:wrap; justify-content:center; margin:auto">
-<img style="width:350px;; margin:12px" src="https://user-images.githubusercontent.com/116546625/225853266-d6b82c55-7f41-4d7e-a70d-a2efcfeee535.PNG" alt="finalTest"/>
+<img style="width:350px;; margin:12px" src="https://user-images.githubusercontent.com/116546625/227210986-cb3e8797-e613-4a5a-a385-81e3fb5b3235.png" alt="finalTest"/>
 </div>
 
 <h2>10. Methodology:</h2>
 
 <li>Pair programming.</li>
 <li>Solo programming.</li>
+
 <li>Agile with SCRUM</li>
 <li>Kanban</li>
 </ul>

@@ -3,8 +3,9 @@
     background-position: center;
     height: 430px;
     background-size: cover;
- }
-h3{
+}
+
+.aboutUs h3 {
     text-align: center;
     margin-top: 20px;
 }
@@ -16,13 +17,16 @@ h3{
     margin-top:30px;
     text-align: left;
 }
+
 p{
     text-align: left;
 }
+
 .target{
     background-color: #6a09b5;
     
 }
+
 .containerBlocks{
     
     width: 60%;
@@ -37,6 +41,7 @@ h4{
     text-transform:uppercase;
     margin-bottom: 20px;
 }
+
 .circle{
     height: 3rem;
     width: 3rem;
@@ -45,6 +50,7 @@ h4{
     margin-top: 20px;
     margin-bottom: 20px;  
 }
+
 .socials, .goals, .natural{
     width: 100%;
     display: flex;

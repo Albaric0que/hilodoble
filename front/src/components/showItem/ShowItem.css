@@ -40,7 +40,7 @@
   background-position: center;
 }
 
-.cartBtn{
+.cartBtnShow{
   width: 10vw;
   height: 3.5vh;
   border-color: #6A09B5;
@@ -54,7 +54,7 @@
   text-align: center;
 }
 
-.priceItem{
+.priceItemShow{
   color: #D9D9D9;
   text-align: left;
 }
