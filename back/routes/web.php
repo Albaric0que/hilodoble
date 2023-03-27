@@ -32,7 +32,7 @@ Route::resource('carts', 'App\Http\Controllers\CartController'); */
 Auth::routes();
 
 //R del CRUD Item
-Route::get('/home',[ItemController::class,'index'])->name('home')/* ->middleware('isadmin', 'auth') */;
+Route::get('/home',[ItemController::class,'index'])->name('home')->middleware('isadmin', 'auth');
 /* Route::get('/home',[ItemController::class,'index']); */
 
 //C del CRUD Item

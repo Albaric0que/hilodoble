@@ -10,24 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-   /*  public function login(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-
-            // Establecer la variable $isAdmin en true para usuarios admin
-            $isAdmin = Auth::user()->isAdmin;
-
-            return redirect()->intended('home');
-    }
-
-        return back()->withErrors([
-            'email' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
-        ]);
-    } */
-
+  
     public function usersList()
     {
         $users = User::paginate();
