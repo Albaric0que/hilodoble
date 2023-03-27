@@ -20,7 +20,7 @@ class IsAdmin
         if(Auth::user()->isAdmin){ 
             return $next($request);
         }
-         return redirect()->route('home');
+         return redirect()->route('UserNonAdmin');
     }
 }
     

@@ -2,6 +2,7 @@
 
 use App\Models\Item;
 use App\Models\User;
+use App\Http\Middleware\isAdmin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -36,27 +37,24 @@ Route::get('/home',[ItemController::class,'index'])->name('home')->middleware('i
 /* Route::get('/home',[ItemController::class,'index']); */
 
 //C del CRUD Item
-Route::post('/storeItem', [ItemController::class, 'store'])->name('storeItem');
-Route::get('/createItem', [ItemController::class, 'create'])->name('create');
+Route::post('/storeItem', [ItemController::class, 'store'])->name('storeItem')->middleware('isadmin', 'auth');
+Route::get('/createItem', [ItemController::class, 'create'])->name('create')->middleware('isadmin', 'auth');
 
 //U del CRUD Item
-Route::get('/edit/{id}', [ItemController::class, 'edit'])->name('editItem');
-Route::patch('/item/{id}', [ItemController::class, 'update'])->name('updateItem');
+Route::get('/edit/{id}', [ItemController::class, 'edit'])->name('editItem')->middleware('isadmin', 'auth');
+Route::patch('/item/{id}', [ItemController::class, 'update'])->name('updateItem')->middleware('isadmin', 'auth');
 
 //D del CRUD Item
-Route::delete('/items/{id}', [ItemController::class, 'destroy'])->name('deleteItem');
+Route::delete('/items/{id}', [ItemController::class, 'destroy'])->name('deleteItem')->middleware('isadmin', 'auth');
 
 //Show Item
-Route::get('/showItem/{id}', [ItemController::class, 'show'])->name('showItem');
+Route::get('/showItem/{id}', [ItemController::class, 'show'])->name('showItem')->middleware('isadmin', 'auth');
 
 
 //CRUD del User
 
 //R del USER
 Route::get('/usersList',[UserController::class,'usersList'])->name('usersList');
-
-/* Route::post('/user', [UserController::class, 'storeUser'])->name('storeUser');
-Route::get('/createUser', [UserController::class, 'create'])->name('create'); */
 
 //U del user
 Route::get('/editUser/{id}', [UserController::class, 'editUser'])->name('editUser');
@@ -67,6 +65,12 @@ Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('delet
 
 //Show
 Route::get('/showUser/{id}', [UserController::class, 'show'])->name('showUser')/* ->middleware('isadmin', 'auth') */;
+
+//nonAdmin
+Route::get('/UserNonAdmin', function () {
+    return view('UserNonAdmin');
+})->name('UserNonAdmin');
+
 
  //Routes Cart
 Route::post('/cart/add', [CartController::class, 'add'])->name('add')->middleware('auth');

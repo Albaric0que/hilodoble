@@ -1,0 +1,1 @@
+<h1>No está autorizado, por favor, contacte con un administrador</h1>
