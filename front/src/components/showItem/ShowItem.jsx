@@ -1,7 +1,7 @@
 import React,  { useEffect, useState } from 'react'
 import axios from 'axios';
 import '../showItem/ShowItem.css'
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'; 
 
 function ShowItem() {
   const param = useParams();
