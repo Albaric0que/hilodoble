@@ -1,9 +1,10 @@
 import React from 'react'
+import './FormButton.css'
 
-function FormButton(props) {
+function FormButton() {
     return (
     <>
-    <button className={`basic-btn ${props.clase}`}>{props.text}</button>
+        <button className='contactBtn' type="submit">Enviar</button>
     </>
     );
 }

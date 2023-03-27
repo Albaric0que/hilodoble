@@ -78,7 +78,6 @@ function Collabs(){
             </div>
         </div>
         <img className="friendShop1" src={ambar} alt="Tienda Clinica de la Bicicleta" />
-        
         </section>
         
         </>

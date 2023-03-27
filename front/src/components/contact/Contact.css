@@ -24,7 +24,7 @@
 .bodyText {
     font-family: 'Montserrat';
     font-style: normal;
-    font-size: 1.10em;
+    font-size: 1em;
     text-align: left;
     margin-left: 10%;
     margin-right:20%;
@@ -36,4 +36,17 @@
 .contentBox {
     display: flex;
     justify-content: center;
+}
+
+.contactFormBox {
+    background-color: #6a09b5;
+    width: 50rem;
+    padding: 20px 80px;
+}
+
+.contactFormTxt {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 1em;
+    color: white;
 }
