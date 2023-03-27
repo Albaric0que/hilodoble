@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './Contact.css'
 import FormButton from "./FormButton";
 
-function Contact() {
+function Contact() { 
     const [formData, setFormData] = useState({
         name: "",
         surname: "",
