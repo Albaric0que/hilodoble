@@ -4,7 +4,7 @@ import FormButton from "./FormButton";
 
 function Contact() { 
     const [formData, setFormData] = useState({
-        name: "",
+        name: "", 
         surname: "",
         email: "",
         suggestionOrMessage: "",
