@@ -30,5 +30,7 @@ Route::post('/cart/add', [App\Http\Controllers\Api\CartController::class, 'add']
 Route::post('/cart/remove', [App\Http\Controllers\Api\CartController::class, 'remove'])->name('remove');
 Route::post('/cart/update', [App\Http\Controllers\Api\CartController::class, 'update'])->name('update');
 Route::get('cart/user/{id}', [CartController::class, 'getCartItemsByUserId']);
+
+Route::post('/auth/cart', [App\Http\Controllers\CartController::class, 'add']);
 });
 

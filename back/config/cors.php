@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'paths' => ['/api/showItem/*', '/login', '/api','/loginUserApi' , '/api/auth/login', '/api/auth/updateUser/*', '/api/auth/', '/api/auth/cart/','sanctum/csrf-cookie'],
+    'paths' => ['/api/showItem/*', '/login', '/api','/loginUserApi' , '/api/auth/login', '/api/auth/updateUser/*', '/api/auth/', '/api/auth/cart/','api/*', 'sanctum/csrf-cookie'],
 
     'allowed_methods' => ['*'],
 
@@ -29,6 +29,8 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'supports_credentials' => true,
+
+    
 
 ];

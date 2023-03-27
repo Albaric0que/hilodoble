@@ -16,7 +16,7 @@ function Header() {
         <a href={`/home`}><img className='logo' src={logo} alt="logo" /></a>
           <div className='rightIcons'>
             <Searchbar/>
-            <a href={`/allItems`}><img className='cart' src={cart} alt="logo" /></a>
+            <a href={`/CartUser`}><img className='cart' src={cart} alt="logo" /></a>
             <MyProfile/>
           </div>
           <div className='toggleMenu'>
