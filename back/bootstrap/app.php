@@ -1,8 +1,8 @@
 <?php
 
-header('Access-Control-Allow-Origin: *');
+/* header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: *');
-header('Access-Control-Allow-Headers: *');
+header('Access-Control-Allow-Headers: *'); */
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +13,11 @@ header('Access-Control-Allow-Headers: *');
 | which serves as the "glue" for all the components of Laravel, and is
 | the IoC container for the system binding all of the various parts.
 |
-*/
+*/  
 
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
-);
+); 
 
 /*
 |--------------------------------------------------------------------------
