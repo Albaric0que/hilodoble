@@ -54,22 +54,22 @@ Route::get('/showItem/{id}', [ItemController::class, 'show'])->name('showItem')-
 //CRUD del User
 
 //R del USER
-Route::get('/usersList',[UserController::class,'usersList'])->name('usersList');
+Route::get('/usersList',[UserController::class,'usersList'])->name('usersList')->middleware('isadmin', 'auth');
 
 //U del user
-Route::get('/editUser/{id}', [UserController::class, 'editUser'])->name('editUser');
-Route::patch('/user/{id}', [UserController::class, 'updateUser'])->name('updateUser');
+Route::get('/editUser/{id}', [UserController::class, 'editUser'])->name('editUser')->middleware('isadmin', 'auth');
+Route::patch('/user/{id}', [UserController::class, 'updateUser'])->name('updateUser')->middleware('isadmin', 'auth');
 
 //D del user
-Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('deleteUser');
+Route::delete('/deleteUser/{id}',[UserController::class,'destroy'])->name('deleteUser')->middleware('isadmin', 'auth');
 
 //Show
-Route::get('/showUser/{id}', [UserController::class, 'show'])->name('showUser')/* ->middleware('isadmin', 'auth') */;
+Route::get('/showUser/{id}', [UserController::class, 'show'])->name('showUser')->middleware('isadmin', 'auth');
 
 //nonAdmin
-Route::get('/UserNonAdmin', function () {
-    return view('UserNonAdmin');
-})->name('UserNonAdmin');
+Route::get('/userNonAdmin', function () {
+    return view('userNonAdmin');
+})->name('userNonAdmin');
 
 
  //Routes Cart
