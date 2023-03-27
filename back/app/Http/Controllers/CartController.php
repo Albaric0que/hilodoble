@@ -82,7 +82,6 @@ public function getCartItemsByUserId($userId)
 
     return response()->json($cartItems);
 }
-}
 
 
 }
