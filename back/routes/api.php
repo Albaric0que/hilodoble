@@ -27,7 +27,14 @@ Route::group([
 });
 
 //Endpoints Cart
-Route::get('/cart', [App\Http\Controllers\Api\CartController::class, 'show'])->name('cart')->middleware('auth');
-Route::post('/cart/add', [App\Http\Controllers\Api\CartController::class, 'add'])->name('add')->middleware('auth');
-Route::post('/cart/remove', [App\Http\Controllers\Api\CartController::class, 'remove'])->name('remove')->middleware('auth');
-Route::post('/cart/update', [App\Http\Controllers\Api\CartController::class, 'update'])->name('update')->middleware('auth');
+
+Route::middleware('auth')->group(function () {
+    Route::post('/cart/add', [CartController::class, 'add'])->name('add');
+    Route::get('/cart', [CartController::class, 'show'])->name('cart');
+    Route::post('/cart/remove', [CartController::class, 'remove'])->name('remove');
+    Route::post('/cart/update', [CartController::class, 'update'])->name('update');
+});
+
+//ShowItem API
+
+Route::get('showItem/{id}', [ItemController::class, 'show'])->name('showItemApi');

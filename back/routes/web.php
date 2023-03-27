@@ -25,20 +25,14 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-/* Route::resource('items', 'App\Http\Controllers\ItemController');
-Route::resource('users', 'App\Http\Controllers\UserController');
-Route::resource('carts', 'App\Http\Controllers\CartController'); */
-/* Route::resource('index', 'App\Http\Controllers\HomeController'); */
-
 Auth::routes();
-
-//R del CRUD Item
-Route::get('/home',[ItemController::class,'index'])->name('home')->middleware('isadmin', 'auth');
-/* Route::get('/home',[ItemController::class,'index']); */
 
 //C del CRUD Item
 Route::post('/storeItem', [ItemController::class, 'store'])->name('storeItem')->middleware('isadmin', 'auth');
 Route::get('/createItem', [ItemController::class, 'create'])->name('create')->middleware('isadmin', 'auth');
+
+//R del CRUD Item
+Route::get('/home',[ItemController::class,'index'])->name('home')->middleware('isadmin', 'auth');
 
 //U del CRUD Item
 Route::get('/edit/{id}', [ItemController::class, 'edit'])->name('editItem')->middleware('isadmin', 'auth');
@@ -70,10 +64,3 @@ Route::get('/showUser/{id}', [UserController::class, 'show'])->name('showUser')-
 Route::get('/userNonAdmin', function () {
     return view('userNonAdmin');
 })->name('userNonAdmin');
-
-
- //Routes Cart
-Route::post('/cart/add', [CartController::class, 'add'])->name('add')->middleware('auth');
-Route::get('/cart', [CartController::class, 'show'])->name('cart')->middleware('auth');
-Route::post('/cart/remove', [CartController::class, 'remove'])->name('remove')->middleware('auth');
-Route::post('/cart/update', [CartController::class, 'update'])->name('update')->middleware('auth');

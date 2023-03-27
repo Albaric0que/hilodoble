@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <h1>Listado de productos</h1>
@@ -59,7 +58,7 @@
                         </td>
                     </tr>
                 @endforeach
-            </tbody>
+            </tbody> 
         </table>
     </div>
 </div>

@@ -25,7 +25,7 @@ class ApiCRUDItemsTest extends TestCase
             ->assertJsonCount(2);
     }
 
-     public function testAnItemCanBeShownInJson()
+    public function testAnItemCanBeShownInJson()
     {
         $item = Item::factory()->create();
 
