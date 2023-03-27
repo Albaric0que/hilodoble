@@ -41,7 +41,7 @@ function Contact() {
                                 <input type="text" name="name" value={formData.name} onChange={handleInputChange} required/>
                             </label>
 
-                            <label className='contactFormTxt'>
+                            <label className='contactFormTxt'> 
                                 Apellidos:
                                 <input type="text" name="surname" value={formData.surname} onChange={handleInputChange} required/>
                             </label>
