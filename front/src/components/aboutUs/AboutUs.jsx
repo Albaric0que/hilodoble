@@ -1,12 +1,16 @@
 import React from 'react';
 import './AboutUs.css';
+import people from '../img/imgAboutUs/people.svg';
+import cup from '../img/imgAboutUs/cup.svg';
+import leaves from '../img/imgAboutUs/leaves.svg';
 
 function AboutUs(){
 
     return(
         <section class="aboutUs">
             <div class="topImage"></div>
-            <h3>Sobre nosotros</h3>
+            <h1>Sobre nosotros</h1>
+            <div className="purpleRec"> </div>
             <div class="text">
                 <div >
                     <p>Mochilas, bandoleras, carpetas, estuches, fundas... Como regalo de empresa o como idea de cumpleaños, todas las propuestas son creadas de manera única y con originalidad.</p>
@@ -19,17 +23,17 @@ function AboutUs(){
             <div class="target">
                 <div class="containerBlocks">
                     <div class="socials">
-                        <div class="circle"></div>
+                        <div class="circle"><img src={people} alt="people icon" /></div>
                         <h4>Sociales</h4>
                         <p>Una nueva vida no solo a los materiales reciclados de los productos, también es la segunda oportunidad de las personas que los crean.</p>
                     </div>
                     <div class="goals">
-                        <div class="circle"></div>
+                        <div class="circle"><img src={cup} alt="cup icon" /></div>
                         <h4>Metas</h4>
                         <p>Tenemos clara nuestra meta: la incorporación social y laboral de las personas, junto a la conservación y desarrollo del entorno.</p>
                     </div>
                     <div class="natural">
-                        <div class="circle"></div>
+                        <div class="circle"><img src={leaves} alt="leaves icon" /></div>
                         <h4>Naturales</h4>
                         <p>Favorecemos la economía circular del entorno, aprovechando recursos, respetando a las personas y conservando el planeta.</p>
                     </div>
