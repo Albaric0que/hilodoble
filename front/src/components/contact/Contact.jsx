@@ -30,7 +30,7 @@ function Contact() {
                 <h2 className='textCharacteristics'>Contacta</h2>
                 <div className='purpleRec'></div>
             </div>
-            <div className='contentBox'>
+            <div className='contentBox'> 
                 <p className='bodyText'>¿Tienes alguna duda, propuesta o sugerencia? Buscamos la respuesta indicada a tu mensaje, para ello contacta con nosotros o escríbenos mediante el formulario.</p>
                 <div className='contactFormBox'>
                     <form onSubmit={handleSubmit}>
