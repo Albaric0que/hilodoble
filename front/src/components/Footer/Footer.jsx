@@ -1,5 +1,5 @@
 import './Footer.css'
-import logo from '../img/imgHeader/logo.png';
+import logo from '../img/imgHeader/cropped-hilo-doble-logo.png';
 import ig from '../img/imgHeader/ig.svg';
 import tw from '../img/imgHeader/tw.svg';
 import fb from '../img/imgHeader/fb.svg';
@@ -29,9 +29,9 @@ function Footer() {
         <div className='footerBlock'>
         <h3>Síguenos en:</h3>
           <ul className='footerSocialList'>
-            <li><a href="#"><img src={fb} alt="fb" /></a></li>  
-            <li><a href="#"><img src={tw} alt="tw" /></a></li>
-            <li><a href="#"><img src={ig} alt="ig" /></a></li>  
+            <li><a href="https://www.facebook.com/hilodoble/"><img src={fb} alt="fb" /></a></li>  
+            <li><a href="https://twitter.com/Hilodoble_"><img src={tw} alt="tw" /></a></li>
+            <li><a href="https://www.instagram.com/hilodobleshop/"><img src={ig} alt="ig" /></a></li>  
           </ul>
         </div>
       </div>
