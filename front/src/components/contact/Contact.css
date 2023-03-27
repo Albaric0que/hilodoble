@@ -21,30 +21,23 @@
     margin: 0 auto;
 }
 
-.bodyText {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-size: 1em;
-    text-align: left;
-    margin-left: 10%;
-    margin-right:20%;
-    margin-bottom:30px;
-    margin-top:30px;
-}
-
 .contentBox {
     display: flex; 
     justify-content: center;
+    padding: 45px 87px;
+}
+
+.bodyText {
+    font-family: 'Montserrat';
+    width: 50%;
+    margin-right: 30px;
 }
 
 .contactFormBox {
     background-color: #6a09b5;
     width: 50rem;
     padding: 20px 80px;
-}
-
-.contactFormBox label {
-    display: block;
+    width: 50%;
 }
 
 .contactFormTxt {
@@ -52,6 +45,14 @@
     font-style: normal;
     font-size: 1em;
     color: white;
+}
+
+.contactFormBox label {
+    display: block;
+}
+
+.contactFormBox input, textarea {
+    width: 100%;
 }
 
 .contactFormTopInfo {

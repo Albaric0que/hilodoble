@@ -36,33 +36,24 @@ function Contact() {
                 <div className='contactFormBox'>
                     <form onSubmit={handleSubmit}>
                         <div className='contactFormTopInfo'>
-                            <label className='contactFormTxt'>
-                                Nombre: 
+                            <div>
+                                <label className='contactFormTxt'>Nombre: </label>
                                 <input type="text" name="name" value={formData.name} onChange={handleInputChange} required/>
-                            </label>
-
-                            <label className='contactFormTxt'> 
-                                Apellidos:
+                            </div>
+                            <div>
+                                <label className='contactFormTxt'>Apellidos: </label>
                                 <input type="text" name="surname" value={formData.surname} onChange={handleInputChange} required/>
-                            </label>
+                            </div>
                         </div>
 
-                        <br></br>
-
                         <div>
-                            <label className='contactFormTxt'>
-                                Correo electrónico: 
-                                <input type="email" name="email" value={formData.email} onChange={handleInputChange} required/>
-                            </label>
+                            <label className='contactFormTxt'>Correo electrónico: </label>
+                            <input type="email" name="email" value={formData.email} onChange={handleInputChange} required/>
                         </div>
 
-                        <br></br>
-
                         <div>
-                            <label className='contactFormTxt'>
-                                Sugerencia o mensaje:
-                                <textarea name="suggestionOrMessage" value={formData.suggestionOrMessage} onChange={handleInputChange} required/>
-                            </label>
+                            <label className='contactFormTxt'>Sugerencia o mensaje: </label>
+                            <textarea name="suggestionOrMessage" value={formData.suggestionOrMessage} onChange={handleInputChange} required/>
                         </div>
                     </form>
                     <FormButton text='Enviar' className='FormBtn' type='submit'/>
