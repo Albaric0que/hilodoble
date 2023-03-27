@@ -44,9 +44,17 @@
     padding: 20px 80px;
 }
 
+.contactFormBox label {
+    display: block;
+}
+
 .contactFormTxt {
     font-family: 'Montserrat';
     font-style: normal;
     font-size: 1em;
     color: white;
+}
+
+.contactFormTopInfo {
+    display: flex;
 }

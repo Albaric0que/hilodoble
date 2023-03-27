@@ -35,14 +35,12 @@ function Contact() {
                 <p className='bodyText'>¿Tienes alguna duda, propuesta o sugerencia? Buscamos la respuesta indicada a tu mensaje, para ello contacta con nosotros o escríbenos mediante el formulario.</p>
                 <div className='contactFormBox'>
                     <form onSubmit={handleSubmit}>
-                        <div>
+                        <div className='contactFormTopInfo'>
                             <label className='contactFormTxt'>
                                 Nombre: 
                                 <input type="text" name="name" value={formData.name} onChange={handleInputChange} required/>
                             </label>
-                        </div>
 
-                        <div>
                             <label className='contactFormTxt'>
                                 Apellidos:
                                 <input type="text" name="surname" value={formData.surname} onChange={handleInputChange} required/>
