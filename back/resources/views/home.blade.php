@@ -33,27 +33,26 @@
             <tbody>
                 @foreach ($items as $item)
                     <tr>
-                        <td>{{ $item->itemName }}</td>
+                        <td><a href="{{ route('items.show', $item->id) }}" >{{ $item->itemName }}</a></td>
                         <td>{{ $item->category }}</td>
                         <td>{{ $item->description }}</td>
                         <td><img src="{{ asset($item->image) }}" alt="{{ $item->itemName }}" class="img-thumbnail" style="max-width: 100px;"></td>
                         <td>{{ $item->stockQuantity }}</td>
                         <td>{{ $item->purchaseQuantity }}</td>
-                        <td>{{ $item->price }}</td>
-                        <td>
-                            <a href="{{ route('items.show', $item->id) }}" ><img src="../images/show.png" alt="eye button"></a><br>
+                        <td>{{ $item->price }}€</td>
+                        <td class="btnActions">
                             <a href="{{ route('editItem',['id'=>$item->id]) }}" ><img src="../images/editPencil.png" alt="Pencil button"></a><br>
-                            <form action="{{ route('items.destroy', $item->id) }}" method="POST" style="display: inline-block;">
+                            <form class="deleteItem"action="{{ route('items.destroy', $item->id) }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button class="deleteItem" type="submit"  onclick="return confirm('Estás seguro de querer borrar este producto?')"><img src="../images/deleteBin.png" alt="Bin button"></button>
                             </form>
                             <form action="{{ route('add') }}" method="POST" style="display: inline-block;">
-                                @csrf
+                            {{--  @csrf
                                 <input type="hidden" name="item_id" value="{{ $item->id }}">
                                 
                                 <input type="number" name="purchaseQuantity" class="form-control" value="1" min="1">
-                                <button type="submit" class="btn btn-primary btn-sm">Añadir al carrito</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Añadir al carrito</button> --}}
                             </form>
                         </td>
                     </tr>

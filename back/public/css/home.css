@@ -8,3 +8,10 @@
     border:none;
     background-color: white;
 }
+.btnActions img{
+    margin-top: 10px;
+    display: flex;  
+}
+.deleteItem{
+    background-color: white;
+}
