@@ -28,7 +28,7 @@ class Navbar extends Component {
                         <li><a href={`/allItems`}>TIENDA</a></li>
                         <li><a href={`/aboutUs`}>SOBRE NOSOTROS</a></li>
                         <li><a href={`/friendsShops`}>TIENDAS AMIGAS</a></li>
-                        <li><a href="index.html">CONTACTA</a></li>
+                        <li><a href={`/contacta`}>CONTACTA</a></li>
                     </ul>
                 </nav>
                 <div id='mobile' onClick={this.handleClick}>

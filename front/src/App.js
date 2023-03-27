@@ -7,6 +7,7 @@ import AboutUs from './components/aboutUs/AboutUs';
 import ShowItem from './components/showItem/ShowItem';
 import AllItems from './components/allItems/AllItems';
 import CartUser from './components/cartUser/CartUser';
+import Contact from './components/contact/Contact';
 import Footer from './components/Footer/Footer';
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/cartUser' element={<CartUser />} />
           <Route path='/aboutUs' element={<AboutUs />} />
           <Route path='/friendsShops' element={<Collabs />} />
+          <Route path='/contacta' element={<Contact />} />
         </Routes>
       </BrowserRouter>
 
