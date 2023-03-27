@@ -16,10 +16,14 @@
 
 .frame{
     background-color: transparent;
-    border: 2.5px solid #6a09b5;
+    border: 2.5px solid rgb(106, 9, 181);
     color: #6a09b5;
     font-size: bold;
+    box-shadow: 0 0 8px rgba(106, 9, 181, .25);
+    cursor: pointer;
 }
+
+
 
 .solid-purple{
     background-color: steelblue;
