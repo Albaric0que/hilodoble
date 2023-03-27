@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import '../home/Home.css';
 import axios from 'axios';
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import Carrousel from '../../components/home/carrousel/Carrousel';
 
 /* function Home() {
     return (
@@ -11,13 +13,16 @@ import { useParams } from 'react-router-dom'
 } */
 
 const Home = () => {
-/*     const [sliderImages, setSliderImages] = useState([]);
-    const [featuredProducts, setFeaturedProducts] = useState([]); */
+
     const param = useParams();
     const [ item, setItem ] = useState([]);
-  
+    const handleAddToCart = (itemId) => {
+    const token = localStorage.getItem('token'); 
+    }
+
     useEffect(() => {
-      // Obtener imágenes del slider
+      
+      // Obtener productos destacados
       axios
         .get(`http://127.0.0.1:8000/api/showItem/${param.id}`)
         .then((response) => {
@@ -25,40 +30,24 @@ const Home = () => {
         })
         .catch((error) => {
           console.error(error);
-        });   
-  
-      // Obtener productos destacados
-      axios
-        .get("https://ejemplo.com/api/featured-products")
-        .then((response) => {
-          setItem(response.data);
-        })
-        .catch((error) => {
-          console.error(error);
         });
     }, []);
-  
+
     return (
-      <div>
-       {/*  {Slider} */}
-        <div className="slider">
-          {item.map((image) => (
-            <img key={item.id} src={item.url} alt={item.alt} />
-          ))}
-        </div>
-  
-        {/* Productos destacados */}
-        <div className="featured-products">
-          {item.map((product) => (
-            <div key={product.id}>
-              <h2>{product.title}</h2>
-              <p>{product.description}</p>
-              <img src={product.image} alt={product.title} />
+      <>
+      <Carrousel/>
+      <Link key={item.id} to={`/showItem`} className="productContainer">
+            <img src={item.image} alt={item.itemName} className="imgContainer"></img>
+            <div>
+              <h3 className="nameItem">{item.itemName}</h3>
+              <h3 className="priceItem">{item.price}€</h3>
+              <button className="cartBtn" onClick={() => handleAddToCart(item.id)}>
+                Añadir al carrito
+              </button>
             </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
+      </Link>
+      </>
+      )
+  }
   
   export default Home;
