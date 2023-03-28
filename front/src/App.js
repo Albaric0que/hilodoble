@@ -1,24 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route, } from 'react-router-dom';
+import Header from './components/header/Header';
+import Collabs from './components/collabs/Collabs'
+import AboutUs from './components/aboutUs/AboutUs';
+import ShowItem from './components/showItem/ShowItem';
+import AllItems from './components/allItems/AllItems';
+import CartUser from './components/cartUser/CartUser';
+import Footer from './components/Footer/Footer';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/showItem/:id' element={<ShowItem />} />
+          <Route path='/allItems' element={<AllItems />} />
+          <Route path='/cartUser' element={<CartUser />} />
+          <Route path='/aboutUs' element={<AboutUs />} />
+          <Route path='/friendsShops' element={<Collabs />} />
+        </Routes>
+      </BrowserRouter>
+
+      <Footer />
     </div>
   );
 }

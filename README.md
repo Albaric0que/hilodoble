@@ -112,7 +112,8 @@
 </div>
 
 <h2>8. Stacks</h2>
-* **Frontend:** HTML5, CSS3, SASS,REACT <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="30" /></a>
+
+* **Frontend:**  HTML5, CSS3, SASS,REACT <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="30" /></a>
 <a href="https://www.w3schools.com/css/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="30" /></a>
 <a href="https://sass-lang.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/sass-original.svg" alt="Sass" height="30" /></a> <a href="https://sass-lang.com/" target="_blank"><img style="margin: 10px" src="https://download.logo.wine/logo/React_(web_framework)/React_(web_framework)-Logo.wine.png" alt="React" height="30" /></a>
 
@@ -156,7 +157,12 @@
 <li>Type in the IDE terminal: <b>php artisan migrate:fresh --seed</b> and press intro.</li>
 <li>Type in the IDE terminal: <b>npm run dev</b> and press intro. Then open another terminal in the IDE without closing the previous one</li>
 <li>Type in the IDE terminal: <b>php artisan migrate</b> and press intro</li>
-<li>Type in the IDE terminal: <b>php artisan serve</b> and press intro.</li><br>
+<li>Type in the IDE terminal: <b>php artisan serve</b> and press intro.</li>
+<li>To install the <b>JWT library<b> you have to pass the following commands in back:<br></li>
+    <ol>
+    <li><b>composer require tymon/jwt-auth<b></li>
+    <li><b>php artisan jwt:secret<b></li>
+    </ol>
 
 <h3>Go to the front folder with the command <b>cd front</b> and type in the terminal the ss command</h3>
 <li>Type in the IDE terminal: <b>npm install</b> and press intro</li>
@@ -170,13 +176,14 @@
 <li><b>Test</b>: Run in the IDE <b>php artisan test</b> & <b>vendor/bin/phpunit</b> where it should return the following result:<b> 5 passed</b> and <b> OK (5 test, 12 assertions)</b></li>
 </ol>
 <div style="display:flex; flex-wrap:wrap; justify-content:center; margin:auto">
-<img style="width:350px;; margin:12px" src="https://user-images.githubusercontent.com/116546625/225853266-d6b82c55-7f41-4d7e-a70d-a2efcfeee535.PNG" alt="finalTest"/>
+<img style="width:350px;; margin:12px" src="https://user-images.githubusercontent.com/116546625/227210986-cb3e8797-e613-4a5a-a385-81e3fb5b3235.png" alt="finalTest"/>
 </div>
 
 <h2>10. Methodology:</h2>
 
 <li>Pair programming.</li>
 <li>Solo programming.</li>
+
 <li>Agile with SCRUM</li>
 <li>Kanban</li>
 </ul>

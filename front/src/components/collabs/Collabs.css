@@ -1,0 +1,82 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container1{
+    /* border: 2px solid red; */
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+   
+
+
+}
+
+.title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 51px;
+    
+    color: #383838;
+    padding-bottom: 15px;
+}
+
+.purpleRec{
+    width: 74px;
+    height: 10px;
+    background-color: #6a09b5; 
+    margin: 0 auto;
+
+}
+
+.text1{
+    padding-top: 15px;
+}
+.cardFriendShop{
+    width: 90%;
+    height: auto;
+    /* border: 2px solid red; */
+    margin: 30px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+    display: flex;
+}
+
+.friendShop1{
+    width: 30%;
+    height: 300px;
+    object-fit: cover;
+    /* padding: 1em; */
+    cursor: pointer;
+    
+}
+
+.info1{
+    padding: 20px;
+}
+
+.info1 h2{
+    margin: 30px 0;
+    font-size: 24px;
+}
+
+.info2{
+    padding: 20px;
+}
+.info2 h2{
+    /* margin: 0 30px; */
+    font-size: 24px;
+    text-align: right;;
+}
+
+.info2 h3{
+    text-align: right;
+    margin: 30px 0;
+}
+
+.info2 p{
+    text-align: right;
+}
