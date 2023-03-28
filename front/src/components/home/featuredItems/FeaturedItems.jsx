@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import '../featuredItems/FeaturedItems';
 
 function FeaturedItems() {
     const [items, setItems] = useState([]);
@@ -44,11 +45,11 @@ function FeaturedItems() {
     };
 
 return (
-    <div className="containerCard">
+    <div className="containerFeaturedItems">
     {items.slice(0, 3).map((item) => {
         return (
         
-        <Link key={item.id} to={`/showItem/${item.id}`} className="productContainer">
+        <Link key={item.id} to={`/showItem/${item.id}`} className="featuredProductContainer">
             <img src={item.image} alt={item.itemName} className="imgContainer"></img>
             <div>
                 <h3 className="nameItem">{item.itemName}</h3>
