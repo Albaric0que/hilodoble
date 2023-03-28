@@ -1,5 +1,5 @@
 import './Footer.css'
-import logo from '../img/imgHeader/cropped-hilo-doble-logo.png';
+import logo from '../img/imgHeader/cropped-hilo-doble-logo.png'; 
 import ig from '../img/imgHeader/ig.svg';
 import tw from '../img/imgHeader/tw.svg';
 import fb from '../img/imgHeader/fb.svg';

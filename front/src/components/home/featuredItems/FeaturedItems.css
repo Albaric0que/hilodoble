@@ -1,9 +1,13 @@
+.containerFeaturedItems, #featuredItems{
+  z-index: 0;
+}
 .containerFeaturedItems{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     max-width: 100%;
     margin: 40px 20px 40px 20px;
+    z-index: 0;
   }
   
   

@@ -47,7 +47,7 @@ function FeaturedItems() {
     const randomItems = items.sort(() => Math.random() - 0.5).slice(0, 3);
 
 return (
-    <>
+    <div id="FeaturedItems">
     <div className='titleContainer'>
         <h1>La solidaridad que se lleva</h1>
         <div className="purpleRec"> </div>
@@ -71,7 +71,7 @@ return (
         })}
         {message && <p className="message">{message}</p>}
     </div>
-    </>
+    </div>
     );
 }
 
