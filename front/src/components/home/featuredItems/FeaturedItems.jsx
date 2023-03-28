@@ -7,8 +7,9 @@ function FeaturedItems() {
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api`)
-        .then(response => {
+        axios
+        .get(`http://127.0.0.1:8000/api`)
+        .then((response) => {
             setItems(response.data);
             console.log(response.data);
         })
@@ -37,11 +38,12 @@ function FeaturedItems() {
             console.log(response.data);
             setMessage(`${response.data.itemName} ha sido añadido al carrito.`);
         })
-            .catch((error) => {
+            .catch((error) => {  
             console.error(error);
         });
     };
 
+return (
     <div className="containerCard">
     {items.map((item) => {
         return (
@@ -59,8 +61,8 @@ function FeaturedItems() {
         );
         })}
         {message && <p className="message">{message}</p>}
-    
     </div>
-    }
+    );
+}
 
     export default FeaturedItems;
