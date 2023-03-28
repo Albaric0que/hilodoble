@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+
 /*
  * This file is part of jwt-auth.
  *
