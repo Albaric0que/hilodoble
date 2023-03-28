@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import logo from '../img/imgHeader/logo.png';
 import cart from '../img/imgHeader/cart.svg';
 import MyProfile from './myProfile/MyProfile';
@@ -9,6 +8,7 @@ import Navbar from './navbar/Navbar';
 import './Header.css';
 
 function Header() {
+
   return (
     <>
       <div>

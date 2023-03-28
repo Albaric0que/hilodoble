@@ -1,7 +1,28 @@
 import React from 'react'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import './Searchbar.css';
 
 function Searchbar() {
+
+    /* const [items, setItems] = useState([]);
+    const [search, setSearch] = useState('');
+
+    const petitionGet=async()=>{
+        await axios.get(`http://127.0.0.1:8000/api`)
+            .then(response =>  {
+
+            setItems(response.data);
+
+        }).catch(error => {
+            console.error(error);
+        })
+    }
+
+    useEffect(() => {
+    petitionGet();
+    },[]) */
+
     return (
         <div className='searchAll'>
             <input className='searchBox' type='search' placeholder="Buscar..."/>

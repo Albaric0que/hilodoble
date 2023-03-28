@@ -18,12 +18,12 @@ function Footer() {
         <div className='footerBlock'>
           <h3>Nuestra web</h3>
           <ul className='footerMenuList'>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Tienda</a></li>
-            <li><a href="#">Sobre nosotros</a></li>
-            <li><a href="#">Tiendas amigas</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contacta</a></li>
+            <li><a href={`/`}>Inicio</a></li>
+            <li><a href={`/allItems`}>Tienda</a></li>
+            <li><a href={`/aboutUs`}>Sobre nosotros</a></li>
+            <li><a href={`/friendsShops`}>Tiendas amigas</a></li>
+            {/* <li><a href="#">Blog</a></li> */}
+            <li><a href="index.html">Contacta</a></li>
           </ul>
         </div>
         <div className='footerBlock'>

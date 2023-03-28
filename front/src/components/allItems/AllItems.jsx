@@ -22,18 +22,17 @@ function AllItems() {
   }, []);
 
   const handleAddToCart = (itemId) => {
-    const token = localStorage.getItem('token'); // get the JWT token from localStorage
-  
+    const token = localStorage.getItem('token');
     axios
       .post(
         'http://127.0.0.1:8000/api/cart/add',
         {
           item_id: itemId,
-          purchaseQuantity: 1, // you can change this value as needed
+          purchaseQuantity: 1,
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`, // include the token in the Authorization header
+            Authorization: `Bearer ${token}`,
           },
         }
       )
