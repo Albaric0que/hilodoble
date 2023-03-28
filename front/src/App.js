@@ -7,6 +7,7 @@ import SignUp from './components/signup.component'
 import Dashboard from './components/dashboard.component'
 import Logout from './components/logout.component'
 import Home from './components/home/Home';
+import EditUser from './components/edituser/EditUser';
 import Header from './components/header/Header';
 import Collabs from './components/collabs/Collabs'
 import Contact from './components/contact/Contact'
@@ -24,6 +25,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/login" element={<Login />} />
+          <Route path="/edit/:id" render={(props) => <EditUser {...props} match={props.match} />} />
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route path="/sign-in" element={<Login />} />
