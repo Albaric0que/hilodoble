@@ -71,7 +71,7 @@
     height: 300px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     
     .titleContainerMarginated{
         padding: 9px 30px;
