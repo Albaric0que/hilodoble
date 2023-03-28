@@ -11,7 +11,7 @@ function Login() {
       password: 'cityslicka'
     }
 
-    axios.post("http://127.0.0.1:8000/api/auth/login", loginPayload)
+    axios.post("https://reqres.in/api/login", loginPayload)
       .then(response => {
         //get token from response
         const token = response.data.token;

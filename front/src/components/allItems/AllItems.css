@@ -1,0 +1,103 @@
+.main{
+  display:flex;
+}
+
+.categories{
+  margin: 40px 20px 40px 20px;
+  width: 20%;
+}
+
+.categories h3{
+  color: #6A09B5;
+}
+
+.categories h4{
+  color:#383838;
+}
+
+ul{
+  list-style: none;
+}
+
+.titleContainer{
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.purpleRec{
+  width: 74px;
+  height: 10px;
+  background-color: #6a09b5; 
+  margin: 10px auto;
+}
+
+.containerCard{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 100%;
+  margin: 40px 20px 40px 20px;
+}
+
+
+.containerCard h1, .containerCard h2{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+}
+
+.containerCard h2{
+  margin-bottom:40px;
+}
+
+.productContainer{
+  padding-bottom: 20px; 
+  text-align: center;
+  width: 290px ;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.productContainer h3.nameItem{
+width:100%;
+}
+
+.cartBtn{
+  width: auto;
+  padding:0 7px 0 7px;
+
+  border-color: #6A09B5;
+  background: white;
+  color:#6A09B5;
+  border-style: solid;
+}
+
+.imgSize{
+width: 100%;
+height: 25vh;
+display:flex;
+justify-content: flex-start;
+}
+
+a{
+  text-decoration: none;
+}
+
+.priceItem{
+  margin: 1vh;
+  color: #D9D9D9;
+}
+
+@media (max-width:400px){
+  .main{
+    display: block;
+  }
+
+  .categories{
+    border: 2px solid blue;
+    margin: 40px 20px 40px 20px;
+    width: 100%;
+
+  }
+}
