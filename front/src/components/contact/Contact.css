@@ -1,0 +1,60 @@
+.pageTitle {
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.textCharacteristics {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 51px;
+    color: #383838;
+    padding-bottom: 15px;
+}
+
+.purpleRec {
+    width: 74px;
+    height: 10px;
+    background-color: #6a09b5; 
+    margin: 0 auto;
+}
+
+.contentBox {
+    display: flex; 
+    justify-content: center;
+    padding: 45px 87px;
+}
+
+.bodyText {
+    font-family: 'Montserrat';
+    width: 50%;
+    margin-right: 30px;
+}
+
+.contactFormBox {
+    background-color: #6a09b5;
+    width: 50rem;
+    padding: 20px 80px;
+    width: 50%;
+}
+
+.contactFormTxt {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 1em;
+    color: white;
+}
+
+.contactFormBox label {
+    display: block;
+}
+
+.contactFormBox input, textarea {
+    width: 100%;
+}
+
+.contactFormTopInfo {
+    display: flex;
+}

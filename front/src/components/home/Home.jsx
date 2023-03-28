@@ -1,0 +1,17 @@
+import React, { useEffect, useState } from 'react'
+import '../home/Home.css';
+import Carrousel from './carrousel/Carrousel';
+import FeaturedItems from './featuredItems/FeaturedItems';
+
+
+function Home() {
+  return (
+    <>
+      <Carrousel/>
+      <div>Home</div>
+      <FeaturedItems />
+
+    </>
+  )
+}
+export default Home

@@ -24,11 +24,11 @@ class Navbar extends Component {
                                 <Searchbar/>
                             </li>
                         </div>
-                        <li><a className='active' href="index.html">INICIO</a></li>
+                        <li><a href={`/home`}>INICIO</a></li>
                         <li><a href={`/allItems`}>TIENDA</a></li>
                         <li><a href={`/aboutUs`}>SOBRE NOSOTROS</a></li>
                         <li><a href={`/friendsShops`}>TIENDAS AMIGAS</a></li>
-                        <li><a href="index.html">CONTACTA</a></li>
+                        <li><a href={`/contact`}>CONTACTA</a></li>
                     </ul>
                 </nav>
                 <div id='mobile' onClick={this.handleClick}>
