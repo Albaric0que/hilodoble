@@ -31,7 +31,7 @@ class CRUDUserTest extends TestCase
         $response->assertStatus(200)
                 ->assertViewIs('usersList');
     }
-/*
+
     public function test_anUserCanBeShowedToAnAdmin()
     {
         $this->withExceptionHandling();
@@ -45,7 +45,7 @@ class CRUDUserTest extends TestCase
         $response->assertSee($user->userName);
         $response->assertStatus(200)
                 ->assertViewIs('showUser');
-    } */
+    }
 
     public function test_anUserCanBeDeletedByAnAdmin()
     {
@@ -74,24 +74,5 @@ class CRUDUserTest extends TestCase
         $response = $this->patch(route('updateUser', $user->id),['name' => 'New name']);
         $this->assertEquals('New name', User::first()->name);
     }
-
-    public function test_anItemCanBeStoredByAnAdmin(){
-        $this->withExceptionHandling();
-
-
-        $userAdmin = User::factory()->create(['isAdmin' => true]);
-        $this->actingAs($userAdmin);
-
-
-        $response = $this ->post(route('store'),[
-                'name'=> 'name',
-                'email'=>'email',
-                'password'=>'password',
-
-            ]);
-
-        $this->assertCount(1,User::all());
-}
-
 }
 

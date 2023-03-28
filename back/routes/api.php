@@ -34,3 +34,15 @@ Route::get('cart/user/{id}', [CartController::class, 'getCartItemsByUserId']);
 Route::post('/auth/cart', [App\Http\Controllers\CartController::class, 'add']);
 });
 
+//Endpoints Cart
+
+Route::middleware('auth')->group(function () {
+    Route::post('/cart/add', [CartController::class, 'add'])->name('add');
+    Route::get('/cart', [CartController::class, 'show'])->name('cart');
+    Route::post('/cart/remove', [CartController::class, 'remove'])->name('remove');
+    Route::post('/cart/update', [CartController::class, 'update'])->name('update');
+});
+
+//ShowItem API
+
+Route::get('showItem/{id}', [ItemController::class, 'show'])->name('showItemApi');

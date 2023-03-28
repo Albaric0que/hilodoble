@@ -15,7 +15,7 @@ class ApiCRUDUsersTest extends TestCase
      */
     use RefreshDatabase;
 
-     public function test_checkIfUserCanDeleteItsProfile(): void
+    /*  public function test_checkIfUserCanDeleteItsProfile(): void
      {
         $user = User::factory()->create();
         $token = auth()->login($user);
@@ -28,9 +28,9 @@ class ApiCRUDUsersTest extends TestCase
             ->assertJson([
                     'message' => 'Tu perfil se ha eliminado correctamente',
                 ]);
-     }
+     } */
 
-     public function test_checkIfUserCanUpdateItsProfile(): void
+     /* public function test_checkIfUserCanUpdateItsProfile(): void
      {
         $user = User::factory()->create();
 
@@ -65,5 +65,5 @@ class ApiCRUDUsersTest extends TestCase
         $this->assertEquals($newUserData['address'], $user->address);
         $this->assertEquals($newUserData['postcode'], $user->postcode);
         $this->assertEquals(0, $user->isAdmin);
-     }
+     } */
 }

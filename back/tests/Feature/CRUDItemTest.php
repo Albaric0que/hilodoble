@@ -19,25 +19,44 @@ class CRUDItemTest extends TestCase
         $items =Item::factory(2)->create();
         $item =$items[0];
 
-        $response = $this->get('/');
+        $userAdmin = User::factory()->create(['isAdmin'=>true]);
+        $this->actingAs($userAdmin);
+
+        $response = $this->get(route('home'));
         $response -> assertSee($item->name);
 
         $response->assertStatus(200)
                 ->assertViewIs('home');
+
+        $userNoAdmin=User::factory()->create(['isAdmin'=>false]);
+        $this->actingAs($userNoAdmin);
+
+        $response = $this->get(route('home', $item->id));
+        $response->assertStatus(302);
     }
 
-    public function test_anItemCanBeShowed()
+    public function test_anItemCanBeShowedJustToAnAdmin()
     {
         $this->withExceptionHandling();
 
         $item = Item::factory()->create();
         $this->assertCount(1, Item::all());
 
+        $userAdmin = User::factory()->create(['isAdmin'=>true]);
+        $this->actingAs($userAdmin);
+
         $response = $this->get(route('showItem', $item->id));
         $response->assertSee($item->itemName);
         $response->assertStatus(200)
                 ->assertViewIs('showItem');
+
+        $userNoAdmin=User::factory()->create(['isAdmin'=>false]);
+        $this->actingAs($userNoAdmin);
+
+        $response = $this->get(route('showItem', $item->id));
+        $response->assertStatus(302);
     }
+
     public function test_AnItemCanBeUpdateJustByAnAdmin(){
 
         $this->withExceptionHandling();
@@ -70,25 +89,23 @@ class CRUDItemTest extends TestCase
 
         $response = $this->delete(route('deleteItem', $item->id));
         $this->assertCount(1, Item::all());
-        $response->assertStatus(403);
+        $response->assertStatus(302);
 
         $userAdmin = User::factory()->create(['isAdmin'=>true]);
         $this->actingAs($userAdmin);
 
         $response = $this->delete(route('deleteItem', $item->id));
         $this->assertCount(0, Item::all());
-
-
     }
 
-
-    public function test_anItemCanBeCreatedJustByAnAdmin(){
+    public function test_anItemCanBeCreatedJustByAnAdmin()
+    {
         $this->withExceptionHandling();
 
         $userAdmin = User::factory()->create(['isAdmin' => true]);
         $this->actingAs($userAdmin);
 
-        $response = $this ->post(route('store'),[
+        $response = $this ->post(route('storeItem'),[
                 'itemName'=> 'itemName',
                 'category'=>'category',
                 'description'=>'description',
@@ -103,7 +120,7 @@ class CRUDItemTest extends TestCase
         $userNoAdmin = User::factory()->create(['isAdmin' => false]);
         $this->actingAs($userNoAdmin);
 
-        $response = $this->post(route('store'),[
+        $response = $this->post(route('storeItem'),[
             'itemName'=> 'itemName',
             'category'=>'category',
             'description'=>'description',

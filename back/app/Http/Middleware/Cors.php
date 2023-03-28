@@ -11,6 +11,7 @@ class Cors
     /**
      * Handle an incoming request.
      *
+<<<<<<< HEAD
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
      * @return mixed
@@ -21,5 +22,12 @@ class Cors
             ->header('Access-Control-Allow-Origin', '*');
             
 
+=======
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     */
+    public function handle(Request $request, Closure $next): Response
+    {
+        return $next($request);
+>>>>>>> CRUDuser
     }
 }

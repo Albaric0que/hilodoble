@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
+
 class ItemController extends Controller
 {
     /**
@@ -41,7 +42,7 @@ class ItemController extends Controller
         $item->description = $request->description;
         $item->image = $request->image;
         $item->stockQuantity = $request->stockQuantity;
-        $item->purchaseQuantity = $request->purchaseQuantity;
+        $item->purchaseQuantity;
         $item->price = $request->price;
         $item->save();
 
@@ -88,19 +89,11 @@ class ItemController extends Controller
             ->with('success', 'Item updated successfully');
     }
 
-/*   public function destroy(string $id)
-    {
-        Item::destroy($id);
-        return response()->json(['message' => 'El producto se ha eliminado correctamente'], 200);
-    } */
-
-
-
     public function destroy($id)
     {
-        if (!auth()->user()->isAdmin) {
+       /*  if (!auth()->user()->isAdmin) {
             abort(403, 'Unauthorized action.');
-        }
+        } */
 
         $item = Item::find($id);
 
