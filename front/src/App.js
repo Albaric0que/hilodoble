@@ -1,49 +1,25 @@
-import React from 'react';
-import { ProtectRoutes } from './hooks/protectRoutes/index';
-import { Route, Routes } from 'react-router-dom';
-import Login from './components/login/Login';
+import React from 'react'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Login from './components/login.component'
 import SignUp from './components/signup.component'
 import Dashboard from './components/dashboard.component'
-import Header from './components/header/Header';
-import Logout from './components/logout/Logout';
-import Collabs from './components/collabs/Collabs'
-import AboutUs from './components/aboutUs/AboutUs';
-import ShowItem from './components/showItem/ShowItem';
-import AllItems from './components/allItems/AllItems';
-import CartUser from './components/cartUser/CartUser';
-import Footer from './components/Footer/Footer';
-import './App.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-
-
-
+import Logout from './components/logout.component'
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-        <Routes>
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route exact path="/Login" element={<Login />} />
-          <Route path='/showItem/:id' element={<ShowItem />} />
-          <Route path='/allItems' element={<AllItems />} />
-          <Route path='/aboutUs' element={<AboutUs />} />
-          <Route path='/friendsShops' element={<Collabs />} />
-        </Routes>
-
-        <Routes>
-          <Route element={ <ProtectRoutes /> }>
-            <Route path='/cartUser' element={<CartUser />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/logout" element={<Logout />} />
-          </Route>
-        </Routes>
-    
-
-      <Footer />
-    </div>
-  );
+    <Router>
+      <div className="App">
+            <Routes>
+              <Route exact path="/" element={<Login />} />
+              <Route path="/sign-in" element={<Login />} />
+              <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/logout" element={<Logout />} />
+            </Routes>
+          </div>
+    </Router>
+  )
 }
-
-export default App;
-
+export default App
