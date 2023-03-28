@@ -12,10 +12,18 @@
         {{ method_field('PATCH') }}
 
         <div class="form-group">
-            <label for="userName">Nombre de Usuario</label>
-            <input type="text" name="userName" id="userName" class="form-control{{ $errors->has('userName') ? ' is-invalid' : '' }}" placeholder="{{ $user->userName }}" value="{{ $user->userName }}" required>
-            @if ($errors->has('userName'))
-                <span class="invalid-feedback">{{ $errors->first('userName') }}</span>
+            <label for="name">Nombre de Usuario</label>
+            <input type="text" name="name" id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ $user->name }}" value="{{ $user->name }}" required>
+            @if ($errors->has('name'))
+                <span class="invalid-feedback">{{ $errors->first('name') }}</span>
+            @endif
+        </div>
+
+        <div class="form-group">
+            <label for="surname">Apellido</label>
+            <input type="text" name="surname" id="surname" class="form-control{{ $errors->has('surname') ? ' is-invalid' : '' }}" placeholder="{{ $user->surname }}" value="{{ $user->surname }}" required>
+            @if ($errors->has('surname'))
+                <span class="invalid-feedback">{{ $errors->first('surname') }}</span>
             @endif
         </div>
 
@@ -26,12 +34,36 @@
                 <span class="invalid-feedback">{{ $errors->first('email') }}</span>
             @endif
         </div>
-    </form>
 
-    <div class="buttons">
-        <button id="save" type="submit" class="btn btn-primary">Save</button>
-        <a id="cancel" href="{{ route('usersList') }}" class="btn btn-secondary">Cancel</a>
-    </div>
+        <div class="form-group">
+            <label for="phone">Teléfono</label>
+            <input type="text" name="phone" id="phone" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" placeholder="{{ $user->phone }}" value="{{ $user->phone}}" required>
+            @if ($errors->has('phone'))
+                <span class="invalid-feedback">{{ $errors->first('phone') }}</span>
+            @endif
+        </div>
+
+        <div class="form-group">
+            <label for="city">Ciudad</label>
+            <input type="text" name="city" id="city" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" placeholder="{{ $user->city }}" value="{{ $user->city}}" required>
+            @if ($errors->has('city'))
+                <span class="invalid-feedback">{{ $errors->first('city') }}</span>
+            @endif
+        </div>
+
+         <div class="form-group">
+            <label for="postcode">Código postal</label>
+            <input type="text" name="postcode" id="postcode" class="form-control{{ $errors->has('postcode') ? ' is-invalid' : '' }}" placeholder="{{ $user->postcode }}" value="{{ $user->postcode}}" required>
+            @if ($errors->has('postcode'))
+                <span class="invalid-feedback">{{ $errors->first('postcode') }}</span>
+            @endif
+        </div>
+        
+        <div class="buttons">
+            <button id="save" type="submit" class="btn btn-primary">Guardar</button>
+            <a id="cancel" href="{{ route('usersList') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
 </div>
 
 @endsection

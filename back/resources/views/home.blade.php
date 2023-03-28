@@ -12,7 +12,7 @@
     @endif
 
         <div class="mb-3">
-            <a href="{{ route('items.create') }}"> <button class="createItem">Añadir producto</button></a>
+            <a href="{{ route('create') }}"> <button class="createItem">Añadir producto</button></a>
         </div>
 </div>
 
@@ -41,9 +41,9 @@
                         <td>{{ $item->purchaseQuantity }}</td>
                         <td>{{ $item->price }}</td>
                         <td>
-                            <a href="{{ route('items.show', $item->id) }}" ><img src="../images/show.png" alt="eye button"></a><br>
+                            <a href="{{ route('showItem', $item->id) }}" ><img src="../images/show.png" alt="eye button"></a><br>
                             <a href="{{ route('editItem',['id'=>$item->id]) }}" ><img src="../images/editPencil.png" alt="Pencil button"></a><br>
-                            <form action="{{ route('items.destroy', $item->id) }}" method="POST" style="display: inline-block;">
+                            <form action="{{ route('deleteItem', $item->id) }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button class="deleteItem" type="submit"  onclick="return confirm('Estás seguro de querer borrar este producto?')"><img src="../images/deleteBin.png" alt="Bin button"></button>
