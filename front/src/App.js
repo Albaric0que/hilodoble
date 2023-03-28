@@ -7,7 +7,7 @@ import AboutUs from './components/aboutUs/AboutUs';
 import ShowItem from './components/showItem/ShowItem';
 import AllItems from './components/allItems/AllItems';
 import CartUser from './components/cartUser/CartUser';
-import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/Footer';     
 import Home from './components/home/Home';
 
 
