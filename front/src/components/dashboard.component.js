@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navigate } from 'react-router-dom';
 import axios from 'axios';
+import { useAuth } from "../hooks/auth";
 
 export default class Dashboard extends Component {
 
@@ -32,7 +33,7 @@ export default class Dashboard extends Component {
     event.preventDefault();
     const token = localStorage.getItem('token');
     if (!token) {
-      return <Navigate to="/sign-in" />;
+      return <Navigate to="/login" />;
     }
   
     try {
@@ -56,7 +57,7 @@ export default class Dashboard extends Component {
   
   render() {
     if (this.state.loggedIN === false) {
-      return <Navigate to="/sign-in" />;
+      return <Navigate to="/login" />;
     }
     return (
       <div>

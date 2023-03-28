@@ -31,7 +31,7 @@ function ShowItem() {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.post(
-        `http://127.0.0.1:8000/api/auth/cart`,
+        `http://127.0.0.1:8000/api/cart/add`,
         {
           user_id: user.id,
           item_id: item.id,

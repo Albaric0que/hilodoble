@@ -34,7 +34,7 @@ function MyProfile() {
                         <a className="nav-link" href="/logout">logout</a>
                     </>
                 ) : (
-                    <a className="nav-link" href="/sign-in">login</a>
+                    <a className="nav-link" href="/login">login</a>
                 )}
             </a>
         </>
