@@ -19,7 +19,7 @@ class AuthUsersTest extends TestCase
      *
      * @return void
      */
-   /*  public function test_UserCanSuccessfullyLogin()
+    public function test_UserCanSuccessfullyLogin()
     {
         $password = $this->faker->password(6);
         $user = User::factory()->create([
@@ -40,7 +40,7 @@ class AuthUsersTest extends TestCase
 
         $this->assertTrue(Auth::check());
     }
- */
+
     public function test_UserCanRegister()
     {
         $userData = [
@@ -85,7 +85,7 @@ class AuthUsersTest extends TestCase
         ]);
     }
 
-    /* public function test_userCanLogout()
+    public function test_userCanLogout()
     {
         $user = User::factory()->create([
             'email' => 'user@example.com',
@@ -104,9 +104,9 @@ class AuthUsersTest extends TestCase
                 ]);
 
         $this->assertGuest();
-    } */
+    }
 
-   /*  public function testRefresh()
+    public function testRefresh()
     {
         $user = User::factory()->create();
         $token = auth()->login($user);
@@ -123,25 +123,20 @@ class AuthUsersTest extends TestCase
             ]);
 
         $this->assertNotEquals($token, $response['access_token']);
-    } */
+    }
 
-   /*  public function test_UserProfile()
+    public function test_UserProfile()
     {
-        // Create a user
         $user = User::factory()->create();
 
-        // Create a token for the user
         $token = auth()->login($user);
 
-        // Make a request to the userProfile endpoint
         $response = $this->withHeaders([
             'Authorization' => 'Bearer ' . $token,
         ])->get('/api/auth/user-profile');
 
-        // Assert that the response status code is 200 OK
         $response->assertStatus(200);
 
-        // Assert that the response JSON contains the user data
         $response->assertJsonStructure([
             'name',
             'surname', 
@@ -153,5 +148,5 @@ class AuthUsersTest extends TestCase
             'postcode', 
             'isAdmin', 
             ]);
-    } */
+    }
 }
