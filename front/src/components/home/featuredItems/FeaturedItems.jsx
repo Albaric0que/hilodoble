@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import '../featuredItems/FeaturedItems';
+import '../featuredItems/FeaturedItems.css';
 
 function FeaturedItems() {
     const [items, setItems] = useState([]);
@@ -44,9 +44,17 @@ function FeaturedItems() {
         });
     };
 
+    const randomItems = items.sort(() => Math.random() - 0.5).slice(0, 3);
+
 return (
+    <>
+    <div className='titleContainer'>
+        <h1>La solidaridad que se lleva</h1>
+        <div className="purpleRec"> </div>
+        <h3>Productos realizados con materiales 100% reciclados</h3>
+    </div>
     <div className="containerFeaturedItems">
-    {items.slice(0, 3).map((item) => {
+    {randomItems.map((item) => {
         return (
         
         <Link key={item.id} to={`/showItem/${item.id}`} className="featuredProductContainer">
@@ -63,6 +71,7 @@ return (
         })}
         {message && <p className="message">{message}</p>}
     </div>
+    </>
     );
 }
 

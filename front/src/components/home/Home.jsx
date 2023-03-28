@@ -8,7 +8,6 @@ function Home() {
   return (
     <>
       <Carrousel/>
-      <div>Home</div>
       <FeaturedItems/>
     </>
   )
