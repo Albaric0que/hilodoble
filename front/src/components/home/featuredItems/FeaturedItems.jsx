@@ -45,7 +45,7 @@ function FeaturedItems() {
 
 return (
     <div className="containerCard">
-    {items.map((item) => {
+    {items.slice(0, 3).map((item) => {
         return (
         
         <Link key={item.id} to={`/showItem/${item.id}`} className="productContainer">
