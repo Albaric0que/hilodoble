@@ -74,7 +74,7 @@ export default class SignUp extends Component {
                console.log(res,"aaaaaaaaaaa");
                 if(res.data.message === "User successfully registered"){
                     alert("Registration Successful")
-                    window.location = "/login";
+                    window.location = "/sign-in";
                 }
             }).catch((error) => {
                 if(error.response.data ===  "{\"email\":[\"The email has already been taken.\"]}"){
@@ -168,7 +168,7 @@ export default class SignUp extends Component {
           </button>
         </div>
         <p className="forgot-password text-right">
-          Already registered <a href="/login">sign in?</a>
+          Already registered <a href="/sign-in">sign in?</a>
         </p>
         </div>
         

@@ -1,87 +1,49 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Navigate } from 'react-router-dom';
-import axios from 'axios';
-import { useAuth } from "../hooks/auth";
 
 export default class Dashboard extends Component {
-
-  
   constructor(props) {
-    super(props);
-    const udata = localStorage.getItem('user');
-    const odata = JSON.parse(udata);
-    let loggedIN = true;
-    if (udata == null) {
-      loggedIN = false;
+    super(props)
+    const udata = localStorage.getItem('user')
+    const odata = JSON.parse(udata)
+    let loggedIN = true
+    if (udata == null){
+      loggedIN = false
     }
     this.state = {
-      user: odata.user,
-      loggedIN,
-    };
-  }
-
-  handleChange = (event) => {
-    this.setState({
-      user: {
-        ...this.state.user,
-        [event.target.name]: event.target.value,
-      },
-    });
-  };
-
-  handleUpdate = async (event) => {
-    event.preventDefault();
-    const token = localStorage.getItem('token');
-    if (!token) {
-      return <Navigate to="/login" />;
+      user : odata.user,
+      loggedIN
     }
-  
-    try {
-      const response = await axios.put(
-        `http://127.0.0.1:8000/api/auth/updateUser/${this.state.user.id}`,
-        this.state.user,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      localStorage.setItem('user', JSON.stringify(response.data));
-      alert('User data updated successfully.');
-    } catch (error) {
-      console.error('Error:', error.response.data);
-      alert('Failed to update user data.');
-    }
-    
-  };
-  
+}
+
+ 
   render() {
-    if (this.state.loggedIN === false) {
-      return <Navigate to="/login" />;
+    if(this.state.loggedIN === false){
+      return  <Navigate to="/sign-in" />
     }
     return (
-      <div>
-        {/* Rest of the Navbar code */}
-        <h1 className="text-black mt-5">
-          Welcome to your profile{' '}
-          <span className="text-primary">{this.state.user.name} </span>
-        </h1>
-        <a class="nav-link" href="/logout">logout </a>
-              
-        <form onSubmit={this.handleUpdate}>
-          <div>
-            <label>Name:</label>
-            <input
-              type="text"
-              name="name"
-              value={this.state.user.name}
-              onChange={this.handleChange}
-            />
+        <div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/dashboard">React.js and Larevel App</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/dashboard">Home</a>
+              </li>
+              </ul>
+              <ul className="navbar-nav">
+                 <a class="nav-link" href="/logout">logout </a>
+              </ul>
           </div>
-          {/* Add more input fields for other user properties */}
-          <button type="submit">Update</button>
-        </form>
+        </div>
+      </nav>
+
+      <h1 className="text-black mt-5">welcome to your profile <span className="text-primary">{this.state.user.name} </span></h1>
       </div>
-    );
+    )
   }
 }

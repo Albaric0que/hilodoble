@@ -3,7 +3,6 @@ import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 
-
 function CartUser() {
     const [cartItems, setCartItems] = useState([]);
     const [newQuantity, setNewQuantity] = useState('');
@@ -26,21 +25,21 @@ function CartUser() {
         }, []);
     
 
-        const handleUpdateQuantity = (event) => {
-            event.preventDefault();
-            const itemId = event.target.elements.itemId.value;
-        
-            axios
-            .put(`http://localhost:8000/api/auth/cart/${itemId}`, {
-                purchaseQuantity: newQuantity,
-            })
-            .then((response) => {
-                setCartItems(response.data);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-        };
+    const handleUpdateQuantity = (event) => {
+        event.preventDefault();
+        const itemId = event.target.elements.itemId.value;
+
+        axios
+        .put(`http://localhost:8000/api/cart/${itemId}`, {
+            purchaseQuantity: newQuantity,
+        })
+        .then((response) => {
+            setCartItems(response.data);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+    };
 
     const handleRemoveItem = (event) => {
         event.preventDefault();
