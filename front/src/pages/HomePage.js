@@ -3,6 +3,8 @@ function HomePage() {
     return (
       <div>
           Home Page
+
+          Estoy logueada
       </div>
     );
   }
