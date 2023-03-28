@@ -15,7 +15,7 @@ Route::get('showItem/{id}', [ItemController::class, 'show'])->name('showItemApi'
 //Endpoints User
 Route::group([
     'middleware' => 'api', 
-    'prefix' => 'auth'
+    'prefix' => 'auth' 
 ], function ($router) {
     Route::post('/login', [AuthController::class, 'login'])->name('loginUserApi');
     Route::post('/register', [AuthController::class, 'register'])->name('registerUserApi');
