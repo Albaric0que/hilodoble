@@ -12,9 +12,8 @@ function ShowItem() {
       .then((response) =>  {
 
         console.log(response)
-        
-        const data = response.data;
-        setItem(data);
+      
+        setItem(response.data);
       }, )
       .catch(error => {
         console.error(error);

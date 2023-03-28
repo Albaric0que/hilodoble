@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react';
 import '../home/Home.css';
-import axios from 'axios';
-import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom';
 import Carrousel from './carrousel/Carrousel';
 import FeaturedItems from './featuredItems/FeaturedItems';
 
@@ -12,8 +9,7 @@ function Home() {
     <>
       <Carrousel/>
       <div>Home</div>
-      <FeaturedItems />
-
+      <FeaturedItems/>
     </>
   )
 }

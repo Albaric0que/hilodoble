@@ -13,8 +13,7 @@ function AllItems() {
     axios
       .get(`http://127.0.0.1:8000/api`)
       .then((response) => {
-        const data = response.data;
-        setItems(data);
+        setItems(response.data);
       })
       .catch((error) => {
         console.error(error);
