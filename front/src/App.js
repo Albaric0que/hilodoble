@@ -13,8 +13,8 @@ import Home from './components/home/Home';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
+    <div className="App">  
+      <Header />  
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home/>} />
