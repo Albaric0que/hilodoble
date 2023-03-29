@@ -4,10 +4,10 @@ import ig from '../img/imgHeader/ig.svg';
 import tw from '../img/imgHeader/tw.svg';
 import fb from '../img/imgHeader/fb.svg';
 import * as React from 'react';
-
+    
 function Footer() {
   
-  return (    
+  return (        
 
     <div className='footerContainer'>
       <div className='footerTop'>
