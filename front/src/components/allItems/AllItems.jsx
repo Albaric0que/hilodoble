@@ -56,11 +56,15 @@ function AllItems() {
       <div className= 'categories'>
         <h3>Categorías</h3>
         <h4>Todos los productos</h4>
-        <ul>
-          <li>Bolsos de viaje</li>
-          <li>Accesorios</li>
-          <li>Material de oficina</li>
-        </ul>
+        <li>
+          <Link to="/bolsos-de-viaje">Bolsos de viaje</Link>
+        </li>
+        <li>
+          <Link to="/category/accesorios">Accesorios</Link>
+        </li>
+        <li>
+          <Link to="/category/material-de-oficina">Material de oficina</Link>
+        </li>
       </div>
     
     <div className="containerCard">

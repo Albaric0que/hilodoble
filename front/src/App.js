@@ -23,6 +23,7 @@ function App() {
           <Route path='/cartUser' element={<CartUser/>} />
           <Route path='/aboutUs' element={<AboutUs/>} />
           <Route path='/friendsShops' element={<Collabs/>} />
+          <Route path='/bolsos-de-viaje' element={<bolsos-de-viaje/>} />
         </Routes>
       </BrowserRouter>
 
