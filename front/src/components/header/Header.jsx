@@ -14,10 +14,10 @@ function Header() {
       <div>
         <Head/>
         <div className='mainIcons'>
-          <img className='logo' src={logo} alt="logo" />
+          <img className='logo' src={logo} alt="logotipoHilodoble" id='logotipoHilodoble' />
           <div className='rightIcons'>
             <Searchbar/>
-            <img className='cart' src={cart} alt="logo" />
+            <img className='cart' src={cart} alt="logocarrito" />
             <MyProfile/>
           </div>
           <div className='toggleMenu'>
