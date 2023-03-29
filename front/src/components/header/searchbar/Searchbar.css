@@ -1,11 +1,11 @@
 .searchBox{
-    border: 1px solid #6a09b5;
+    border: 1px solid #6A09B5;
     height: 40px;
     width: 200px;
     padding: 0 40px;
-    margin-right: 20px;
+    display: flex;
+    justify-content: flex-end;
 }
-
 .searchIcon {
     position: absolute;
     width: 20px;
@@ -13,14 +13,12 @@
     top: 50%;
     transform: translateY(-50%);
 }
-
 .searchAll {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 }
-
 .searchAll img {
     cursor: pointer;
 }
