@@ -19,11 +19,11 @@ class Navbar extends Component {
                             <li>
                                 <a href="index.html"><img className='cart' src={cart} alt="logo" /></a>
                                 <a href="index.html"><img className='profile' src={profile} alt="Profile Section" /></a>
-                            </li>
+                            </li> 
                             <li>
                                 <Searchbar/>
                             </li>
-                        </div>
+                        </div> 
                         <li><a className='active' href={`/`}>INICIO</a></li>
                         <li><a href={`/allItems`}>TIENDA</a></li>
                         <li><a href={`/aboutUs`}>SOBRE NOSOTROS</a></li>
