@@ -15,12 +15,7 @@ function Header() {
         <Head/>
         <div className='mainIcons'>
           <img className='logo' src={logo} alt="logo" />
-          <div className='rightIcons'>
-            <Searchbar/>
-            <img className='cart' src={cart} alt="logo" />
-            <MyProfile/>
-          </div>
-          <div className='toggleMenu'> 
+          <div className='toggleMenu'>
             <Navbar/>
           </div>
         </div>
