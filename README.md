@@ -96,22 +96,22 @@
 <h3 align="center">Figma Desktop</h3>
 <div style="heigth:auto; display:flex; flex-wrap: wrap; justify-content:center; padding:1rem">
 <img style="width:25px"; src="https://user-images.githubusercontent.com/116546625/223278003-0f74829f-f2b9-4942-b505-f0540529ebf5.png" alt="Pallete Color"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225424904-86f4fba7-a3e2-4071-93c4-a7aed5c3478b.png" alt="Home desktop"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225425061-86954397-6431-4d20-aaa2-e65af34e66ba.png" alt="Shop desktop"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225425248-191127dc-5aab-47d5-80e1-550dac7d10df.png" alt="Product desktop"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225425404-37ba7981-3d88-4d9a-9178-7ef6b0d0e0bd.png" alt="About us desktop"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225425719-19b90cdd-a0ca-4f98-a42f-2d1a757e3eee.png" alt="Friendly store desktop"/>   
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225425891-28100a58-e27d-43cd-a425-d97d225af2c8.png" alt="Contact desktop"/>
+<img style="width:150px"; src="https://user-images.githubusercontent.com/116546625/225424904-86f4fba7-a3e2-4071-93c4-a7aed5c3478b.png" alt="Home desktop"/>
+<img style="width:150px"; src="https://user-images.githubusercontent.com/116546625/225425061-86954397-6431-4d20-aaa2-e65af34e66ba.png" alt="Shop desktop"/>
+<img style="width:150px"; src="https://user-images.githubusercontent.com/116546625/225425248-191127dc-5aab-47d5-80e1-550dac7d10df.png" alt="Product desktop"/>
+<img style="width:150px"; src="https://user-images.githubusercontent.com/116546625/225425404-37ba7981-3d88-4d9a-9178-7ef6b0d0e0bd.png" alt="About us desktop"/>
+<img style="width:150px"; src="https://user-images.githubusercontent.com/116546625/225425719-19b90cdd-a0ca-4f98-a42f-2d1a757e3eee.png" alt="Friendly store desktop"/>   
+<img style="width:150px"; src="https://user-images.githubusercontent.com/116546625/225425891-28100a58-e27d-43cd-a425-d97d225af2c8.png" alt="Contact desktop"/>
 </div>
 
 <h3 align="center">Figma Desktop Admin</h3>
 <div style="heigth:auto; display:flex; flex-wrap: wrap; justify-content:center; padding:1rem">
 <img style="width:25px"; src="https://user-images.githubusercontent.com/116546625/223278003-0f74829f-f2b9-4942-b505-f0540529ebf5.png" alt="Pallete Color"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225428987-c0717c80-5b2e-43d7-a710-1cf87e3588a8.png" alt="Home desktop"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225429302-792e3dd5-77c5-4c65-a5d5-5bf8ecd4bfd5.png" alt="Shop desktop"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225429455-aa9a7873-68a8-4bc1-a9a8-e909792bddd5.png" alt="Create Product Admin"/>
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225429919-aadfdf6f-b486-4073-99cf-67849074abec.png" alt="Friendly store desktop"/>   
-<img style="width:100px"; src="https://user-images.githubusercontent.com/116546625/225430007-e0b305b1-bde0-488f-98d1-78f678ccddf1.png" alt="Contact desktop"/>
+<img style="width:175px"; src="https://user-images.githubusercontent.com/116546625/225428987-c0717c80-5b2e-43d7-a710-1cf87e3588a8.png" alt="Home desktop"/>
+<img style="width:175px"; src="https://user-images.githubusercontent.com/116546625/225429302-792e3dd5-77c5-4c65-a5d5-5bf8ecd4bfd5.png" alt="Shop desktop"/>
+<img style="width:175px"; src="https://user-images.githubusercontent.com/116546625/225429455-aa9a7873-68a8-4bc1-a9a8-e909792bddd5.png" alt="Create Product Admin"/>
+<img style="width:175px"; src="https://user-images.githubusercontent.com/116546625/225429919-aadfdf6f-b486-4073-99cf-67849074abec.png" alt="Friendly store desktop"/>   
+<img style="width:175px"; src="https://user-images.githubusercontent.com/116546625/225430007-e0b305b1-bde0-488f-98d1-78f678ccddf1.png" alt="Contact desktop"/>
 </div>
 
 <h2>8. Stacks</h2>
@@ -175,8 +175,8 @@
 <li>Type in the terminal: <b>npm install axios</b> and press intro</li>
 <li>Type in the terminal: <b>npm install react-bootstrap bootstrap</b> and press intro</li>
 <li>To run the front test, you will need to type in the terminal: <b>npm install --save-dev @testing-library/react</b> to install the test library</li>
+<li>Type in the terminal: <b>npm i @formspree/react</b> and press intro</li>
 <li>Type in the terminal: <b>npm start</b> and press intro</li>
-
         
 <h4>This project is supported by two different repositories. To see the complete project go to https://github.com/Nataliaplm/HilodobleBack and follow the instructions in readMe.</h4>
 
@@ -195,7 +195,6 @@
 <img style="width:350px;; margin:12px" src="https://user-images.githubusercontent.com/116545731/228640567-7993a0ea-db91-44f7-9830-e190ba297caf.png" alt="finalTest"/>
 </div>
 
-
 <h2>10. Methodology:</h2>
 <ul>
 <li>Pair programming.</li>
@@ -212,4 +211,3 @@
 <li>Implement payment gateway.</li>
 <li>Add pages with legal texts.</li>
 </ul>
-
