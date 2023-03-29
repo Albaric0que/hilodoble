@@ -44,3 +44,17 @@
 * {
     font-family:'Montserrat';
 }
+
+ol, ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+
+a {
+  color: #383838 !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #6A09B5 !important;
+}

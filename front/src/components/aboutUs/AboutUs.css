@@ -5,9 +5,8 @@
 .topImage {
     background-image: url('https://hilodoble.com/wp-content/uploads/2019/10/taller-hilodoble-copia.jpg');
     background-position: center;
-    height: 430px;
+    height: 250px;
     background-size: cover;
-    margin-top: 20px;
 }
 
 h1{
@@ -25,37 +24,34 @@ h1{
     margin: 10px auto;
 }
 .text{
-    margin-left: 20%;
-    margin-right:20%;
-    margin-bottom:30px;
-    margin-top:30px;
-    text-align: left;
+    margin: 30px 87px;
 }
+
 p{
     text-align: left;
 }
+
 .target{
     background-color: #6a09b5;
     
 }
-.containerBlocks{
-    
-    width: 60%;
+
+.containerBlocks {
+    padding: 0 87px;
     display: flex;
     flex-wrap: nowrap;
-    color:white;
-    margin-left: 20%;
-    gap:30px; 
+    color: white;
+    gap: 30px;
 }
+
 h4{
     text-transform:uppercase;
     margin-bottom: 20px;
 }
 .circle{
-    height: 3rem;
-    width: 3rem;
+    padding: 20px;
     background-color: white;
-    border-radius: 25px;
+    border-radius: 100px;
     margin-top: 20px;
     margin-bottom: 20px;  
 }
@@ -67,9 +63,31 @@ h4{
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.containerBlocks img{
-    width: 30px;
-    margin-top: 10px;
-    margin-left: 10px;
-}    
+
+.socials p, .goals p, .natural p {
+    text-align: center;
+}
+
+.containerBlocks img {
+    width: 40px;
+    filter: invert(17%) sepia(83%) saturate(4641%) hue-rotate(271deg) brightness(69%) contrast(114%);
+}
+
+@media (max-width: 992px) {
+    .text{
+        margin: 30px;
+    }
+
+    .containerBlocks {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .containerBlocks {
+        padding: 0 30px;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+}
 
