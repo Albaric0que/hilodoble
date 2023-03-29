@@ -10,11 +10,11 @@ function Header() {
       <div>
         <Head/>
         <div className='mainIcons'>
-          <img className='logo' src={logo} alt="logo" />
+          <img className='logo' src={logo} alt="logotipo" />
           <div className='toggleMenu'>
             <Navbar/>
           </div>
-        </div>
+        </div>   
         <div className='navbarDesktop'>
           <Navbar/>
         </div>

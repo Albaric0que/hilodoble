@@ -4,7 +4,6 @@ import Header from './Header';
 
 test('render logo', () => {
     render(<Header />);
-    const logo = screen.getByRole('img', {name:'Logotipo Hilodoble'});
+    const logo = screen.getByAltText('logotipo');
     expect(logo).toBeInTheDocument();
-
 })
