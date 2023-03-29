@@ -163,7 +163,7 @@
 <li>Type in the terminal: <b>php artisan serve</b> and press intro.</li>
 
 
-<li>In otrher terminal to install the <b>JWT library<b> you have to pass the following commands in back:<br></li>
+<li>In other terminal to install the <b>JWT library<b> you have to pass the following commands in back:<br></li>
     <ol>
     <li><b>composer require tymon/jwt-auth<b></li>
     <li><b>php artisan jwt:secret<b></li>
@@ -174,6 +174,7 @@
 <li>Type in the terminal: <b>npm i react-router-dom</b> and press intro</li>
 <li>Type in the terminal: <b>npm install axios</b> and press intro</li>
 <li>Type in the terminal: <b>npm install react-bootstrap bootstrap</b> and press intro</li>
+<li>To run the front test, you will need to type in the terminal: <b>npm install --save-dev @testing-library/react</b> to install the test library</li>
 <li>Type in the terminal: <b>npm start</b> and press intro</li>
 
         
