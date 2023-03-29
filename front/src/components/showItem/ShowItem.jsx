@@ -23,7 +23,10 @@ function ShowItem() {
 
   return (
     <>
-    <h1 className='nameItemShow'>{item.itemName}</h1>
+    <div className='titleContainer'>
+        <h1>{item.itemName}</h1>
+        <div className="purpleRec"> </div>
+      </div>
     <div className= 'bigContainer'>
     <div className= 'containerProduct' key={item.id}>
         <div className= 'secondContainer'>
