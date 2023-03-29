@@ -10,11 +10,12 @@ use App\Http\Controllers\Api\CartController;
 
 //Endpoints Item
 Route::get('/', [App\Http\Controllers\Api\ItemController::class, 'index'])->name('itemsApi');
+Route::get('showItem/{id}', [ItemController::class, 'show'])->name('showItemApi');
 
 //Endpoints User
 Route::group([
-    'middleware' => 'api',
-    'prefix' => 'auth'
+    'middleware' => 'api', 
+    'prefix' => 'auth' 
 ], function ($router) {
     Route::post('/login', [AuthController::class, 'login'])->name('loginUserApi');
     Route::post('/register', [AuthController::class, 'register'])->name('registerUserApi');

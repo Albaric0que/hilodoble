@@ -1,7 +1,7 @@
 import React,  { useEffect, useState } from 'react'
 import axios from 'axios';
 import '../showItem/ShowItem.css'
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'; 
 
 function ShowItem() {
   const param = useParams();
@@ -12,9 +12,8 @@ function ShowItem() {
       .then((response) =>  {
 
         console.log(response)
-        
-        const data = response.data;
-        setItem(data);
+      
+        setItem(response.data);
       }, )
       .catch(error => {
         console.error(error);
@@ -24,7 +23,10 @@ function ShowItem() {
 
   return (
     <>
-    <h1 className='nameItemShow'>{item.itemName}</h1>
+    <div className='titleContainer'>
+        <h1>{item.itemName}</h1>
+        <div className="purpleRec"> </div>
+      </div>
     <div className= 'bigContainer'>
     <div className= 'containerProduct' key={item.id}>
         <div className= 'secondContainer'>

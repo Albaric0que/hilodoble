@@ -7,7 +7,7 @@ function Searchbar() {
             <input className='searchBox' type='search' placeholder="Buscar..."/>
             <svg 
                 xmlns='/front/src/components/img/searchIcon.png'
-                class='searchIcon'
+                className='searchIcon'
                 viewBox='0 0 20 20'
             >
                 <path

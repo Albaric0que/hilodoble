@@ -13,8 +13,7 @@ function AllItems() {
     axios
       .get(`http://127.0.0.1:8000/api`)
       .then((response) => {
-        const data = response.data;
-        setItems(data);
+        setItems(response.data);
       })
       .catch((error) => {
         console.error(error);
@@ -51,7 +50,7 @@ function AllItems() {
       <div className='titleContainer'>
         <h1>Nuestra tienda</h1>
         <div className="purpleRec"> </div>
-        <h3>Artesanía, reciclaje y diseños exclusivos</h3>
+        <p>Artesanía, reciclaje y diseños exclusivos</p>
       </div>
       <div className='main'>
       <div className= 'categories'>

@@ -12,7 +12,7 @@ a {
 
 .footerContainer {
     font-family:'Montserrat';
-    font-size: 18px;
+    font-size: 15px;
     color: #383838;
 }
 
@@ -21,6 +21,14 @@ a {
     padding: 30px 30px;
     display: flex;
     flex-wrap: wrap;
+}
+
+.footerBlock:nth-child(2) {
+    margin-top: 20px;
+}
+
+.footerBlock:last-child {
+    margin-top: 20px;
 }
 
 .footerBlock {
@@ -34,11 +42,11 @@ a {
     font-weight: 400;
     margin-top: 0px;
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .footerBlock .logo {
-    width: 250px;
+    width: 130px;
 }
 
 .footerBlock ul li a {
@@ -61,7 +69,6 @@ a {
 
 .footerSocialList {
     display: flex;
-    justify-content: center;
 }
 
 .footerSocialList li {
@@ -77,16 +84,14 @@ a {
 }
 
 .footerSocialList img {
-    width: 30px;
-    fill: #6A09B5;
+    width: 20px;
+    filter: invert(19%) sepia(0%) saturate(1695%) hue-rotate(182deg) brightness(102%) contrast(93%);
     transition: 0.4s;
 }
 
 .footerSocialList img:hover{
-    fill: white;
+    filter: invert(17%) sepia(83%) saturate(4641%) hue-rotate(271deg) brightness(69%) contrast(114%);
 }
-
-
 
 .subFooter ul{
     display: flex;
@@ -100,7 +105,7 @@ a {
 }
 
 .subFooter ul li a{
-    color: white;
+    color: white !important;
     transition: 0.4s;
     font-size: 14px;
 }
@@ -112,18 +117,78 @@ a {
 
 @media (min-width: 768px) {
 
-    .footerTop {
-        flex-wrap: nowrap;
-    }
-    
     .footerBlock {
-        width: 33.3%;
         padding: 0 30px;
         text-align: left;
     }
 
+    .footerBlock:first-child {
+        width: 49%;
+        padding-left: 0;
+    }
+
+    .footerBlock:nth-child(2) {
+        width: 49%;
+        padding-right: 0;
+        margin-top: 0;
+    }
+    
+    .footerBlock:last-child {
+        width: 100%;
+        margin-top: 45px;
+    }
+
+    .footerBlock:last-child h3 {
+        text-align: center;
+    }
+
     .footerSocialList {
-        justify-content: start;
+        justify-content: center;
     }
   
   }
+
+  @media (min-width: 993px) {
+
+    .footerTop {
+        flex-wrap: nowrap;
+        padding: 45px 87px;
+    }
+
+    .footerBlock {
+        width: 33.3%;
+    }
+
+        .footerBlock:first-child {
+        width: 33.3%;
+        padding-left: 0;
+        padding-right: 45px;
+    }
+
+    .footerBlock:nth-child(2) {
+        width: 33.3%;
+        padding-right: 0;
+        padding-left: 0;
+        margin-top: 0;
+    }
+
+    .footerBlock:last-child {
+        width: 33.3%;
+        padding-left: 45px;
+        padding-right: 0;
+        margin-top: 0;
+    }
+
+    .footerBlock:last-child h3 {
+        text-align: left;
+    }
+
+    .footerSocialList {
+        justify-content: flex-start;
+    }
+
+    .subFooter {
+        padding: 15px 87px;
+    }
+
+}

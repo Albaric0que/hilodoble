@@ -8,7 +8,8 @@ import ShowItem from './components/showItem/ShowItem';
 import AllItems from './components/allItems/AllItems';
 import CartUser from './components/cartUser/CartUser';
 import Contact from './components/contact/Contact';
-import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/Footer';     
+import Home from './components/home/Home';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
+          <Route path='/' element={<Home/>} />
           <Route path='/showItem/:id' element={<ShowItem />} />
           <Route path='/allItems' element={<AllItems />} />
           <Route path='/cartUser' element={<CartUser />} />
@@ -25,7 +27,6 @@ function App() {
           <Route path='/contacta' element={<Contact />} />
         </Routes>
       </BrowserRouter>
-
       <Footer />
     </div>
   );
