@@ -1,12 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import logo from '../img/imgHeader/logo.png';
-import cart from '../img/imgHeader/cart.svg';
-import MyProfile from './myProfile/MyProfile';
 import Head from './head/Head';
-import Searchbar from './searchbar/Searchbar';
 import Navbar from './navbar/Navbar';
-import './Header.css';
+import './Header.css'; 
 
 function Header() {
   return (
