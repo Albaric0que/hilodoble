@@ -105,7 +105,7 @@ a {
 }
 
 .subFooter ul li a{
-    color: white;
+    color: white !important;
     transition: 0.4s;
     font-size: 14px;
 }
