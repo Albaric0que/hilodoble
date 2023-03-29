@@ -7,8 +7,8 @@ import * as React from 'react';
     
 function Footer() {
   
-  return (        
-
+  return (  
+  
     <div className='footerContainer'>
       <div className='footerTop'>
         <div className='footerBlock'>
