@@ -24,3 +24,11 @@
 .cardFriendShop .shopSocial a:last-child .basicBtn {
     margin-right: 0px;
 }
+
+@media (max-width: 767px) {
+    .basicBtn{
+        width: 100%;
+        margin: 25px 0 0 0;
+    }
+
+}
