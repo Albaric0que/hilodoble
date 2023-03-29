@@ -176,6 +176,9 @@
 <li>Type in the terminal: <b>npm install react-bootstrap bootstrap</b> and press intro</li>
 <li>Type in the terminal: <b>npm start</b> and press intro</li>
 
+        
+<h4>This project is supported by two different repositories. To see the complete project go to https://github.com/Nataliaplm/HilodobleBack and follow the instructions in readMe.</h4>
+
 <h3>Warning & Testing</h3>
 <ol>
 <li><b>Important</b>: If we then need to run more commands in the IDE, we'll open a third terminal without closing the previous two.</li>
