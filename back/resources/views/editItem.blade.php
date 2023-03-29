@@ -53,7 +53,7 @@
 
             <div class="form-group">
                 <label for="price">Precio</label>
-                <input type="number" name="price" id="price" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" value="{{ $item->price }}" min="0" required>
+                <input type="number" name="price" id="price" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" value="{{ $item->price }}" step="0.01" min="0.01" required>
                 @if ($errors->has('price'))
                     <span class="invalid-feedback">{{ $errors->first('price') }}</span>
                 @endif
@@ -66,5 +66,4 @@
         </div>
     </form>
 </div>
-
 @endsection

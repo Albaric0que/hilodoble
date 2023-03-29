@@ -1,7 +1,7 @@
 import React,  { useEffect, useState } from 'react'
 import axios from 'axios';
 import '../showItem/ShowItem.css'
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'; 
 
 function ShowItem() {
   const param = useParams();
@@ -12,9 +12,8 @@ function ShowItem() {
       .then((response) =>  {
 
         console.log(response)
-        
-        const data = response.data;
-        setItem(data);
+      
+        setItem(response.data);
       }, )
       .catch(error => {
         console.error(error);

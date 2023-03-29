@@ -127,21 +127,16 @@ class AuthUsersTest extends TestCase
 
     public function test_UserProfile()
     {
-        // Create a user
         $user = User::factory()->create();
 
-        // Create a token for the user
         $token = auth()->login($user);
 
-        // Make a request to the userProfile endpoint
         $response = $this->withHeaders([
             'Authorization' => 'Bearer ' . $token,
         ])->get('/api/auth/user-profile');
 
-        // Assert that the response status code is 200 OK
         $response->assertStatus(200);
 
-        // Assert that the response JSON contains the user data
         $response->assertJsonStructure([
             'name',
             'surname', 
