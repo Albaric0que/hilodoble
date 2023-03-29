@@ -17,7 +17,7 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path='/home' element={<Home/>} />
+          <Route path='/' element={<Home/>} />
           <Route path='/showItem/:id' element={<ShowItem/>} />
           <Route path='/allItems' element={<AllItems/>} />
           <Route path='/cartUser' element={<CartUser/>} />
