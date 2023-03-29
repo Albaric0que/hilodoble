@@ -1,3 +1,8 @@
+.contactBtnBox {
+    display: flex;
+    justify-content: center;
+}
+
 .contactBtn {
     background-color: white;
     display: flex;

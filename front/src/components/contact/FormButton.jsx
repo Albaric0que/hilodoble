@@ -3,9 +3,9 @@ import './FormButton.css'
 
 function FormButton() {
     return (
-    <>
+    <div className='contactBtnBox'>
         <button className='contactBtn' type="submit">Enviar</button>
-    </>
+    </div>
     );
 }
 
