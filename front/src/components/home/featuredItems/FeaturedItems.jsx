@@ -48,10 +48,10 @@ function FeaturedItems() {
 
 return (
     <div id="FeaturedItems">
-    <div className='titleContainer'>
+    <div className='titleContainer titleContainerMarginated'>
         <h1>La solidaridad que se lleva</h1>
         <div className="purpleRec"> </div>
-        <h3>Productos realizados con materiales 100% reciclados</h3>
+        <p>Productos realizados con materiales 100% reciclados</p>
     </div>
     <div className="containerFeaturedItems">
     {randomItems.map((item) => {

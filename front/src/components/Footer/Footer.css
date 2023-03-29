@@ -12,7 +12,7 @@ a {
 
 .footerContainer {
     font-family:'Montserrat';
-    font-size: 18px;
+    font-size: 15px;
     color: #383838;
 }
 
@@ -24,11 +24,11 @@ a {
 }
 
 .footerBlock:nth-child(2) {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .footerBlock:last-child {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .footerBlock {
@@ -42,7 +42,7 @@ a {
     font-weight: 400;
     margin-top: 0px;
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .footerBlock .logo {
