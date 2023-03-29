@@ -28,7 +28,7 @@ function Header() {
           <Navbar/>
         </div>
       </div>
-    </>
+    </>   
   )
 }
 
