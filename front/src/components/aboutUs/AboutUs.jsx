@@ -9,8 +9,11 @@ function AboutUs(){
     return(
         <section class="aboutUs">
             <div class="topImage"></div>
-            <h1>Sobre nosotros</h1>
-            <div className="purpleRec"> </div>
+
+            <div className='titleContainer titleContainerMarginated'>
+                <h1>Sobre nosotros</h1>
+                <div className="purpleRec"> </div>
+            </div>
             <div class="text">
                 <div >
                     <p>Mochilas, bandoleras, carpetas, estuches, fundas... Como regalo de empresa o como idea de cumpleaños, todas las propuestas son creadas de manera única y con originalidad.</p>

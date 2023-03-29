@@ -1,5 +1,5 @@
 import './Footer.css'
-import logo from '../img/imgHeader/cropped-hilo-doble-logo.png';
+import logo from '../img/imgHeader/cropped-hilo-doble-logo.png'; 
 import ig from '../img/imgHeader/ig.svg';
 import tw from '../img/imgHeader/tw.svg';
 import fb from '../img/imgHeader/fb.svg';
@@ -18,12 +18,11 @@ function Footer() {
         <div className='footerBlock'>
           <h3>Nuestra web</h3>
           <ul className='footerMenuList'>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Tienda</a></li>
-            <li><a href="#">Sobre nosotros</a></li>
-            <li><a href="#">Tiendas amigas</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contacta</a></li>
+            <li><a href={`/home`}>INICIO</a></li>
+            <li><a href={`/allItems`}>TIENDA</a></li>
+            <li><a href={`/aboutUs`}>SOBRE NOSOTROS</a></li>
+            <li><a href={`/friendsShops`}>TIENDAS AMIGAS</a></li>
+            <li><a href="index.html">CONTACTA</a></li>
           </ul>
         </div>
         <div className='footerBlock'>
@@ -38,10 +37,10 @@ function Footer() {
       
       <div className='subFooter'>
         <ul>
-          <li><a href="#">política de privacidad</a></li>
-          <li><a href="#">aviso legal</a></li>
-          <li><a href="#">política de cookies</a></li>
-          <li><a href="#">política de devoluciones</a></li>
+          <li><a href={`/privacy`}>política de privacidad</a></li>
+          <li><a href={`/legal`}>aviso legal</a></li>
+          <li><a href={`/cookies`}>política de cookies</a></li>
+          <li><a href={`/returns`}>política de devoluciones</a></li>
         </ul>
       </div>
     </div>

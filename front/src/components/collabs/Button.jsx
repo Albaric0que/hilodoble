@@ -4,7 +4,7 @@ import './Button.css'
 function Button(props) {
     return (
     <>
-    <button className={`basic-btn ${props.clase}`}>{props.text}</button>
+    <button className={`basicBtn ${props.clase}`}>{props.text}</button>
     </>
     );
 }
