@@ -181,13 +181,20 @@
 <h4>This project is supported by two different repositories. To see the complete project go to https://github.com/Nataliaplm/HilodobleBack and follow the instructions in readMe.</h4>
 
 <h3>Warning & Testing</h3>
-<ol>
+<ul>
 <li><b>Important</b>: If we then need to run more commands in the IDE, we'll open a third terminal without closing the previous two.</li>
 <li><b>BackTest: CRUDUser, CRUDITems and autentication Test</b>: Run in the IDE <b>php artisan test</b> & <b>vendor/bin/phpunit</b> where it should return the following result:<b> 12 passed</b> and <b> OK (12 test, 42 assertions)</b></li>
-</ol>
+</ul>
 <div style="display:flex; flex-wrap:wrap; justify-content:center; margin:auto">
 <img style="width:350px;; margin:12px" src="https://user-images.githubusercontent.com/113030390/228594722-9134622e-b43e-468b-a2a4-1f7c928d47d4.png" alt="finalTest"/>
 </div>
+<ul> 
+<li><b>FrontTest: Logo and ShopFriends Test</b>: Run in the IDE <b>npm test</b> where it should return the following result:<b> 3 passed</b> and <b> OK ( Test Suites: 2 ; Tests: 3 )</b></li>
+</ul>
+<div style="display:flex; flex-wrap:wrap; justify-content:center; margin:auto">
+<img style="width:350px;; margin:12px" src="https://user-images.githubusercontent.com/116545731/228640567-7993a0ea-db91-44f7-9830-e190ba297caf.png" alt="finalTest"/>
+</div>
+
 
 <h2>10. Methodology:</h2>
 <ul>
