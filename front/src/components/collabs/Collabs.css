@@ -1,0 +1,109 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.titleContainerMarginated{
+    padding: 9px 87px;
+}
+
+.titleContainerMarginated p{
+    text-align: center;
+}
+
+.cardFriendShop{
+    height: auto;
+    margin: 30px 87px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.friendShopImg{
+    width: 30%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;   
+}
+
+.reversedCardFriendShop .friendShopImg {
+    order: 2;
+}
+
+.reversedCardFriendShop .info {
+    order: 1;
+}
+
+.bikes {
+    background-image: url(../img/imgCollabs/clinicaDeLaBicicleta.png);
+}
+
+.thyssen {
+    background-image: url(../img/imgCollabs/museoThyssen.jpg);
+}
+
+.info{
+    padding: 30px;
+    width: 70%;
+}
+.info h2{
+    margin: 30px 0;
+    font-size: 24px;
+    color: #6a09b5;
+}
+
+.info h3{
+    margin: 30px 0;
+}
+
+.info p.featuredText {
+    margin: 10px 0;
+}
+
+.reversedCardFriendShop, .reversedCardFriendShop p {
+    text-align: right;
+}
+
+.mapContainer iframe {
+    width: 100%;
+    height: 300px;
+}
+
+@media (max-width: 992px) {
+    
+    .titleContainerMarginated{
+        padding: 9px 30px;
+    }
+
+    .cardFriendShop{
+        height: auto;
+        margin: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .25); 
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .friendShopImg{
+        width: 100%; 
+        height: 300px; 
+    }
+
+    .reversedCardFriendShop .friendShopImg {
+        order: 1;
+    }
+
+    .reversedCardFriendShop .info {
+        order: 2;
+    }
+    
+    .info{
+        padding: 30px;
+        width: 100%;
+    }
+
+    .finalSpace {
+        margin-bottom: 36px;
+    }
+}
