@@ -200,6 +200,8 @@
 <li>Pair programming.</li>
 <li>Solo programming.</li>
 <li>Agile with SCRUM.</li>
+<li>TDD and MVC.</li>
+<li>OPP  Object Oriented Programming.</li>
 </ul>
 
 <h2>11. Next Steps</h2>
