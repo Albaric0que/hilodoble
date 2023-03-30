@@ -15,7 +15,7 @@ export default class Dashboard extends Component {
       loggedIN
     }
   }
- 
+
   render() {
     if(this.state.loggedIN === false){
       return  <Navigate to="/sign-in" />
@@ -24,7 +24,6 @@ export default class Dashboard extends Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
-            <a className="navbar-brand" href="/dashboard">React.js and Laravel App</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -77,7 +76,7 @@ export default class Dashboard extends Component {
               </tr>
             </tbody>
           </table>
-          <button className="btn btn-primary" onClick={() => {window.location.href='/edituser'}}>Update</button>
+        
         </div>
       </div>
     )

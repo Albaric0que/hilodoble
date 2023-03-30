@@ -137,7 +137,6 @@ function CartUser() {
             </>
             )}
         </div>
-   
     );
 }
 export default CartUser;

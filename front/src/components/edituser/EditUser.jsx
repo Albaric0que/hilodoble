@@ -15,8 +15,6 @@ export default class EditUser extends Component {
         city: odata.user.city,
         address: odata.user.address,
         postcode: odata.user.postcode,
-        userId: props.match.params.id // add userId to state
-
         errors: []
         }
     }
@@ -25,7 +23,6 @@ export default class EditUser extends Component {
         event.preventDefault()
         
             const user = {
-            userId = this.state.id,
             name: this.state.name,
             surname: this.state.surname,
             email: this.state.email,
